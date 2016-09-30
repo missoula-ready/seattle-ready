@@ -1,0 +1,1 @@
+web: gunicorn disasterinfosite.wsgi --log-file -
