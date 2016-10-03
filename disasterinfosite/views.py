@@ -130,7 +130,7 @@ def app_view(request):
                             photos.append(str(p))
 
                         data[key] = {
-                            'heading': heading.display_name,
+                            'heading': heading,
                             'sections': OrderedDict(sorted(sections.items(), key=lambda t: t[0].order_of_appearance )),
                             'likely_scenario_title': values[0].group.likely_scenario_title,
                             'likely_scenario_text': values[0].group.likely_scenario_text,
