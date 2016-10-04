@@ -232,12 +232,12 @@ LOGIN / SIGNUP FORM
 GENERIC FORM STYLES
 *****/
 .button {
-  border-color: #fd8d3c;
-  background-color: #fd8d3c;
+  border-color: #a5c727;
+  background-color: #a5c727;
 }
 
 .button:hover, .button:focus {
-  background-color: #f03b20;
+  background-color: #397D02;
 }
 
 input:invalid {
@@ -452,7 +452,7 @@ SUPPLY KIT
   font-size: 50px;
   line-height: .9em;
   margin: 0 15px;
-  color: #fd8d3c;
+  color: #a5c727;
 }
 .supply-kit .text-label {
   padding-top: .2em;
