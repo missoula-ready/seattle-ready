@@ -36,7 +36,7 @@ $( document ).ready(function() {
     dataType: "json",
     success: function(boundaryShape) {
       var boundaryStyle = {
-        "color": "rgb(253, 141, 60)",
+        "color": "rgb(165, 199, 39)",
         "weight": 4,
         "opacity": 1,
         "fillColor": "#ffffff",
