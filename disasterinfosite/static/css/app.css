@@ -10,14 +10,14 @@ html {
 body {
   height:auto !important;
   width:auto !important;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Arvo', serif;
   color: #444;
 }
 
 /*****
 TYPOGRAPHY STYLES
 ******/
-.sans-serif {  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+.sans-serif {  font-family: 'Open Sans', sans-serif; }
 .vert-pad-medium { padding: 2em 0; }
 .caps {
   text-transform: uppercase;
