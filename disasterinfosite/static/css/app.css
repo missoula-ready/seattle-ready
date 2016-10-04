@@ -259,11 +259,10 @@ DISASTER TABS
   background-color: #ffffff;
   margin: 5px;
   max-width: 99%;
-  padding: 5px;
 }
 
 .disaster-tabs-content {
-  background-color: #9999aa;
+  background-color: #003DA5;
 }
 
 .disaster-container {
@@ -276,6 +275,7 @@ DISASTER TABS
 }
 
 .tabs-content > .content {
+  padding: 1rem;
   width: auto;
 }
 
@@ -283,15 +283,17 @@ DISASTER TABS
   display: inline-block;
   float: right;
   margin-top: 10px;
+  padding: 1rem;
   width: 98%;
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
-  background-color: #9999aa;
+  background-color: #003DA5;
+  color: #fff;
 }
 
 .disaster-tabs {
-  background-color: #9999aa;
+  background-color: #003DA5;
   padding: 5px;
 }
 
@@ -594,13 +596,12 @@ GEEK BOX
     padding: 0;
   }
 
-  .tabs dd > a, .tabs .tab-title > a {
-    padding: 0.5rem 1rem
+  .disaster-container .column {
+    padding: 0;
   }
 
-  .disaster-tabs {
-    background-color: #91AB9B;
-    padding: 5px;
+  .tabs dd > a, .tabs .tab-title > a {
+    padding: 0.5rem 1rem
   }
 
   .location-form {
