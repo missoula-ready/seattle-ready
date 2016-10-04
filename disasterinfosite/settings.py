@@ -12,7 +12,7 @@ from os import environ
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY_SEATTLE']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -81,7 +81,7 @@ TEMPLATE_LOADERS = (
 import dj_database_url
 
 DATABASES = {}
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.parse(os.environ["DATABASE_URL_SEATTLE"])
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 # Allow database connections to persist
