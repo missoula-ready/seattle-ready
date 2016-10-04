@@ -111,7 +111,7 @@ INFORMATION AND INSTRUCTIONS STYLES
 }
 
 .information-container {
-  background-color: #333;
+  background-color: #444;
   color: #FFF;
   padding: 15px;
 }
@@ -126,7 +126,7 @@ MAP AND SEARCH STYLES
 ******/
 
 .location-form {
-  background-color: #333;
+  background-color: #444;
   padding-bottom: 10px;
   padding-left: 100px; /* make it line up with the text in the header, not the image */
 }
@@ -136,7 +136,7 @@ MAP AND SEARCH STYLES
 }
 
 #location-text {
-  color: #333;
+  color: #444;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -148,10 +148,10 @@ MAP AND SEARCH STYLES
   border-color: #999;
   color: #999;
 }
-::-webkit-input-placeholder { color: #333; }
-:-moz-placeholder { color: #333; }
-::-moz-placeholder { color: #333; }
-:-ms-input-placeholder { color: #333; }
+::-webkit-input-placeholder { color: #444; }
+:-moz-placeholder { color: #444; }
+::-moz-placeholder { color: #444; }
+:-ms-input-placeholder { color: #444; }
 
 #location-submit {
   background-image: url(../img/icon-search.png);
@@ -220,7 +220,7 @@ LOGIN / SIGNUP FORM
 }
 
 #user-interaction-container label {
-  color: #444;
+  color: #333;
 }
 
 #user-info-container,
