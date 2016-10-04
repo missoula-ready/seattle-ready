@@ -95,7 +95,11 @@ HEADER STYLES
 
 .project-title {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
+}
+
+.project-subtitle {
+  margin-bottom: 2rem;
 }
 
 /*****
@@ -521,6 +525,7 @@ GEEK BOX
   .project-title {
     font-size: 2rem;
     line-height: 1.2em;
+    padding-top: 3rem;
   }
 
   .project-subtitle {
