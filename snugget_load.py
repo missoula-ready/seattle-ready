@@ -12,9 +12,9 @@ def main():
   optionalFields = ['intensity', 'image', 'lookup_value', ''] # all other fields in snuggetFile are required. The empty string is to deal with Excel's charming habit of putting a blank column after all data in a CSV.
 
   try:
-    dbURL = os.environ['DATABASE_URL']
+    dbURL = os.environ['DATABASE_URL_SEATTLE']
   except:
-    print("Error: DATABASE_URL environment variable is not set. See README.md for how to set it.")
+    print("Error: DATABASE_URL_SEATTLE environment variable is not set. See README.md for how to set it.")
     exit()
 
 # dbURL should be in the form protocol://user:password@host:port/databasename
