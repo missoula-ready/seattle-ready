@@ -61,11 +61,12 @@ HEADER STYLES
    /*font-family: Georgia, Times, 'Times New Roman', serif;*/
    font-size: 1.25em;
    font-weight: bold;
-   color: #444;
+   color: #fff;
+
 }
 
 #title a:hover {
-   color: #444;
+   color: #fff;
 }
 
 #title .button--top {
@@ -76,7 +77,7 @@ HEADER STYLES
 
 .title-header {
   padding: 5px;
-  background-color: #9999aa;
+  background-color: #003DA5;
 }
 
 .title-header h2 {
@@ -93,6 +94,7 @@ HEADER STYLES
 }
 
 .project-title {
+  text-align: center;
   padding-top: 1rem;
 }
 
@@ -105,7 +107,7 @@ INFORMATION AND INSTRUCTIONS STYLES
 }
 
 .information-container {
-  background-color: #444444;
+  background-color: #333;
   color: #FFF;
   padding: 15px;
 }
@@ -120,7 +122,7 @@ MAP AND SEARCH STYLES
 ******/
 
 .location-form {
-  background-color: #444444;
+  background-color: #333;
   padding-bottom: 10px;
   padding-left: 100px; /* make it line up with the text in the header, not the image */
 }
@@ -130,7 +132,7 @@ MAP AND SEARCH STYLES
 }
 
 #location-text {
-  color: #444444;
+  color: #333;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -142,10 +144,10 @@ MAP AND SEARCH STYLES
   border-color: #999;
   color: #999;
 }
-::-webkit-input-placeholder { color: #444444; }
-:-moz-placeholder { color: #444444; }
-::-moz-placeholder { color: #444444; }
-:-ms-input-placeholder { color: #444444; }
+::-webkit-input-placeholder { color: #333; }
+:-moz-placeholder { color: #333; }
+::-moz-placeholder { color: #333; }
+:-ms-input-placeholder { color: #333; }
 
 #location-submit {
   background-image: url(../img/icon-search.png);
