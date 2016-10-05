@@ -6,6 +6,8 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 
 # To set it up, follow the instructions in the [Disaster Preparedness project README](https://github.com/missoula-ready/disaster-preparedness/blob/master/README.md). But instead of DJANGO_SECRET_KEY, use DJANGO_SECRET_KEY_SEATTLE, and instead of DATABASE_URL, use DATABASE_URL_SEATTLE.
 
+Depending on your server setup, you may want to put these values in settings.py directly.
+
 # Values to put in Django Admin
 
 ### Tabs
@@ -55,27 +57,27 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 ### Section orders
 
 ###### Snugget Section
-What to expect: 0
-How to prepare: 1
-In Recent History: 2
+  What to expect: 0
+  How to prepare: 1
+  In Recent History: 2
 
 ###### Snugget Subsection
 Note that these may appear in different sections or be mutually exclusive, which is why some of them have the same order.
 
-In Your Lifetime: 0
-Erosion Risk: 1
-What's the Worst: 2
-What to do: 2
-Tsunami Zone: 3
-Liquefaction: 4
-Unstable Structures: 5
-Warning Signs: 6
-Before: 7
-During: 8
-After: 9
-Local Resources: 10
-What's Happened?: 11
-Historical Images: 12
+  In Your Lifetime: 0
+  Erosion Risk: 1
+  What's the Worst: 2
+  What to do: 2
+  Tsunami Zone: 3
+  Liquefaction: 4
+  Unstable Structures: 5
+  Warning Signs: 6
+  Before: 7
+  During: 8
+  After: 9
+  Local Resources: 10
+  What's Happened?: 11
+  Historical Images: 12
 
 ### Important links
 
