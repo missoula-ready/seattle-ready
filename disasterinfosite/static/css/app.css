@@ -333,7 +333,7 @@ SECTIONS
   background: transparent url(../img/question.svg) no-repeat 0 0;
 }
 
-.section-icon--Past {
+.section-icon--Past, .section-icon--In {
   background: transparent url(../img/clock.svg) no-repeat 0 0;
 }
 
