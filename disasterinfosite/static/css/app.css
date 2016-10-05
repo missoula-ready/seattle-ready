@@ -397,14 +397,15 @@ PHOTOS OF PAST EVENTS
 *****/
 
 .past-photos {
-  width: 416px;
-  height: 288px;
+  width: 420px;
   padding: 10px;
   margin: 0 auto;
 }
 
 .slideshow-image {
   width: 400px;
+  max-width: 100%;
+  display: inline-block;
 }
 
 /* Arrows for photo slider */
