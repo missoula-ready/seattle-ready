@@ -6,6 +6,8 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 
 # To set it up, follow the instructions in the [Disaster Preparedness project README](https://github.com/missoula-ready/disaster-preparedness/blob/master/README.md). But instead of DJANGO_SECRET_KEY, use DJANGO_SECRET_KEY_SEATTLE, and instead of DATABASE_URL, use DATABASE_URL_SEATTLE.
 
+Depending on your server setup, you may want to put these values in settings.py directly.
+
 # Values to put in Django Admin
 
 ### Tabs
