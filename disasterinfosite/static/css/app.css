@@ -57,15 +57,14 @@ label {
 HEADER STYLES
 *****/
 
-#title a {
+#title h1 a {
    /*font-family: Georgia, Times, 'Times New Roman', serif;*/
    font-size: 1.25em;
    font-weight: bold;
    color: #fff;
-
 }
 
-#title a:hover {
+#title h1 a:hover {
    color: #fff;
 }
 
@@ -154,12 +153,16 @@ MAP AND SEARCH STYLES
 :-ms-input-placeholder { color: #444; }
 
 #location-submit {
-  background-image: url(../img/icon-search.png);
+  background-image: url(../img/icon-search--dark.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 22px 22px;
   /*width: 44px;*/
   border-radius: 0 3px 3px 0;
+}
+
+#location-submit:hover{
+  background-image: url(../img/icon-search.png);
 }
 
 .auto-location-submit, .button--top {
@@ -238,6 +241,7 @@ LOGIN / SIGNUP FORM
 GENERIC FORM STYLES
 *****/
 .button {
+  color: #333;
   border-color: #a5c727;
   background-color: #a5c727;
 }
