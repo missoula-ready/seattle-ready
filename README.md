@@ -116,7 +116,7 @@ A natural disaster could strike your area at any time. Find out about where you 
 ###### Who Made This
 `This is based on <a href="http://www.opb.org/news/widget/aftershock-find-your-cascadia-earthquake-story/" target="_blank">Aftershock</a>, an earthquake preparedness application for Oregon residents. Carson MacPherson-Krutsky and <a href="https://hs.umt.edu/geosciences/faculty/bendick/" target="_blank">Dr. Rebecca Bendick</a>, a graduate student and her advisor at the Unversity of Montana, had the idea to expand it for other locales and types of disasters. <a href="https://github.com/nein09" target="_blank">Melinda Minch</a> and <a href="https://github.com/eldang" target="_blank">Eldan Goldenberg</a> adapted it for that purpose. Source for a general-purpose version of this site is available on <a href="https://github.com/missoula-ready/disaster-preparedness" target="_blank">Github</a>.
 <br/>
-Content and data are supported by several entities including the <a href="http://www.umt.edu/" target="_blank">University of Montana</a>, <a href="http://www.kingcounty.gov/" target="_blank">King County</a>, and the <a href="http://www.seattle.gov/" target="_blank">City of Seattle</a>.
+Content and data are supported by several entities including the <a href="http://www.umt.edu/" alt="logo" target="_blank">University of Montana</a>, <a href="http://www.kingcounty.gov/" alt="logo" target="_blank">King County</a>, and the <a href="http://www.seattle.gov/" alt="logo" target="_blank">City of Seattle</a>.
 <br/>
 <img class="who-made-this-logo umt-logo" src="static/img/umt_logo.png">
 <img class="who-made-this-logo county-logo" src="static/img/kc_logo_bw.gif">
