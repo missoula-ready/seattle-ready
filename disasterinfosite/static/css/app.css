@@ -11,7 +11,7 @@ body {
   height:auto !important;
   width:auto !important;
   font-family: 'Arvo', serif;
-  color: #444;
+  color: #081f2c;
 }
 
 /*****
@@ -76,7 +76,7 @@ HEADER STYLES
 
 .title-header {
   padding: 5px;
-  background-color: #003DA5;
+  background-color: #006086;
 }
 
 .title-header h2 {
@@ -110,7 +110,7 @@ INFORMATION AND INSTRUCTIONS STYLES
 }
 
 .information-container {
-  background-color: #444;
+  background-color: #081f2c;
   color: #FFF;
   padding: 15px;
 }
@@ -125,7 +125,7 @@ MAP AND SEARCH STYLES
 ******/
 
 .location-form {
-  background-color: #444;
+  background-color: #081f2c;
   padding-bottom: 10px;
   padding-left: 100px; /* make it line up with the text in the header, not the image */
 }
@@ -135,7 +135,7 @@ MAP AND SEARCH STYLES
 }
 
 #location-text {
-  color: #444;
+  color: #081f2c;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -147,10 +147,10 @@ MAP AND SEARCH STYLES
   border-color: #999;
   color: #999;
 }
-::-webkit-input-placeholder { color: #444; }
-:-moz-placeholder { color: #444; }
-::-moz-placeholder { color: #444; }
-:-ms-input-placeholder { color: #444; }
+::-webkit-input-placeholder { color: #081f2c; }
+:-moz-placeholder { color: #081f2c; }
+::-moz-placeholder { color: #081f2c; }
+:-ms-input-placeholder { color: #081f2c; }
 
 #location-submit {
   background-image: url(../img/icon-search--dark.png);
@@ -223,7 +223,7 @@ LOGIN / SIGNUP FORM
 }
 
 #user-interaction-container label {
-  color: #333;
+  color: #081f2c;
 }
 
 #user-info-container,
@@ -241,7 +241,7 @@ LOGIN / SIGNUP FORM
 GENERIC FORM STYLES
 *****/
 .button {
-  color: #333;
+  color: #081f2c;
   border-color: #a5c727;
   background-color: #a5c727;
 }
@@ -266,7 +266,7 @@ DISASTER TABS
 }
 
 .disaster-tabs-content {
-  background-color: #003DA5;
+  background-color: #006086;
 }
 
 .disaster-container {
@@ -292,17 +292,17 @@ DISASTER TABS
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
-  background-color: #003DA5;
+  background-color: #006086;
   color: #fff;
 }
 
 .disaster-tabs {
-  background-color: #003DA5;
+  background-color: #006086;
   padding: 5px;
 }
 
 .likely-scenario {
-  background-color: #444444;
+  background-color: #081f2c;
   color: #FFF;
   padding: 10px;
   margin-top: -15px;
@@ -483,12 +483,12 @@ GEEK BOX
 *****/
 
 #geek-box {
-  background-color: #444;
+  background-color: #081f2c;
   color: #fff;
 }
 
 #geek-box-container {
-  background-color: #444;
+  background-color: #081f2c;
 }
 
 #geek-box a {
