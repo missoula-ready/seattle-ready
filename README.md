@@ -90,7 +90,7 @@ Community leaders (FEMA?) contact information goes ehre.
 This site is a collaboration of HazardReady, the University of Montana, King County, and the City of Seattle.
 
 ###### Site title
-King County Ready
+Seattle and King County Ready
 
 ###### URL
 https://hazardready.org/kingco
