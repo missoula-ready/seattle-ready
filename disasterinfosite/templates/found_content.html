@@ -51,7 +51,7 @@
                   {% endfor %}
                 {% endfor %}
                 {% if section.name == "In Recent History" and hazard.photos %}
-                  <h3>Photos of Past Events</h3>
+                  <h3>Historical Images</h3>
                   <div class="past-photos">
                     {% for photo in hazard.photos %}
                      <img alt="A historical image of {{ hazard.heading }} in {{ location.areaname }}" class="slideshow-image" src="{{ photo }}"/>

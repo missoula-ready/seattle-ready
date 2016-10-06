@@ -36,21 +36,9 @@ Depending on your server setup, you may want to put these values in settings.py 
     Likely Scenario Title:
     Likely Scenario Text:
 
-######Dam
-    Display Name: Dam Failure
-    Order: 4
-    Likely Scenario Title:
-    Likely Scenario Text:
-
 ######Volcano
     Display Name: Volcano
-    Order: 5
-    Likely Scenario Title:
-    Likely Scenario Text:
-
-######Sea
-    Display Name: Sea Level Rise
-    Order: 6
+    Order: 4
     Likely Scenario Title:
     Likely Scenario Text:
 
@@ -67,7 +55,7 @@ Note that these may appear in different sections or be mutually exclusive, which
   In Your Lifetime: 0
   Erosion Risk: 1
   What's the Worst: 2
-  What to do: 2
+  If the dams failed: 3
   Tsunami Zone: 3
   Liquefaction: 4
   Unstable Structures: 5
