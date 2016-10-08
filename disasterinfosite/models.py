@@ -96,20 +96,25 @@ class Location(SingletonModel):
     # GENERATED CODE GOES HERE
     # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
     # locationsList
+            'EQ_kingco': EQ_kingco.objects.data_bounds(),
             'EQ_Liquefact_kingco': EQ_Liquefact_kingco.objects.data_bounds(),
             'EQ_Nisqual68_kingco': EQ_Nisqual68_kingco.objects.data_bounds(),
             'EQ_SeattleFault72_kingco': EQ_SeattleFault72_kingco.objects.data_bounds(),
             'EQ_Tsunami_SeaFault72_kingco': EQ_Tsunami_SeaFault72_kingco.objects.data_bounds(),
             'EQ_URM_DensityZones_seattle': EQ_URM_DensityZones_seattle.objects.data_bounds(),
+            'Fire_kingco': Fire_kingco.objects.data_bounds(),
             'Fire_WUI_kingco_only': Fire_WUI_kingco_only.objects.data_bounds(),
             'Flood_100yr_wUrban_kingco': Flood_100yr_wUrban_kingco.objects.data_bounds(),
             'Flood_500yr_wUrban_kingco': Flood_500yr_wUrban_kingco.objects.data_bounds(),
             'Flood_CMZ_kingco': Flood_CMZ_kingco.objects.data_bounds(),
             'Flood_DamInundation': Flood_DamInundation.objects.data_bounds(),
+            'Flood_kingco': Flood_kingco.objects.data_bounds(),
             'Flood_nearest_sand_distr': Flood_nearest_sand_distr.objects.data_bounds(),
             'Hubs_Nearest_seattle': Hubs_Nearest_seattle.objects.data_bounds(),
             'LSLD_ExistingAreas_kingco': LSLD_ExistingAreas_kingco.objects.data_bounds(),
+            'LSLD_kingco': LSLD_kingco.objects.data_bounds(),
             'LSLD_Prone_kingco': LSLD_Prone_kingco.objects.data_bounds(),
+            'Volcano_kingco': Volcano_kingco.objects.data_bounds(),
             'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds()
     # END OF GENERATED CODE BLOCK
     ######################################################
@@ -181,6 +186,18 @@ class ShapefileGroup(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsClasses
+class EQ_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='quake')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class EQ_Liquefact_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='quake')[0]
@@ -234,6 +251,18 @@ class EQ_URM_DensityZones_seattle(models.Model):
         return ShapefileGroup.objects.get_or_create(name='quake')[0]
 
     lookup_val = models.IntegerField()
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
+class Fire_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='fire')[0]
+
+    lookup_val = models.CharField(max_length=80)
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
@@ -301,6 +330,18 @@ class Flood_DamInundation(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
+class Flood_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='flood')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class Flood_nearest_sand_distr(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='flood')[0]
@@ -337,11 +378,35 @@ class LSLD_ExistingAreas_kingco(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
+class LSLD_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class LSLD_Prone_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
     lookup_val = models.IntegerField()
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
+class Volcano_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='volcano')[0]
+
+    lookup_val = models.CharField(max_length=80)
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
@@ -442,20 +507,25 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsFilters
+    EQ_kingco_filter = models.ForeignKey(EQ_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_Liquefact_kingco_filter = models.ForeignKey(EQ_Liquefact_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_Nisqual68_kingco_filter = models.ForeignKey(EQ_Nisqual68_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_SeattleFault72_kingco_filter = models.ForeignKey(EQ_SeattleFault72_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_Tsunami_SeaFault72_kingco_filter = models.ForeignKey(EQ_Tsunami_SeaFault72_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_URM_DensityZones_seattle_filter = models.ForeignKey(EQ_URM_DensityZones_seattle, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Fire_kingco_filter = models.ForeignKey(Fire_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Fire_WUI_kingco_only_filter = models.ForeignKey(Fire_WUI_kingco_only, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_100yr_wUrban_kingco_filter = models.ForeignKey(Flood_100yr_wUrban_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_500yr_wUrban_kingco_filter = models.ForeignKey(Flood_500yr_wUrban_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_CMZ_kingco_filter = models.ForeignKey(Flood_CMZ_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_DamInundation_filter = models.ForeignKey(Flood_DamInundation, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Flood_kingco_filter = models.ForeignKey(Flood_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_nearest_sand_distr_filter = models.ForeignKey(Flood_nearest_sand_distr, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Hubs_Nearest_seattle_filter = models.ForeignKey(Hubs_Nearest_seattle, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_ExistingAreas_kingco_filter = models.ForeignKey(LSLD_ExistingAreas_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_kingco_filter = models.ForeignKey(LSLD_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_Prone_kingco_filter = models.ForeignKey(LSLD_Prone_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_Lahar_kingco_filter = models.ForeignKey(Volcano_Lahar_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
 # END OF GENERATED CODE BLOCK
 ######################################################
@@ -480,6 +550,12 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsGeoFilters
+        qs_EQ_kingco = EQ_kingco.objects.filter(geom__contains=pnt)
+        EQ_kingco_rating = qs_EQ_kingco.values_list('lookup_val', flat=True)
+        for rating in EQ_kingco_rating:
+            individualSnugget = Snugget.objects.filter(EQ_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_EQ_Liquefact_kingco = EQ_Liquefact_kingco.objects.filter(geom__contains=pnt)
         EQ_Liquefact_kingco_rating = qs_EQ_Liquefact_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Liquefact_kingco_rating:
@@ -508,6 +584,12 @@ class Snugget(models.Model):
         EQ_URM_DensityZones_seattle_rating = qs_EQ_URM_DensityZones_seattle.values_list('lookup_val', flat=True)
         for rating in EQ_URM_DensityZones_seattle_rating:
             individualSnugget = Snugget.objects.filter(EQ_URM_DensityZones_seattle_filter__lookup_val__exact=rating).select_subclasses()
+            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_Fire_kingco = Fire_kingco.objects.filter(geom__contains=pnt)
+        Fire_kingco_rating = qs_Fire_kingco.values_list('lookup_val', flat=True)
+        for rating in Fire_kingco_rating:
+            individualSnugget = Snugget.objects.filter(Fire_kingco_filter__lookup_val__exact=rating).select_subclasses()
             groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Fire_WUI_kingco_only = Fire_WUI_kingco_only.objects.filter(geom__contains=pnt)
@@ -540,6 +622,12 @@ class Snugget(models.Model):
             individualSnugget = Snugget.objects.filter(Flood_DamInundation_filter__lookup_val__exact=rating).select_subclasses()
             groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
+        qs_Flood_kingco = Flood_kingco.objects.filter(geom__contains=pnt)
+        Flood_kingco_rating = qs_Flood_kingco.values_list('lookup_val', flat=True)
+        for rating in Flood_kingco_rating:
+            individualSnugget = Snugget.objects.filter(Flood_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_Flood_nearest_sand_distr = Flood_nearest_sand_distr.objects.filter(geom__contains=pnt)
         Flood_nearest_sand_distr_rating = qs_Flood_nearest_sand_distr.values_list('lookup_val', flat=True)
         for rating in Flood_nearest_sand_distr_rating:
@@ -558,10 +646,22 @@ class Snugget(models.Model):
             individualSnugget = Snugget.objects.filter(LSLD_ExistingAreas_kingco_filter__lookup_val__exact=rating).select_subclasses()
             groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
+        qs_LSLD_kingco = LSLD_kingco.objects.filter(geom__contains=pnt)
+        LSLD_kingco_rating = qs_LSLD_kingco.values_list('lookup_val', flat=True)
+        for rating in LSLD_kingco_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_LSLD_Prone_kingco = LSLD_Prone_kingco.objects.filter(geom__contains=pnt)
         LSLD_Prone_kingco_rating = qs_LSLD_Prone_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_Prone_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_Prone_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_Volcano_kingco = Volcano_kingco.objects.filter(geom__contains=pnt)
+        Volcano_kingco_rating = qs_Volcano_kingco.values_list('lookup_val', flat=True)
+        for rating in Volcano_kingco_rating:
+            individualSnugget = Snugget.objects.filter(Volcano_kingco_filter__lookup_val__exact=rating).select_subclasses()
             groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Volcano_Lahar_kingco = Volcano_Lahar_kingco.objects.filter(geom__contains=pnt)
@@ -572,20 +672,25 @@ class Snugget(models.Model):
 
 
         return {'groups': groupsDict,
+                'EQ_kingco_rating': EQ_kingco_rating,
                 'EQ_Liquefact_kingco_rating': EQ_Liquefact_kingco_rating,
                 'EQ_Nisqual68_kingco_rating': EQ_Nisqual68_kingco_rating,
                 'EQ_SeattleFault72_kingco_rating': EQ_SeattleFault72_kingco_rating,
                 'EQ_Tsunami_SeaFault72_kingco_rating': EQ_Tsunami_SeaFault72_kingco_rating,
                 'EQ_URM_DensityZones_seattle_rating': EQ_URM_DensityZones_seattle_rating,
+                'Fire_kingco_rating': Fire_kingco_rating,
                 'Fire_WUI_kingco_only_rating': Fire_WUI_kingco_only_rating,
                 'Flood_100yr_wUrban_kingco_rating': Flood_100yr_wUrban_kingco_rating,
                 'Flood_500yr_wUrban_kingco_rating': Flood_500yr_wUrban_kingco_rating,
                 'Flood_CMZ_kingco_rating': Flood_CMZ_kingco_rating,
                 'Flood_DamInundation_rating': Flood_DamInundation_rating,
+                'Flood_kingco_rating': Flood_kingco_rating,
                 'Flood_nearest_sand_distr_rating': Flood_nearest_sand_distr_rating,
                 'Hubs_Nearest_seattle_rating': Hubs_Nearest_seattle_rating,
                 'LSLD_ExistingAreas_kingco_rating': LSLD_ExistingAreas_kingco_rating,
+                'LSLD_kingco_rating': LSLD_kingco_rating,
                 'LSLD_Prone_kingco_rating': LSLD_Prone_kingco_rating,
+                'Volcano_kingco_rating': Volcano_kingco_rating,
                 'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating
                 }
 # END OF GENERATED CODE BLOCK

@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # adminModelImports
-from .models import EmbedSnugget, TextSnugget, SnuggetSection, SnuggetSubSection, Location, SiteSettings, SupplyKit, ImportantLink, EQ_Liquefact_kingco, EQ_Nisqual68_kingco, EQ_SeattleFault72_kingco, EQ_Tsunami_SeaFault72_kingco, EQ_URM_DensityZones_seattle, Fire_WUI_kingco_only, Flood_100yr_wUrban_kingco, Flood_500yr_wUrban_kingco, Flood_CMZ_kingco, Flood_DamInundation, Flood_nearest_sand_distr, Hubs_Nearest_seattle, LSLD_ExistingAreas_kingco, LSLD_Prone_kingco, Volcano_Lahar_kingco
+from .models import EmbedSnugget, TextSnugget, SnuggetSection, SnuggetSubSection, Location, SiteSettings, SupplyKit, ImportantLink, EQ_kingco, EQ_Liquefact_kingco, EQ_Nisqual68_kingco, EQ_SeattleFault72_kingco, EQ_Tsunami_SeaFault72_kingco, EQ_URM_DensityZones_seattle, Fire_kingco, Fire_WUI_kingco_only, Flood_100yr_wUrban_kingco, Flood_500yr_wUrban_kingco, Flood_CMZ_kingco, Flood_DamInundation, Flood_kingco, Flood_nearest_sand_distr, Hubs_Nearest_seattle, LSLD_ExistingAreas_kingco, LSLD_kingco, LSLD_Prone_kingco, Volcano_kingco, Volcano_Lahar_kingco
 # END OF GENERATED CODE BLOCK
 ######################################################
 from .models import ShapefileGroup, PastEventsPhoto, DataOverviewImage, UserProfile
@@ -25,8 +25,8 @@ class SnuggetAdmin(admin.ModelAdmin):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # adminLists
-    list_display = ('shortname', 'section', 'sub_section', 'EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_Lahar_kingco_filter')
-    list_filter = ('section', 'sub_section', 'EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_Lahar_kingco_filter')
+    list_display = ('shortname', 'section', 'sub_section', 'EQ_kingco_filter', 'EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_kingco_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_kingco_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_kingco_filter', 'Volcano_Lahar_kingco_filter')
+    list_filter = ('section', 'sub_section', 'EQ_kingco_filter', 'EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_kingco_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_kingco_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_kingco_filter', 'Volcano_Lahar_kingco_filter')
 
     fieldsets = (
         (None, {
@@ -34,7 +34,7 @@ class SnuggetAdmin(admin.ModelAdmin):
         }),
         ('Filters', {
             'description': 'Choose a filter value this snugget will show up for.  It is recommended you only select a value for one filter and leave the rest empty.',
-            'fields': (('EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_Lahar_kingco_filter'))
+            'fields': (('EQ_kingco_filter', 'EQ_Liquefact_kingco_filter', 'EQ_Nisqual68_kingco_filter', 'EQ_SeattleFault72_kingco_filter', 'EQ_Tsunami_SeaFault72_kingco_filter', 'EQ_URM_DensityZones_seattle_filter', 'Fire_kingco_filter', 'Fire_WUI_kingco_only_filter', 'Flood_100yr_wUrban_kingco_filter', 'Flood_500yr_wUrban_kingco_filter', 'Flood_CMZ_kingco_filter', 'Flood_DamInundation_filter', 'Flood_kingco_filter', 'Flood_nearest_sand_distr_filter', 'Hubs_Nearest_seattle_filter', 'LSLD_ExistingAreas_kingco_filter', 'LSLD_kingco_filter', 'LSLD_Prone_kingco_filter', 'Volcano_kingco_filter', 'Volcano_Lahar_kingco_filter'))
         })
     )
 # END OF GENERATED CODE BLOCK
@@ -93,20 +93,25 @@ admin.site.register(SupplyKit, SingletonModelAdmin)
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # adminSiteRegistrations
+admin.site.register(EQ_kingco, GeoNoEditAdmin)
 admin.site.register(EQ_Liquefact_kingco, GeoNoEditAdmin)
 admin.site.register(EQ_Nisqual68_kingco, GeoNoEditAdmin)
 admin.site.register(EQ_SeattleFault72_kingco, GeoNoEditAdmin)
 admin.site.register(EQ_Tsunami_SeaFault72_kingco, GeoNoEditAdmin)
 admin.site.register(EQ_URM_DensityZones_seattle, GeoNoEditAdmin)
+admin.site.register(Fire_kingco, GeoNoEditAdmin)
 admin.site.register(Fire_WUI_kingco_only, GeoNoEditAdmin)
 admin.site.register(Flood_100yr_wUrban_kingco, GeoNoEditAdmin)
 admin.site.register(Flood_500yr_wUrban_kingco, GeoNoEditAdmin)
 admin.site.register(Flood_CMZ_kingco, GeoNoEditAdmin)
 admin.site.register(Flood_DamInundation, GeoNoEditAdmin)
+admin.site.register(Flood_kingco, GeoNoEditAdmin)
 admin.site.register(Flood_nearest_sand_distr, GeoNoEditAdmin)
 admin.site.register(Hubs_Nearest_seattle, GeoNoEditAdmin)
 admin.site.register(LSLD_ExistingAreas_kingco, GeoNoEditAdmin)
+admin.site.register(LSLD_kingco, GeoNoEditAdmin)
 admin.site.register(LSLD_Prone_kingco, GeoNoEditAdmin)
+admin.site.register(Volcano_kingco, GeoNoEditAdmin)
 admin.site.register(Volcano_Lahar_kingco, GeoNoEditAdmin)
 # END OF GENERATED CODE BLOCK
 ######################################################

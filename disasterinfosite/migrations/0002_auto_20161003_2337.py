@@ -224,4 +224,74 @@ class Migration(migrations.Migration):
             name='Volcano_Lahar_kingco_filter',
             field=models.ForeignKey(null=True, to='disasterinfosite.Volcano_Lahar_kingco', on_delete=django.db.models.deletion.PROTECT, related_name='+', blank=True),
         ),
+        migrations.CreateModel(
+            name='EQ_kingco',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Flood_kingco',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='LSLD_kingco',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Volcano_kingco',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+            ],
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='EQ_kingco_filter',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='disasterinfosite.EQ_kingco', related_name='+', blank=True, null=True),
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='Flood_kingco_filter',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='disasterinfosite.Flood_kingco', related_name='+', blank=True, null=True),
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='LSLD_kingco_filter',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='disasterinfosite.LSLD_kingco', related_name='+', blank=True, null=True),
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='Volcano_kingco_filter',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='disasterinfosite.Volcano_kingco', related_name='+', blank=True, null=True),
+        ),
+        migrations.CreateModel(
+            name='Fire_kingco',
+            fields=[
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Fire_kingco.getGroup)),
+            ],
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='Fire_kingco_filter',
+            field=models.ForeignKey(null=True, blank=True, to='disasterinfosite.Fire_kingco', on_delete=django.db.models.deletion.PROTECT, related_name='+'),
+        ),
     ]
