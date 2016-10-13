@@ -53,19 +53,19 @@ Depending on your server setup, you may want to put these values in settings.py 
 Note that these may appear in different sections or be mutually exclusive, which is why some of them have the same order.
 
   In Your Lifetime: 0
-  What's the Worst: 2
-  Erosion Risk: 3
-  If the dams failed: 3
-  Tsunami Zone: 3
-  Liquefaction: 4
-  Unstable Structures: 5
-  Warning Signs: 6
-  Before: 7
-  During: 8
-  After: 9
-  Local Resources: 10
-  What's Happened?: 11
-  Historical Images: 12
+  What's the Worst: 1
+  Erosion Risk: 2
+  If the dams failed: 2
+  Tsunami Zone: 2
+  Liquefaction: 3
+  Unstable Structures: 4
+  Warning Signs: 5
+  Before: 6
+  During: 7
+  After: 8
+  Local Resources: 9
+  What's Happened?: 10
+  Historical Images: 11
 
 ### Important links
 
