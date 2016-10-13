@@ -93,7 +93,7 @@ This site is a collaboration of HazardReady, the University of Montana, King Cou
 Seattle and King County Ready
 
 ###### URL
-https://hazardready.org/kingco
+https://hazardready.org/seattle
 
 ###### Site description
 A disaster preparedness website
