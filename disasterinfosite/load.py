@@ -6,6 +6,11 @@ from django.contrib.gis.utils import LayerMapping
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # loadMappings
+EQ_Cascadia_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 EQ_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -107,6 +112,7 @@ Volcano_Lahar_kingco_mapping = {
 }
 
 
+EQ_Cascadia_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/EQ_Cascadia_kingco.shp'))
 EQ_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/EQ_kingco.shp'))
 EQ_Liquefact_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/EQ_Liquefact_kingco.shp'))
 EQ_Nisqual68_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/EQ_Nisqual68_kingco.shp'))
@@ -150,6 +156,10 @@ def run(verbose=True):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # loadImports
+    from .models import EQ_Cascadia_kingco
+    lm_EQ_Cascadia_kingco = LayerMapping(EQ_Cascadia_kingco, EQ_Cascadia_kingco_shp, EQ_Cascadia_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_EQ_Cascadia_kingco.save(strict=True, verbose=verbose)
+
     from .models import EQ_kingco
     lm_EQ_kingco = LayerMapping(EQ_kingco, EQ_kingco_shp, EQ_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQ_kingco.save(strict=True, verbose=verbose)

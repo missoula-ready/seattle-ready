@@ -96,6 +96,7 @@ class Location(SingletonModel):
     # GENERATED CODE GOES HERE
     # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
     # locationsList
+            'EQ_Cascadia_kingco': EQ_Cascadia_kingco.objects.data_bounds(),
             'EQ_kingco': EQ_kingco.objects.data_bounds(),
             'EQ_Liquefact_kingco': EQ_Liquefact_kingco.objects.data_bounds(),
             'EQ_Nisqual68_kingco': EQ_Nisqual68_kingco.objects.data_bounds(),
@@ -186,6 +187,18 @@ class ShapefileGroup(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsClasses
+class EQ_Cascadia_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='quake')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class EQ_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='quake')[0]
@@ -507,6 +520,7 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsFilters
+    EQ_Cascadia_kingco_filter = models.ForeignKey(EQ_Cascadia_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_kingco_filter = models.ForeignKey(EQ_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_Liquefact_kingco_filter = models.ForeignKey(EQ_Liquefact_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     EQ_Nisqual68_kingco_filter = models.ForeignKey(EQ_Nisqual68_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
@@ -550,128 +564,156 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsGeoFilters
+        qs_EQ_Cascadia_kingco = EQ_Cascadia_kingco.objects.filter(geom__contains=pnt)
+        EQ_Cascadia_kingco_rating = qs_EQ_Cascadia_kingco.values_list('lookup_val', flat=True)
+        for rating in EQ_Cascadia_kingco_rating:
+            individualSnugget = Snugget.objects.filter(EQ_Cascadia_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_EQ_kingco = EQ_kingco.objects.filter(geom__contains=pnt)
         EQ_kingco_rating = qs_EQ_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_EQ_Liquefact_kingco = EQ_Liquefact_kingco.objects.filter(geom__contains=pnt)
         EQ_Liquefact_kingco_rating = qs_EQ_Liquefact_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Liquefact_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Liquefact_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_EQ_Nisqual68_kingco = EQ_Nisqual68_kingco.objects.filter(geom__contains=pnt)
         EQ_Nisqual68_kingco_rating = qs_EQ_Nisqual68_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Nisqual68_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Nisqual68_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_EQ_SeattleFault72_kingco = EQ_SeattleFault72_kingco.objects.filter(geom__contains=pnt)
         EQ_SeattleFault72_kingco_rating = qs_EQ_SeattleFault72_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_SeattleFault72_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_SeattleFault72_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_EQ_Tsunami_SeaFault72_kingco = EQ_Tsunami_SeaFault72_kingco.objects.filter(geom__contains=pnt)
         EQ_Tsunami_SeaFault72_kingco_rating = qs_EQ_Tsunami_SeaFault72_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Tsunami_SeaFault72_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Tsunami_SeaFault72_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_EQ_URM_DensityZones_seattle = EQ_URM_DensityZones_seattle.objects.filter(geom__contains=pnt)
         EQ_URM_DensityZones_seattle_rating = qs_EQ_URM_DensityZones_seattle.values_list('lookup_val', flat=True)
         for rating in EQ_URM_DensityZones_seattle_rating:
             individualSnugget = Snugget.objects.filter(EQ_URM_DensityZones_seattle_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Fire_kingco = Fire_kingco.objects.filter(geom__contains=pnt)
         Fire_kingco_rating = qs_Fire_kingco.values_list('lookup_val', flat=True)
         for rating in Fire_kingco_rating:
             individualSnugget = Snugget.objects.filter(Fire_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Fire_WUI_kingco_only = Fire_WUI_kingco_only.objects.filter(geom__contains=pnt)
         Fire_WUI_kingco_only_rating = qs_Fire_WUI_kingco_only.values_list('lookup_val', flat=True)
         for rating in Fire_WUI_kingco_only_rating:
             individualSnugget = Snugget.objects.filter(Fire_WUI_kingco_only_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_100yr_wUrban_kingco = Flood_100yr_wUrban_kingco.objects.filter(geom__contains=pnt)
         Flood_100yr_wUrban_kingco_rating = qs_Flood_100yr_wUrban_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_100yr_wUrban_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_100yr_wUrban_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_500yr_wUrban_kingco = Flood_500yr_wUrban_kingco.objects.filter(geom__contains=pnt)
         Flood_500yr_wUrban_kingco_rating = qs_Flood_500yr_wUrban_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_500yr_wUrban_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_500yr_wUrban_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_CMZ_kingco = Flood_CMZ_kingco.objects.filter(geom__contains=pnt)
         Flood_CMZ_kingco_rating = qs_Flood_CMZ_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_CMZ_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_CMZ_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_DamInundation = Flood_DamInundation.objects.filter(geom__contains=pnt)
         Flood_DamInundation_rating = qs_Flood_DamInundation.values_list('lookup_val', flat=True)
         for rating in Flood_DamInundation_rating:
             individualSnugget = Snugget.objects.filter(Flood_DamInundation_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_kingco = Flood_kingco.objects.filter(geom__contains=pnt)
         Flood_kingco_rating = qs_Flood_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Flood_nearest_sand_distr = Flood_nearest_sand_distr.objects.filter(geom__contains=pnt)
         Flood_nearest_sand_distr_rating = qs_Flood_nearest_sand_distr.values_list('lookup_val', flat=True)
         for rating in Flood_nearest_sand_distr_rating:
             individualSnugget = Snugget.objects.filter(Flood_nearest_sand_distr_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Hubs_Nearest_seattle = Hubs_Nearest_seattle.objects.filter(geom__contains=pnt)
         Hubs_Nearest_seattle_rating = qs_Hubs_Nearest_seattle.values_list('lookup_val', flat=True)
         for rating in Hubs_Nearest_seattle_rating:
             individualSnugget = Snugget.objects.filter(Hubs_Nearest_seattle_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_LSLD_ExistingAreas_kingco = LSLD_ExistingAreas_kingco.objects.filter(geom__contains=pnt)
         LSLD_ExistingAreas_kingco_rating = qs_LSLD_ExistingAreas_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_ExistingAreas_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_ExistingAreas_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_LSLD_kingco = LSLD_kingco.objects.filter(geom__contains=pnt)
         LSLD_kingco_rating = qs_LSLD_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_LSLD_Prone_kingco = LSLD_Prone_kingco.objects.filter(geom__contains=pnt)
         LSLD_Prone_kingco_rating = qs_LSLD_Prone_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_Prone_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_Prone_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Volcano_kingco = Volcano_kingco.objects.filter(geom__contains=pnt)
         Volcano_kingco_rating = qs_Volcano_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_kingco_rating:
             individualSnugget = Snugget.objects.filter(Volcano_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
         qs_Volcano_Lahar_kingco = Volcano_Lahar_kingco.objects.filter(geom__contains=pnt)
         Volcano_Lahar_kingco_rating = qs_Volcano_Lahar_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_Lahar_kingco_rating:
             individualSnugget = Snugget.objects.filter(Volcano_Lahar_kingco_filter__lookup_val__exact=rating).select_subclasses()
-            groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
 
         return {'groups': groupsDict,
+                'EQ_Cascadia_kingco_rating': EQ_Cascadia_kingco_rating,
                 'EQ_kingco_rating': EQ_kingco_rating,
                 'EQ_Liquefact_kingco_rating': EQ_Liquefact_kingco_rating,
                 'EQ_Nisqual68_kingco_rating': EQ_Nisqual68_kingco_rating,
