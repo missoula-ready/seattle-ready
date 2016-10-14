@@ -149,6 +149,20 @@ class Migration(migrations.Migration):
                 ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_Lahar_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
         ),
+        migrations.CreateModel(
+            name='EQ_Cascadia_kingco',
+            fields=[
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.EQ_Cascadia_kingco.getGroup)),
+            ],
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='EQ_Cascadia_kingco_filter',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='disasterinfosite.EQ_Cascadia_kingco', blank=True, related_name='+', null=True),
+        ),
         migrations.AddField(
             model_name='snugget',
             name='EQ_Liquefact_kingco_filter',
