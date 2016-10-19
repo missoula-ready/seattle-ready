@@ -769,7 +769,7 @@ class EmbedSnugget(Snugget):
 class PastEventsPhoto(models.Model):
     group = models.ForeignKey(ShapefileGroup, on_delete=models.PROTECT, null=True)
     image = models.ImageField(upload_to="photos")
-    caption = models.TextField(default="", max_length=200)
+    caption = models.TextField(default="", max_length=500)
 
     def __str__(self):
         return self.image.url
