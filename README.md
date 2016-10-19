@@ -83,7 +83,7 @@ Supply kit text goes here
 King County
 
 ###### Community Leaders
-Community leaders (FEMA?) contact information goes ehre.
+This section is not used on this site.
 
 ### Settings
 
