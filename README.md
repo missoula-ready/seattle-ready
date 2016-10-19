@@ -59,7 +59,7 @@ Note that these may appear in different sections or be mutually exclusive, which
   If the dams failed: 3
   Tsunami Zone: 3
   Liquefaction: 4
-  Unstable Structures:54
+  Unstable Structures: 5
   Warning Signs: 6
   Before: 7
   During: 8
