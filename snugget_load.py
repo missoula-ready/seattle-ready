@@ -27,6 +27,7 @@ def main():
 
   with psycopg2.connect(host=dbHost, port=dbPort, user=dbUser, password=dbPass, database=dbName) as conn:
     with conn.cursor() as cur:
+      cleanSnuggetFile(snuggetFile)
       with open(snuggetFile) as csvFile:
         newSnuggets = csv.DictReader(csvFile)
         rowCount = 1 # row 1 consists of field names, so row 2 is the first data row. We'll increment this before first referencing it.
@@ -35,6 +36,21 @@ def main():
           if allRequiredFieldsPresent(row, optionalFields, rowCount):
             overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
   print("Snugget load complete. Processed", rowCount, "rows in", snuggetFile)
+
+
+
+
+def cleanSnuggetFile(snuggetFile):
+  with open(snuggetFile, 'r') as original:
+    snuggets = original.read()
+
+  snuggets = snuggets.replace('“','"').replace('”','"')
+  snuggets = snuggets.replace("‘","'").replace("‘","’")
+
+  with open(snuggetFile, 'w') as improved:
+    improved.write(snuggets)
+
+
 
 
 
