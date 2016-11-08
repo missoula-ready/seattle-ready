@@ -13,7 +13,6 @@ def main():
 
   cleanSnuggetFile(snuggetFile)
 
-
   try:
     dbURL = os.environ['DATABASE_URL_SEATTLE']
   except:
@@ -50,17 +49,9 @@ def cleanSnuggetFile(snuggetFile):
     with open(tempFile, 'w') as tmp:
       cleanedSnuggets = csv.DictWriter(tmp, snuggets.fieldnames)
       for row in snuggets:
-        print(row)
-        '''
-        # straighten smart quotes
-        row = row.replace('“','"').replace('”','"')
-        row = row.replace('“','"').replace('”','"')
-        # remove out
-        row = row.strip("'").strip('"')
-        '''
-
+#        print(row)
         for key in row:
-          print(key, row[key])
+#          print(key, row[key])
           # straighten smart quotes
           row[key] = row[key].replace('“','"').replace('”','"')
           row[key] = row[key].replace("‘","'").replace("‘","’")
@@ -70,17 +61,12 @@ def cleanSnuggetFile(snuggetFile):
           row[key] = row[key].replace("\n","").replace("\r","")
           # deduplicate quotes
           row[key] = row[key].replace('""', '').replace('""', '').replace('""', '').replace('""', '')
-          print(key, row[key])
-        print(row)
-        print(" ")
+#          print(key, row[key])
+#        print(row)
+#        print(" ")
 
         cleanedSnuggets.writerow(row)
   os.replace(tempFile, snuggetFile)
-
-  # straighten smart quotes
-  # TODO: line breaks
-  # TODO: deduplicate quotes
-  # TODO: remove quotes from outside of strings
 
 
 
