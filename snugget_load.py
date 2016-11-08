@@ -11,6 +11,9 @@ def main():
   overwriteAll = False
   optionalFields = ['intensity', 'image', 'lookup_value', ''] # all other fields in snuggetFile are required. The empty string is to deal with Excel's charming habit of putting a blank column after all data in a CSV.
 
+  cleanSnuggetFile(snuggetFile)
+
+
   try:
     dbURL = os.environ['DATABASE_URL_SEATTLE']
   except:
@@ -41,14 +44,43 @@ def main():
 
 
 def cleanSnuggetFile(snuggetFile):
-  with open(snuggetFile, 'r') as original:
-    snuggets = original.read()
+  tempFile = snuggetFile.replace(".csv", ".tmp.csv")
+  with open(snuggetFile) as original:
+    snuggets = csv.DictReader(original)
+    with open(tempFile, 'w') as tmp:
+      cleanedSnuggets = csv.DictWriter(tmp, snuggets.fieldnames)
+      for row in snuggets:
+        print(row)
+        '''
+        # straighten smart quotes
+        row = row.replace('“','"').replace('”','"')
+        row = row.replace('“','"').replace('”','"')
+        # remove out
+        row = row.strip("'").strip('"')
+        '''
 
-  snuggets = snuggets.replace('“','"').replace('”','"')
-  snuggets = snuggets.replace("‘","'").replace("‘","’")
+        for key in row:
+          print(key, row[key])
+          # straighten smart quotes
+          row[key] = row[key].replace('“','"').replace('”','"')
+          row[key] = row[key].replace("‘","'").replace("‘","’")
+          # remove CR or LF chars that aren't combined
+          # this should be some help with stray line breaks
+          # but won't be a complete fix because CRLF will be seen as 2 distinct rows
+          row[key] = row[key].replace("\n","").replace("\r","")
+          # deduplicate quotes
+          row[key] = row[key].replace('""', '').replace('""', '').replace('""', '').replace('""', '')
+          print(key, row[key])
+        print(row)
+        print(" ")
 
-  with open(snuggetFile, 'w') as improved:
-    improved.write(snuggets)
+        cleanedSnuggets.writerow(row)
+  os.replace(tempFile, snuggetFile)
+
+  # straighten smart quotes
+  # TODO: line breaks
+  # TODO: deduplicate quotes
+  # TODO: remove quotes from outside of strings
 
 
 
