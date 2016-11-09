@@ -1,6 +1,7 @@
 import os
 import csv
 
+from chardet.universaldetector import UniversalDetector
 import psycopg2
 
 def main():
@@ -44,27 +45,37 @@ def main():
 
 def cleanSnuggetFile(snuggetFile):
   tempFile = snuggetFile.replace(".csv", ".tmp.csv")
-  with open(snuggetFile) as original:
-    snuggets = csv.DictReader(original)
+  detector = UniversalDetector()
+  for line in open(snuggetFile, 'rb'):
+    detector.feed(line)
+    if detector.done:
+      break
+  detector.close()
+  print(detector.result)
+  with open(snuggetFile, encoding=detector.result['encoding']) as original:
+    dialect = csv.Sniffer().sniff(original.read(1024))
+    original.seek(0)
+    snuggets = csv.DictReader(original, dialect=dialect)
     with open(tempFile, 'w') as tmp:
-      cleanedSnuggets = csv.DictWriter(tmp, snuggets.fieldnames)
+      cleanedSnuggets = csv.DictWriter(tmp, fieldnames=snuggets.fieldnames)
       cleanedSnuggets.writeheader()
       for row in snuggets:
-#        print(row)
+        print(row)
         for key in row:
-#          print(key, row[key])
-          # straighten smart quotes
-          row[key] = row[key].replace('“','"').replace('”','"')
-          row[key] = row[key].replace("‘","'").replace("‘","’")
-          # remove CR or LF chars that aren't combined
-          # this should be some help with stray line breaks
-          # but won't be a complete fix because CRLF will be seen as 2 distinct rows
-          row[key] = row[key].replace("\n","").replace("\r","")
-          # deduplicate quotes
-          row[key] = row[key].replace('""', '').replace('""', '').replace('""', '').replace('""', '')
-#          print(key, row[key])
+          if row[key] is not None:
+            print(key, row[key])
+            # straighten smart quotes
+            row[key] = row[key].replace('“','"').replace('”','"')
+            row[key] = row[key].replace("‘","'").replace("‘","’")
+            # remove CR or LF chars that aren't combined
+            # this should be some help with stray line breaks
+            # but won't be a complete fix because CRLF will be seen as 2 distinct rows
+            row[key] = row[key].replace("\n","").replace("\r","")
+            # deduplicate quotes
+            row[key] = row[key].replace('""', '').replace('""', '').replace('""', '').replace('""', '')
+#            print(key, row[key])
 #        print(row)
-#        print(" ")
+        print(" ")
 
         cleanedSnuggets.writerow(row)
   os.replace(tempFile, snuggetFile)
