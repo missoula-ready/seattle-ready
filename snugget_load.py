@@ -48,6 +48,7 @@ def cleanSnuggetFile(snuggetFile):
     snuggets = csv.DictReader(original)
     with open(tempFile, 'w') as tmp:
       cleanedSnuggets = csv.DictWriter(tmp, snuggets.fieldnames)
+      cleanedSnuggets.writeheader()
       for row in snuggets:
 #        print(row)
         for key in row:
