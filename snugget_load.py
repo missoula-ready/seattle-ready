@@ -1,6 +1,7 @@
 import os
 import csv
 
+from openpyxl import load_workbook # library to read .xlsx format
 import psycopg2
 
 def main():
