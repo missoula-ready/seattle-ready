@@ -1,14 +1,14 @@
 import os
 import csv
 
-from openpyxl import load_workbook # library to read .xlsx format
+import openpyxl # library to read .xlsx format
 import psycopg2
 
 def main():
   appName = "disasterinfosite"
   appDir = "disasterinfosite"
   dataDir = os.path.join(appDir, "data")
-  snuggetFile = os.path.join(dataDir, "snuggets.csv")
+  snuggetFile = os.path.join(dataDir, "snuggets.xlsx")
   overwriteAll = False
   optionalFields = ['intensity', 'image', 'lookup_value', ''] # all other fields in snuggetFile are required. The empty string is to deal with Excel's charming habit of putting a blank column after all data in a CSV.
 
@@ -28,13 +28,13 @@ def main():
 
   with psycopg2.connect(host=dbHost, port=dbPort, user=dbUser, password=dbPass, database=dbName) as conn:
     with conn.cursor() as cur:
-      with open(snuggetFile) as csvFile:
-        newSnuggets = csv.DictReader(csvFile)
-        rowCount = 1 # row 1 consists of field names, so row 2 is the first data row. We'll increment this before first referencing it.
-        for row in newSnuggets:
-          rowCount += 1
-          if allRequiredFieldsPresent(row, optionalFields, rowCount):
-            overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
+      newSnuggets = XLSXDictReader(snuggetFile)
+      rowCount = 1 # row 1 consists of field names, so row 2 is the first data row. We'll increment this before first referencing it.
+      for row in newSnuggets:
+        print(row)
+        rowCount += 1
+      if allRequiredFieldsPresent(row, optionalFields, rowCount):
+        overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
   print("Snugget load complete. Processed", rowCount, "rows in", snuggetFile)
 
 
@@ -256,6 +256,29 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
       return False
 
 
+
+
+# drop-in replacement for built-in csv.DictReader() function with .xlsx files
+# from https://gist.github.com/mdellavo/853413
+# then heavily adapted because the original didn't actually work
+def XLSXDictReader(f):
+  book  = openpyxl.reader.excel.load_workbook(f)
+  sheet = book.get_active_sheet()
+
+  rows = 1
+  for row in sheet.iter_rows():
+    rows = rows + 1
+  cols = 1
+  for col in sheet.iter_cols():
+    cols = cols + 1
+
+  headers = dict( (i, sheet.cell(row=1, column=i).value) for i in range(1, cols) )
+
+  def item(i, j):
+    return (sheet.cell(row=1, column=j).value,
+      sheet.cell(row=i, column=j).value)
+
+  return (dict(item(i,j) for j in range(1, cols)) for i in range(2, rows))
 
 
 
