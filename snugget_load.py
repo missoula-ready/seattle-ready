@@ -31,7 +31,6 @@ def main():
       newSnuggets = XLSXDictReader(snuggetFile)
       rowCount = 1 # row 1 consists of field names, so row 2 is the first data row. We'll increment this before first referencing it.
       for row in newSnuggets:
-        print(row)
         rowCount += 1
       if allRequiredFieldsPresent(row, optionalFields, rowCount):
         overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
