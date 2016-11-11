@@ -104,8 +104,6 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
 #   "text" -> disasterinfosite_textsnugget.content
   if row["intensity"] == '':
     row["intensity"] = None
-  if row['image'] == None:
-    rpw['image'] = ''
   groupID = getGroupID(appName, row["shapefile"], cur)
   cur.execute(
     'INSERT INTO ' + appName + '_snugget (section_id, sub_section_id, group_id, "' + filterColumn + '") VALUES (%s, %s, %s, %s);',
