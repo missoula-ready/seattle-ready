@@ -169,7 +169,7 @@ def findFilterID(appName, shapefile, key, cur):
   cols = readColumnsFrom(appName, shapefile, cur)
   if len(cols) > 0:
     keyColumn = cols[1]
-    cur.execute("SELECT id FROM " + appName + "_" + shapefile + " WHERE " + keyColumn + "::text = %s;", [key])
+    cur.execute("SELECT id FROM " + appName + "_" + shapefile + " WHERE " + keyColumn + " = %s;", [key])
     ref = cur.fetchone()
     if ref is not None:
       return str(ref[0])
