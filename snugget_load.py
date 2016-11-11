@@ -278,8 +278,10 @@ def XLSXDictReader(f):
   headers = dict( (i, sheet.cell(row=1, column=i).value) for i in range(1, cols) )
 
   def item(i, j):
-    return (sheet.cell(row=1, column=j).value,
-      sheet.cell(row=i, column=j).value)
+    if sheet.cell(row=i, column=j).value == None:
+      return (sheet.cell(row=1, column=j).value, '')
+    else:
+      return (sheet.cell(row=1, column=j).value, str(sheet.cell(row=i, column=j).value))
 
   return (dict(item(i,j) for j in range(1, cols)) for i in range(2, rows))
 
