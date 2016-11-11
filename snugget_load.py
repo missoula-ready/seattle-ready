@@ -44,7 +44,7 @@ def allRequiredFieldsPresent(row, optionalFields, rowCount):
   if any(a != '' for a in row.values()): # if the entire row is not empty
     blanks = []
     for key in row.keys():
-      if (key not in optionalFields) and (row[key] == None):
+      if (key not in optionalFields) and (row[key] == ''):
         blanks.append(key)
     if blanks == []:
       return True
