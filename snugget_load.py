@@ -4,6 +4,10 @@ import csv
 import openpyxl # library to read .xlsx format
 import psycopg2
 
+# import settings here because we'll follow whatever's set there
+# for the database parameters
+import disasterinfosite.settings as settings
+
 def main():
   appName = "disasterinfosite"
   appDir = "disasterinfosite"
@@ -12,19 +16,12 @@ def main():
   overwriteAll = False
   optionalFields = ['intensity', 'image', 'lookup_value', ''] # all other fields in snuggetFile are required. The empty string is to deal with Excel's charming habit of putting a blank column after all data in a CSV.
 
-  try:
-    dbURL = os.environ['DATABASE_URL_SEATTLE']
-  except:
-    print("Error: DATABASE_URL_SEATTLE environment variable is not set. See README.md for how to set it.")
-    exit()
-
-# dbURL should be in the form protocol://user:password@host:port/databasename
-  dbParts = [x.split('/') for x in dbURL.split('@')]
-  dbHost = dbParts[1][0].split(":")[0]
-  dbPort = dbParts[1][0].split(":")[1]
-  dbUser = dbParts[0][2].split(":")[0]
-  dbPass = dbParts[0][2].split(":")[1]
-  dbName = dbParts[1][1]
+  dbURL = settings.DATABASES['default']
+  dbHost = dbURL['HOST']
+  dbPort = dbURL['PORT']
+  dbUser = dbURL['USER']
+  dbPass = dbURL['PASSWORD']
+  dbName = dbURL['NAME']
 
   with psycopg2.connect(host=dbHost, port=dbPort, user=dbUser, password=dbPass, database=dbName) as conn:
     with conn.cursor() as cur:
