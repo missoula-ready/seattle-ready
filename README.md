@@ -8,6 +8,9 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 
 Depending on your server setup, you may want to put these values in settings.py directly.
 
+# Special data operations
+There is one shapefile in disasterinfosite/data that is too big to host on github. It is called LSLD_steepslope.shp - so in this repo, it is LSLD_steepslope.shp.zip. Unzip it before doing a data add- and copy it to the reprojected folder if you don't have one, because that takes a long time.
+
 # Values to put in Django Admin
 
 ### Tabs
@@ -39,6 +42,18 @@ Depending on your server setup, you may want to put these values in settings.py 
 ######Volcano
     Display Name: Volcano
     Order: 4
+    Likely Scenario Title:
+    Likely Scenario Text:
+
+######Winter
+    Display Name: Winter Weather
+    Order: 5
+    Likely Scenario Title:
+    Likely Scenario Text:
+
+######Summer
+    Display Name: Summer Weather
+    Order: 6
     Likely Scenario Title:
     Likely Scenario Text:
 

@@ -112,11 +112,15 @@ class Location(SingletonModel):
             'Flood_kingco': Flood_kingco.objects.data_bounds(),
             'Flood_nearest_sand_distr': Flood_nearest_sand_distr.objects.data_bounds(),
             'Hubs_Nearest_seattle': Hubs_Nearest_seattle.objects.data_bounds(),
+            'LSLD_existing_features': LSLD_existing_features.objects.data_bounds(),
             'LSLD_ExistingAreas_kingco': LSLD_ExistingAreas_kingco.objects.data_bounds(),
             'LSLD_kingco': LSLD_kingco.objects.data_bounds(),
             'LSLD_Prone_kingco': LSLD_Prone_kingco.objects.data_bounds(),
+            'LSLD_steepslope': LSLD_steepslope.objects.data_bounds(),
+            'Summer_kingco': Summer_kingco.objects.data_bounds(),
             'Volcano_kingco': Volcano_kingco.objects.data_bounds(),
-            'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds()
+            'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds(),
+            'Winter_kingco': Winter_kingco.objects.data_bounds()
     # END OF GENERATED CODE BLOCK
     ######################################################
         }
@@ -379,6 +383,18 @@ class Hubs_Nearest_seattle(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
+class LSLD_existing_features(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class LSLD_ExistingAreas_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
@@ -415,6 +431,30 @@ class LSLD_Prone_kingco(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
+class LSLD_steepslope(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    lookup_val = models.CharField(max_length=254)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
+class Summer_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='summer')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
 class Volcano_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='volcano')[0]
@@ -430,6 +470,18 @@ class Volcano_kingco(models.Model):
 class Volcano_Lahar_kingco(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='volcano')[0]
+
+    lookup_val = models.CharField(max_length=80)
+    geom = models.MultiPolygonField(srid=4326)
+    objects = ShapeManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.lookup_val)
+
+class Winter_kingco(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='winter')[0]
 
     lookup_val = models.CharField(max_length=80)
     geom = models.MultiPolygonField(srid=4326)
@@ -536,11 +588,15 @@ class Snugget(models.Model):
     Flood_kingco_filter = models.ForeignKey(Flood_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Flood_nearest_sand_distr_filter = models.ForeignKey(Flood_nearest_sand_distr, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Hubs_Nearest_seattle_filter = models.ForeignKey(Hubs_Nearest_seattle, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_existing_features_filter = models.ForeignKey(LSLD_existing_features, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_ExistingAreas_kingco_filter = models.ForeignKey(LSLD_ExistingAreas_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_kingco_filter = models.ForeignKey(LSLD_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_Prone_kingco_filter = models.ForeignKey(LSLD_Prone_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_steepslope_filter = models.ForeignKey(LSLD_steepslope, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Summer_kingco_filter = models.ForeignKey(Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_Lahar_kingco_filter = models.ForeignKey(Volcano_Lahar_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Winter_kingco_filter = models.ForeignKey(Winter_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
 # END OF GENERATED CODE BLOCK
 ######################################################
 
@@ -676,6 +732,13 @@ class Snugget(models.Model):
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
+        qs_LSLD_existing_features = LSLD_existing_features.objects.filter(geom__contains=pnt)
+        LSLD_existing_features_rating = qs_LSLD_existing_features.values_list('lookup_val', flat=True)
+        for rating in LSLD_existing_features_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_existing_features_filter__lookup_val__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_LSLD_ExistingAreas_kingco = LSLD_ExistingAreas_kingco.objects.filter(geom__contains=pnt)
         LSLD_ExistingAreas_kingco_rating = qs_LSLD_ExistingAreas_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_ExistingAreas_kingco_rating:
@@ -697,6 +760,20 @@ class Snugget(models.Model):
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
+        qs_LSLD_steepslope = LSLD_steepslope.objects.filter(geom__contains=pnt)
+        LSLD_steepslope_rating = qs_LSLD_steepslope.values_list('lookup_val', flat=True)
+        for rating in LSLD_steepslope_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_steepslope_filter__lookup_val__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_Summer_kingco = Summer_kingco.objects.filter(geom__contains=pnt)
+        Summer_kingco_rating = qs_Summer_kingco.values_list('lookup_val', flat=True)
+        for rating in Summer_kingco_rating:
+            individualSnugget = Snugget.objects.filter(Summer_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
         qs_Volcano_kingco = Volcano_kingco.objects.filter(geom__contains=pnt)
         Volcano_kingco_rating = qs_Volcano_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_kingco_rating:
@@ -708,6 +785,13 @@ class Snugget(models.Model):
         Volcano_Lahar_kingco_rating = qs_Volcano_Lahar_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_Lahar_kingco_rating:
             individualSnugget = Snugget.objects.filter(Volcano_Lahar_kingco_filter__lookup_val__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_Winter_kingco = Winter_kingco.objects.filter(geom__contains=pnt)
+        Winter_kingco_rating = qs_Winter_kingco.values_list('lookup_val', flat=True)
+        for rating in Winter_kingco_rating:
+            individualSnugget = Snugget.objects.filter(Winter_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
@@ -729,11 +813,15 @@ class Snugget(models.Model):
                 'Flood_kingco_rating': Flood_kingco_rating,
                 'Flood_nearest_sand_distr_rating': Flood_nearest_sand_distr_rating,
                 'Hubs_Nearest_seattle_rating': Hubs_Nearest_seattle_rating,
+                'LSLD_existing_features_rating': LSLD_existing_features_rating,
                 'LSLD_ExistingAreas_kingco_rating': LSLD_ExistingAreas_kingco_rating,
                 'LSLD_kingco_rating': LSLD_kingco_rating,
                 'LSLD_Prone_kingco_rating': LSLD_Prone_kingco_rating,
+                'LSLD_steepslope_rating': LSLD_steepslope_rating,
+                'Summer_kingco_rating': Summer_kingco_rating,
                 'Volcano_kingco_rating': Volcano_kingco_rating,
-                'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating
+                'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating,
+                'Winter_kingco_rating': Winter_kingco_rating
                 }
 # END OF GENERATED CODE BLOCK
 ######################################################
