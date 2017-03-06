@@ -273,9 +273,11 @@ DISASTER TABS
   padding-top: 20px;
 }
 
-.tab-title {
+.tabs .tab-title {
   font-size: 16px;
   font-weight: bold;
+  margin-right: 5px;
+  margin-bottom: 5px !important;
 }
 
 .tabs-content > .content {
@@ -288,9 +290,27 @@ DISASTER TABS
   padding: 1rem;
 }
 
-.tabs dd.active a, .tabs .tab-title.active a {
+.tabs dd > a, .tabs .tab-title > a {
+  background: #efefef;
+  background: -webkit-linear-gradient(#efefef, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#efefef, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#efefef, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#efefef, #ccc); /* Standard syntax */
+  padding: 0.5rem
+}
+
+.tabs dd > a:hover, .tabs .tab-title > a:hover {
+  color: #006666;
+}
+
+.tabs dd.active > a, .tabs .tab-title.active > a {
+  background: #006086;
   background-color: #006086;
   color: #fff;
+}
+
+.tabs dd.active > a:hover, .tabs .tab-title.active > a:hover {
+  color: #a5c727;
 }
 
 .disaster-tabs {
@@ -613,7 +633,7 @@ GEEK BOX
   }
 
   .tabs dd > a, .tabs .tab-title > a {
-    padding: 0.5rem 1rem
+    padding: 0.5rem 0.75rem
   }
 
   .location-form {
@@ -691,6 +711,7 @@ GEEK BOX
   }
 
   .tabs dd, .tabs .tab-title {
+    margin: 0 !important;
     width: 100%;
   }
 

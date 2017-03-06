@@ -7,11 +7,13 @@
 # Files we made but don't want in git (usually security reason)
 secure_settings.py
 
-# Data directory full of binary or large data sets we don't need in a code repository.
- data/
-# Temp directories made by the importer
+#Directories for simplified and reprojected data files
 disasterinfosite/data/reprojected/
-disasterinfosite/data/simplified/
+disasterinfosite/data/simplified
+
+#Directories for uploading photos and images
+disasterinfosite/static/img/data/
+disasterinfosite/static/img/photos/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

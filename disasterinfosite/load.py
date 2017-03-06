@@ -86,6 +86,11 @@ Hubs_Nearest_seattle_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+LSLD_existing_features_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 LSLD_ExistingAreas_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -101,6 +106,16 @@ LSLD_Prone_kingco_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+LSLD_steepslope_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
+Summer_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 Volcano_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -108,6 +123,11 @@ Volcano_kingco_mapping = {
 
 Volcano_Lahar_kingco_mapping = {
     'lookup_val': 'Lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
+Winter_kingco_mapping = {
+    'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
 
@@ -128,11 +148,15 @@ Flood_DamInundation_shp = os.path.abspath(os.path.join(os.path.dirname(__file__)
 Flood_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Flood_kingco.shp'))
 Flood_nearest_sand_distr_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Flood_nearest_sand_distr.shp'))
 Hubs_Nearest_seattle_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Hubs_Nearest_seattle.shp'))
+LSLD_existing_features_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_existing_features.shp'))
 LSLD_ExistingAreas_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_ExistingAreas_kingco.shp'))
 LSLD_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_kingco.shp'))
 LSLD_Prone_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_Prone_kingco.shp'))
+LSLD_steepslope_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_steepslope.shp'))
+Summer_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Summer_kingco.shp'))
 Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_kingco.shp'))
 Volcano_Lahar_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_Lahar_kingco.shp'))
+Winter_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Winter_kingco.shp'))
 # END OF GENERATED CODE BLOCK
 ######################################################
 
@@ -148,7 +172,9 @@ def run(verbose=True):
     fire = ShapefileGroup.objects.get_or_create(name='fire')
     flood = ShapefileGroup.objects.get_or_create(name='flood')
     landslide = ShapefileGroup.objects.get_or_create(name='landslide')
+    summer = ShapefileGroup.objects.get_or_create(name='summer')
     volcano = ShapefileGroup.objects.get_or_create(name='volcano')
+    winter = ShapefileGroup.objects.get_or_create(name='winter')
 # END OF GENERATED CODE BLOCK
 ######################################################
 
@@ -220,6 +246,10 @@ def run(verbose=True):
     lm_Hubs_Nearest_seattle = LayerMapping(Hubs_Nearest_seattle, Hubs_Nearest_seattle_shp, Hubs_Nearest_seattle_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_Hubs_Nearest_seattle.save(strict=True, verbose=verbose)
 
+    from .models import LSLD_existing_features
+    lm_LSLD_existing_features = LayerMapping(LSLD_existing_features, LSLD_existing_features_shp, LSLD_existing_features_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_LSLD_existing_features.save(strict=True, verbose=verbose)
+
     from .models import LSLD_ExistingAreas_kingco
     lm_LSLD_ExistingAreas_kingco = LayerMapping(LSLD_ExistingAreas_kingco, LSLD_ExistingAreas_kingco_shp, LSLD_ExistingAreas_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_LSLD_ExistingAreas_kingco.save(strict=True, verbose=verbose)
@@ -232,6 +262,14 @@ def run(verbose=True):
     lm_LSLD_Prone_kingco = LayerMapping(LSLD_Prone_kingco, LSLD_Prone_kingco_shp, LSLD_Prone_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_LSLD_Prone_kingco.save(strict=True, verbose=verbose)
 
+    from .models import LSLD_steepslope
+    lm_LSLD_steepslope = LayerMapping(LSLD_steepslope, LSLD_steepslope_shp, LSLD_steepslope_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_LSLD_steepslope.save(strict=True, verbose=verbose)
+
+    from .models import Summer_kingco
+    lm_Summer_kingco = LayerMapping(Summer_kingco, Summer_kingco_shp, Summer_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Summer_kingco.save(strict=True, verbose=verbose)
+
     from .models import Volcano_kingco
     lm_Volcano_kingco = LayerMapping(Volcano_kingco, Volcano_kingco_shp, Volcano_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_Volcano_kingco.save(strict=True, verbose=verbose)
@@ -239,6 +277,10 @@ def run(verbose=True):
     from .models import Volcano_Lahar_kingco
     lm_Volcano_Lahar_kingco = LayerMapping(Volcano_Lahar_kingco, Volcano_Lahar_kingco_shp, Volcano_Lahar_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_Volcano_Lahar_kingco.save(strict=True, verbose=verbose)
+
+    from .models import Winter_kingco
+    lm_Winter_kingco = LayerMapping(Winter_kingco, Winter_kingco_shp, Winter_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Winter_kingco.save(strict=True, verbose=verbose)
 
 # END OF GENERATED CODE BLOCK
 ######################################################
