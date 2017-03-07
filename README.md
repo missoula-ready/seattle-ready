@@ -71,6 +71,7 @@ Note that these may appear in different sections or be mutually exclusive, which
   Cascadia Quake: 1
   What's the Worst: 2
   Erosion Risk: 3
+  Climate Impacts: 3
   If the dams failed: 3
   Tsunami Zone: 3
   Liquefaction: 4
