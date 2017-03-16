@@ -1,6 +1,18 @@
 $( document ).ready(function() {
   $(document).foundation();
 
+  $('a').on('click', function(e) {
+    if(e.currentTarget.hostname !== location.hostname) {
+      if(e.currentTarget.target === "_blank") {
+        return trackOutboundLink(e.currentTarget.href);
+        return true;
+      } else {
+        return trackOutboundLink(e.currentTarget.href, function(){ document.location = e.currentTarget.href; });
+        return false;
+      }
+    }
+  });
+
   // convenience function to extract url parameters
   function getURLParameter(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
