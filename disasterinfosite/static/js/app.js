@@ -3,13 +3,7 @@ $( document ).ready(function() {
 
   $('a').on('click', function(e) {
     if(e.currentTarget.hostname !== location.hostname) {
-      if(e.currentTarget.target === "_blank") {
-        return trackOutboundLink(e.currentTarget.href);
-        return true;
-      } else {
-        return trackOutboundLink(e.currentTarget.href, function(){ document.location = e.currentTarget.href; });
-        return false;
-      }
+      return trackOutboundLink(e.currentTarget.href, e.currentTarget.target === "_blank");
     }
   });
 
