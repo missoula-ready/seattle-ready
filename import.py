@@ -142,13 +142,15 @@ def sanitiseInput(inputString):
 
 
 """
-processShapefile() makes two changes in one shot:
-* Reprojects the shapefile to srs, because geoDjango has issues if they're not all in the same SRS
-* Dissolves shapes on keyField so that we'll end up with one database row per unique keyField value
+processShapefile() reprojects the shapefile to srs, because geoDjango has issues if they're not all in the same SRS
 Simplifying the shapefile is done by a separate function, because the units for simplification tolerance
 depend on the spatial representation system being used, and can't even be straightforwardly converted (since degrees
 to metres depends on the latitude). The simplest way to simplify with a uniform tolerance is to do it after
 standardising the SRS.
+
+This function had previously aggregated shapes with the same key value, but
+we suspect that doing so may in fact degrade performance by getting in the way
+of PostGIS's spatial indexing, so that step has been removed.
 """
 def processShapefile(f, stem, inputDir, outputDir, srs, keyField):
   original = os.path.join(inputDir, f)
