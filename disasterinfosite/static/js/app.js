@@ -1,6 +1,12 @@
 $( document ).ready(function() {
   $(document).foundation();
 
+  $('a').on('click', function(e) {
+    if(e.currentTarget.hostname !== location.hostname) {
+      return trackOutboundLink(e.currentTarget.href, e.currentTarget.target === "_blank");
+    }
+  });
+
   // convenience function to extract url parameters
   function getURLParameter(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
