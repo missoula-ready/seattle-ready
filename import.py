@@ -156,13 +156,14 @@ def processShapefile(f, stem, inputDir, outputDir, srs, keyField):
   if os.path.exists(reprojected):
     print("Skipping reprojection because this file has previously been reprojected.")
   else:
-    print("Aggregating shapes with the same value of", keyField, "and reprojecting to", srs)
-    sqlCmd = 'select ST_Union(Geometry),' + keyField + ' from ' + stem + ' GROUP BY ' + keyField
+    print("Reprojecting to", srs)
+#    print("Aggregating shapes with the same value of", keyField, "and reprojecting to", srs)
+#    sqlCmd = 'select ST_Union(Geometry),' + keyField + ' from ' + stem + ' GROUP BY ' + keyField
     ogrCmd = [
       "ogr2ogr",
       reprojected,
       original,
-      "-dialect", "sqlite", "-sql", sqlCmd,
+#      "-dialect", "sqlite", "-sql", sqlCmd,
       "-t_srs", srs
     ]
     subprocess.call(ogrCmd)
