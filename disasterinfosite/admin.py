@@ -16,9 +16,9 @@ from .actions import export_as_csv_action
 
 admin.site.register(SnuggetSection, admin.ModelAdmin)
 admin.site.register(SnuggetSubSection, admin.ModelAdmin)
-admin.site.register(ShapefileGroup, admin.ModelAdmin)
-admin.site.register(PastEventsPhoto, admin.ModelAdmin)
-admin.site.register(DataOverviewImage, admin.ModelAdmin)
+admin.site.register(ShapefileGroup, TranslationAdmin)
+admin.site.register(PastEventsPhoto, TranslationAdmin)
+admin.site.register(DataOverviewImage, TranslationAdmin)
 
 
 class SnuggetAdmin(admin.ModelAdmin):
@@ -85,12 +85,18 @@ admin.site.register(User, UserAdmin)
 class GeoNoEditAdmin(admin.GeoModelAdmin):
     modifiable = False
 
-admin.site.register(ImportantLink, admin.ModelAdmin)
+admin.site.register(ImportantLink, TranslationAdmin)
 class SiteSettingsAdmin(SingletonModelAdmin, TranslationAdmin):
     pass
 admin.site.register(SiteSettings, SiteSettingsAdmin)
-admin.site.register(Location, SingletonModelAdmin)
-admin.site.register(SupplyKit, SingletonModelAdmin)
+
+class LocationAdmin(SingletonModelAdmin, TranslationAdmin):
+    pass
+admin.site.register(Location, LocationAdmin)
+
+class SupplyKitAdmin(SingletonModelAdmin, TranslationAdmin):
+    pass
+admin.site.register(SupplyKit, SupplyKitAdmin)
 
 ######################################################
 # GENERATED CODE GOES HERE
