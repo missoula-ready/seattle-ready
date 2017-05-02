@@ -1,6 +1,7 @@
 from django.contrib.gis import admin
 from embed_video.admin import AdminVideoMixin
 from solo.admin import SingletonModelAdmin
+from modeltranslation.admin import TranslationAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 ######################################################
@@ -85,7 +86,9 @@ class GeoNoEditAdmin(admin.GeoModelAdmin):
     modifiable = False
 
 admin.site.register(ImportantLink, admin.ModelAdmin)
-admin.site.register(SiteSettings, SingletonModelAdmin)
+class SiteSettingsAdmin(SingletonModelAdmin, TranslationAdmin):
+    pass
+admin.site.register(SiteSettings, SiteSettingsAdmin)
 admin.site.register(Location, SingletonModelAdmin)
 admin.site.register(SupplyKit, SingletonModelAdmin)
 
