@@ -15,7 +15,7 @@ urlpatterns = [
    url(r'^accounts/update_profile/$', views.update_profile)
 ]
 
-urlpatterns += i18n_patterns(url(r'^$', views.app_view, name='index'), prefix_default_language=False)
+urlpatterns += i18n_patterns(url(r'^$', views.app_view, name='index'))
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
