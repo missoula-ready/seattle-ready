@@ -38,7 +38,7 @@ $( document ).ready(function() {
 
   $.ajax({
     type: "POST",
-    url: "static/img/boundary.geojson",
+    url: "../static/img/boundary.geojson",
     dataType: "json",
     success: function(boundaryShape) {
       var boundaryStyle = {
@@ -57,7 +57,7 @@ $( document ).ready(function() {
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
-    icon.options.iconUrl = "static/img/marker-icon.png";
+    icon.options.iconUrl = "../static/img/marker-icon.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,
