@@ -132,4 +132,44 @@ class Migration(migrations.Migration):
             name='text_es',
             field=models.TextField(help_text='More information about building your supply kit. Any web address in here gets turned into a link automatically.', null=True),
         ),
+        migrations.AddField(
+            model_name='snuggetsection',
+            name='display_name',
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50),
+        ),
+        migrations.AddField(
+            model_name='snuggetsection',
+            name='display_name_en_us',
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='snuggetsection',
+            name='display_name_es',
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='snuggetsubsection',
+            name='display_name',
+            field=models.CharField(blank=True, default='The name to show for this section', max_length=50),
+        ),
+        migrations.AddField(
+            model_name='snuggetsubsection',
+            name='display_name_en_us',
+            field=models.CharField(blank=True, default='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='snuggetsubsection',
+            name='display_name_es',
+            field=models.CharField(blank=True, default='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='textsnugget',
+            name='content_en_us',
+            field=models.TextField(null=True),
+        ),
+        migrations.AddField(
+            model_name='textsnugget',
+            name='content_es',
+            field=models.TextField(null=True),
+        ),
     ]
