@@ -566,8 +566,8 @@ GEEK BOX
 
 /* adjustments for smaller screens */
 @media only screen and (max-width: 40rem) {
-  .button {
-    font-size: 0.75em;
+  .button, .select {
+    font-size: 12px;
   }
 
   #title .button--top {
@@ -709,7 +709,7 @@ GEEK BOX
 
   .project-title {
     font-size: 1.5rem;
-    line-height: 1.2em;
+    line-height: 1.5em;
   }
 
   .project-subtitle {
