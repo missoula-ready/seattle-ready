@@ -107,6 +107,7 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
     (str(sectionID), str(subsectionID), str(groupID), str(filterID))
   )
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
+  # TODO: modify this to dynamically read in localized text columns and put them in localized content columns
   cur.execute(
     'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, content_en, image, percentage) VALUES (%s, %s, %s, %s, %s);',
     (snuggetID, row["text"], row["text"], row["image"], row["intensity"])
