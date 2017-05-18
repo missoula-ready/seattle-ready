@@ -139,7 +139,7 @@ def getSectionID(appName, sectionName, cur, subsection=False):
   if sectionID is not None:
     return sectionID
   else: # if no sectionID was found then we need to create the section
-    cur.execute("INSERT INTO " + tableName + "(name, order_of_appearance) VALUES(%s, %s);", (sectionName, 0))
+    cur.execute("INSERT INTO " + tableName + "(name, order_of_appearance, display_name) VALUES(%s, %s, %s);", (sectionName, 0, sectionName))
     cur.execute("SELECT id FROM " + tableName + " WHERE name = %s;", [sectionName])
     sectionID = cur.fetchone()[0]
     return sectionID
