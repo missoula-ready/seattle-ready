@@ -14,8 +14,8 @@ from .models import EmbedSnugget, TextSnugget, SnuggetSection, SnuggetSubSection
 from .models import ShapefileGroup, PastEventsPhoto, DataOverviewImage, UserProfile
 from .actions import export_as_csv_action
 
-admin.site.register(SnuggetSection, admin.ModelAdmin)
-admin.site.register(SnuggetSubSection, admin.ModelAdmin)
+admin.site.register(SnuggetSection, TranslationAdmin)
+admin.site.register(SnuggetSubSection, TranslationAdmin)
 admin.site.register(ShapefileGroup, TranslationAdmin)
 admin.site.register(PastEventsPhoto, TranslationAdmin)
 admin.site.register(DataOverviewImage, TranslationAdmin)
@@ -45,7 +45,7 @@ class SnuggetAdmin(admin.ModelAdmin):
         return "Undefined"
 
 
-class TextAdmin(SnuggetAdmin):
+class TextAdmin(SnuggetAdmin, TranslationAdmin):
     fieldsets = SnuggetAdmin.fieldsets + ((None, {
         'fields': ('content',),
         }),

@@ -107,9 +107,10 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
     (str(sectionID), str(subsectionID), str(groupID), str(filterID))
   )
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
+  # TODO: modify this to dynamically read in localized text columns and put them in localized content columns
   cur.execute(
-    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, image, percentage) VALUES (%s, %s, %s, %s);',
-    (snuggetID, row["text"], row["image"], row["intensity"])
+    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, content_en, image, percentage) VALUES (%s, %s, %s, %s, %s);',
+    (snuggetID, row["text"], row["text"], row["image"], row["intensity"])
   )
   # For extra credit, set the group's display_name to the heading value.
 
@@ -139,7 +140,7 @@ def getSectionID(appName, sectionName, cur, subsection=False):
   if sectionID is not None:
     return sectionID
   else: # if no sectionID was found then we need to create the section
-    cur.execute("INSERT INTO " + tableName + "(name, order_of_appearance) VALUES(%s, %s);", (sectionName, 0))
+    cur.execute("INSERT INTO " + tableName + "(name, order_of_appearance, display_name) VALUES(%s, %s, %s);", (sectionName, 0, sectionName))
     cur.execute("SELECT id FROM " + tableName + " WHERE name = %s;", [sectionName])
     sectionID = cur.fetchone()[0]
     return sectionID
