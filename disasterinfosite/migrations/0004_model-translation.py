@@ -139,7 +139,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='snuggetsection',
-            name='display_name_en_us',
+            name='display_name_en',
             field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50, null=True),
         ),
         migrations.AddField(
@@ -150,21 +150,21 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='snuggetsubsection',
             name='display_name',
-            field=models.CharField(blank=True, default='The name to show for this section', max_length=50),
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50),
         ),
         migrations.AddField(
             model_name='snuggetsubsection',
-            name='display_name_en_us',
-            field=models.CharField(blank=True, default='The name to show for this section', max_length=50, null=True),
+            name='display_name_en',
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50, null=True),
         ),
         migrations.AddField(
             model_name='snuggetsubsection',
             name='display_name_es',
-            field=models.CharField(blank=True, default='The name to show for this section', max_length=50, null=True),
+            field=models.CharField(blank=True, help_text='The name to show for this section', max_length=50, null=True),
         ),
         migrations.AddField(
             model_name='textsnugget',
-            name='content_en_us',
+            name='content_en',
             field=models.TextField(null=True),
         ),
         migrations.AddField(

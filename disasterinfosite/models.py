@@ -558,7 +558,7 @@ class SnuggetSection(models.Model):
 
 class SnuggetSubSection(models.Model):
     name = models.CharField(max_length=50)
-    display_name = models.CharField(max_length=50, default="The name to show for this section", blank=True)
+    display_name = models.CharField(max_length=50, help_text="The name to show for this section", blank=True)
     order_of_appearance = models.IntegerField(
         default=0,
         help_text="The order in which you'd like this to appear in the section. 0 is at the top. These can be in different sections or mutually exclusive, hence the non-unique values."
