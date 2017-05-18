@@ -108,8 +108,8 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
   )
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
   cur.execute(
-    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, image, percentage) VALUES (%s, %s, %s, %s);',
-    (snuggetID, row["text"], row["image"], row["intensity"])
+    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, content_en, image, percentage) VALUES (%s, %s, %s, %s, %s);',
+    (snuggetID, row["text"], row["text"], row["image"], row["intensity"])
   )
   # For extra credit, set the group's display_name to the heading value.
 
