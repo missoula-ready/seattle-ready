@@ -59,10 +59,23 @@ WSGI_APPLICATION = 'disasterinfosite.wsgi.application'
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 LANGUAGE_CODE = 'en'
 USE_L10N = True
+
+# Somali is not an officially supported language in Django, so this is a patch to add it.
+import django.conf.locale
+django.conf.locale.LANG_INFO['so'] = {
+    'bidi': False,
+    'code': 'so',
+    'name': 'Somali',
+    'name_local': u'af Soomaali',
+}
+
 gettext = lambda s: s
 LANGUAGES = (
     ('en', gettext('English')),
-    ('es', gettext('Spanish'))
+    ('ru', gettext('Russian')),
+    ('so', gettext('Somali')),
+    ('es', gettext('Spanish')),
+    ('vi', gettext('Vietnamese'))
 )
 
 USE_I18N = True
