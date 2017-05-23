@@ -8,6 +8,13 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 
 Depending on your server setup, you may want to put these values in settings.py directly.
 
+# Django language customization
+Currently, there is no out-of-the box support for language codes cn (an abbreviated version of zh-hans, to make our URLs cleaner), and so (Somali). These instructions allow you to modfiy your Django installation to make it possible to navigate to /so/ and /cn/ to use this site in Somali and Chinese.
+
+1. In ```venv/lib/python3.5/site-packages/django/conf/locale```, create a folder called `cn` and a folder called `so`
+1. Copy the contents of the appropriate Chinese language folder into `cn` (curently, zh-Hans). This makes a Simplified Chinese language with the code `cn`.
+2. Create a blank file called ``__init__.py`` in the `so` folder. In the `so` folder, create a folder named `LC_MESSAGES` and create a blank file named `django.mo` inside it. This sets up a dummy Somali translation, which is enough to fool Django into thinking it has a Somali version.
+
 # Special data operations
 There is one shapefile in disasterinfosite/data that is too big to host on github. It is called LSLD_steepslope.shp - so in this repo, it is LSLD_steepslope.shp.zip. Unzip it before doing a data add- and copy it to the reprojected folder if you don't have one, because that takes a long time.
 
