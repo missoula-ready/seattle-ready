@@ -69,8 +69,17 @@ django.conf.locale.LANG_INFO['so'] = {
     'name_local': u'af Soomaali',
 }
 
+# Add an alias for Chinese = cn, as well, for neatness. This is the same as simplified Chinese.
+django.conf.locale.LANG_INFO['cn'] = {
+    'bidi': False,
+    'code': 'cn',
+    'name': 'Chinese',
+    'name_local': '简体中文',
+}
+
 gettext = lambda s: s
 LANGUAGES = (
+    ('cn', gettext('Chinese')),
     ('en', gettext('English')),
     ('ru', gettext('Russian')),
     ('so', gettext('Somali')),

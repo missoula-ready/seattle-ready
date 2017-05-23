@@ -402,4 +402,79 @@ class Migration(migrations.Migration):
             name='content_vi',
             field=models.TextField(null=True),
         ),
+        migrations.AddField(
+            model_name='dataoverviewimage',
+            name='link_text_cn',
+            field=models.CharField(default='', max_length=100, null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='title_cn',
+            field=models.CharField(help_text="A title for your important link, like 'Evacuation Information'", max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='location',
+            name='area_name_cn',
+            field=models.CharField(default='the affected area', help_text="Describe the entire area that this app covers, e.g. 'Oregon' or 'Missoula County'.", max_length=100, null=True),
+        ),
+        migrations.AddField(
+            model_name='location',
+            name='community_leaders_cn',
+            field=models.TextField(default='Information about community leaders goes here.', help_text='Information about community leaders, how to contact them, and form groups.', null=True),
+        ),
+        migrations.AddField(
+            model_name='pasteventsphoto',
+            name='caption_cn',
+            field=models.TextField(default='', max_length=500, null=True),
+        ),
+        migrations.AddField(
+            model_name='shapefilegroup',
+            name='display_name_cn',
+            field=models.CharField(default='', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='sitesettings',
+            name='about_text_cn',
+            field=models.TextField(default='Information about your organization goes here.', help_text='Describe the data and the agencies that it came from.', null=True),
+        ),
+        migrations.AddField(
+            model_name='sitesettings',
+            name='intro_text_cn',
+            field=models.TextField(default='A natural disaster could strike your area at any time.', help_text='A description of what we are trying to help people prepare for, or the goal of your site.', null=True),
+        ),
+        migrations.AddField(
+            model_name='sitesettings',
+            name='site_description_cn',
+            field=models.CharField(default='A disaster preparedness website', help_text='A small, catchy description for this site.', max_length=200, null=True),
+        ),
+        migrations.AddField(
+            model_name='sitesettings',
+            name='site_title_cn',
+            field=models.CharField(default='Your Title Here!', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='sitesettings',
+            name='who_made_this_cn',
+            field=models.TextField(default='Information about the creators and maintainers of this particular site.', help_text='Include information about who you are and how to contact you.', null=True),
+        ),
+        migrations.AddField(
+            model_name='snuggetsection',
+            name='display_name_cn',
+            field=models.CharField(default='', help_text='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='snuggetsubsection',
+            name='display_name_cn',
+            field=models.CharField(default='', help_text='The name to show for this section', max_length=50, null=True),
+        ),
+        migrations.AddField(
+            model_name='supplykit',
+            name='text_cn',
+            field=models.TextField(help_text='More information about building your supply kit. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='textsnugget',
+            name='content_cn',
+            field=models.TextField(null=True),
+        ),
     ]
