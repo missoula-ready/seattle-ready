@@ -106,7 +106,7 @@ LSLD_Prone_kingco_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
-LSLD_steepslope_mapping = {
+LSLD_steepgradezone_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
@@ -152,7 +152,7 @@ LSLD_existing_features_shp = os.path.abspath(os.path.join(os.path.dirname(__file
 LSLD_ExistingAreas_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_ExistingAreas_kingco.shp'))
 LSLD_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_kingco.shp'))
 LSLD_Prone_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_Prone_kingco.shp'))
-LSLD_steepslope_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_steepslope.shp'))
+LSLD_steepgradezone_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_steepgradezone.shp'))
 Summer_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Summer_kingco.shp'))
 Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_kingco.shp'))
 Volcano_Lahar_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_Lahar_kingco.shp'))
@@ -169,7 +169,7 @@ def run(verbose=True):
 # loadGroups
     from .models import ShapefileGroup
     quake = ShapefileGroup.objects.get_or_create(name='quake')
-    fire = ShapefileGroup.objects.get_or_create(name='fire')
+    wildfire = ShapefileGroup.objects.get_or_create(name='wildfire')
     flood = ShapefileGroup.objects.get_or_create(name='flood')
     landslide = ShapefileGroup.objects.get_or_create(name='landslide')
     summer = ShapefileGroup.objects.get_or_create(name='summer')
@@ -262,9 +262,9 @@ def run(verbose=True):
     lm_LSLD_Prone_kingco = LayerMapping(LSLD_Prone_kingco, LSLD_Prone_kingco_shp, LSLD_Prone_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_LSLD_Prone_kingco.save(strict=True, verbose=verbose)
 
-    from .models import LSLD_steepslope
-    lm_LSLD_steepslope = LayerMapping(LSLD_steepslope, LSLD_steepslope_shp, LSLD_steepslope_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
-    lm_LSLD_steepslope.save(strict=True, verbose=verbose)
+    from .models import LSLD_steepgradezone
+    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_shp, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_LSLD_steepgradezone.save(strict=True, verbose=verbose)
 
     from .models import Summer_kingco
     lm_Summer_kingco = LayerMapping(Summer_kingco, Summer_kingco_shp, Summer_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])

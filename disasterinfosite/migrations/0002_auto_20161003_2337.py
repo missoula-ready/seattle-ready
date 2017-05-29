@@ -308,4 +308,46 @@ class Migration(migrations.Migration):
             name='Fire_kingco_filter',
             field=models.ForeignKey(null=True, blank=True, to='disasterinfosite.Fire_kingco', on_delete=django.db.models.deletion.PROTECT, related_name='+'),
         ),
+                migrations.CreateModel(
+            name='LSLD_existing_features',
+            fields=[
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.LSLD_existing_features.getGroup)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Summer_kingco',
+            fields=[
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Summer_kingco.getGroup)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Winter_kingco',
+            fields=[
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('lookup_val', models.CharField(max_length=80)),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Winter_kingco.getGroup)),
+            ],
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='LSLD_existing_features_filter',
+            field=models.ForeignKey(to='disasterinfosite.LSLD_existing_features', blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+'),
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='Summer_kingco_filter',
+            field=models.ForeignKey(to='disasterinfosite.Summer_kingco', blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+'),
+        ),
+        migrations.AddField(
+            model_name='snugget',
+            name='Winter_kingco_filter',
+            field=models.ForeignKey(to='disasterinfosite.Winter_kingco', blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+'),
+        ),
     ]
