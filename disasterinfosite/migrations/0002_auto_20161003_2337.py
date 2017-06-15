@@ -358,7 +358,7 @@ class Migration(migrations.Migration):
             model_name='snugget',
             name='Winter_kingco_filter',
             field=models.ForeignKey(to='disasterinfosite.Winter_kingco', blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+'),
-        ),,
+        ),
         migrations.AddField(
             model_name='snugget',
             name='lsld_steepgradezone_filter',
