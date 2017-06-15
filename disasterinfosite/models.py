@@ -118,7 +118,7 @@ class Location(SingletonModel):
             'LSLD_ExistingAreas_kingco': LSLD_ExistingAreas_kingco.objects.data_bounds(),
             'LSLD_kingco': LSLD_kingco.objects.data_bounds(),
             'LSLD_Prone_kingco': LSLD_Prone_kingco.objects.data_bounds(),
-            'LSLD_steepgradezone': LSLD_steepgradezone.objects.data_bounds(),
+            'lsld_steepgradezone': lsld_steepgradezone.objects.data_bounds(),
             'Summer_kingco': Summer_kingco.objects.data_bounds(),
             'Volcano_kingco': Volcano_kingco.objects.data_bounds(),
             'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds(),
@@ -279,7 +279,7 @@ class EQ_URM_DensityZones_seattle(models.Model):
 
 class Fire_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='wildfire')[0]
+        return ShapefileGroup.objects.get_or_create(name='fire')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -291,7 +291,7 @@ class Fire_kingco(models.Model):
 
 class Fire_WUI_kingco_only(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='wildfire')[0]
+        return ShapefileGroup.objects.get_or_create(name='fire')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -387,7 +387,7 @@ class Hubs_Nearest_seattle(models.Model):
 
 class LSLD_existing_features(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='slide')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -399,7 +399,7 @@ class LSLD_existing_features(models.Model):
 
 class LSLD_ExistingAreas_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='slide')[0]
 
     lookup_val = models.CharField(max_length=100)
     geom = models.MultiPolygonField(srid=4326)
@@ -411,7 +411,7 @@ class LSLD_ExistingAreas_kingco(models.Model):
 
 class LSLD_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='slide')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -423,7 +423,7 @@ class LSLD_kingco(models.Model):
 
 class LSLD_Prone_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='slide')[0]
 
     lookup_val = models.IntegerField()
     geom = models.MultiPolygonField(srid=4326)
@@ -433,17 +433,17 @@ class LSLD_Prone_kingco(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
-class LSLD_steepgradezone(models.Model):
+class lsld_steepgradezone(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='slide')[0]
 
-    lookup_val = models.IntegerField()
+    gridcode = models.IntegerField()
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.lookup_val)
+        return str(self.gridcode)
 
 class Summer_kingco(models.Model):
     def getGroup():
@@ -602,7 +602,7 @@ class Snugget(models.Model):
     LSLD_ExistingAreas_kingco_filter = models.ForeignKey(LSLD_ExistingAreas_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_kingco_filter = models.ForeignKey(LSLD_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_Prone_kingco_filter = models.ForeignKey(LSLD_Prone_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    LSLD_steepgradezone_filter = models.ForeignKey(LSLD_steepgradezone, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    lsld_steepgradezone_filter = models.ForeignKey(lsld_steepgradezone, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Summer_kingco_filter = models.ForeignKey(Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_Lahar_kingco_filter = models.ForeignKey(Volcano_Lahar_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
@@ -770,10 +770,10 @@ class Snugget(models.Model):
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_steepgradezone = LSLD_steepgradezone.objects.filter(geom__contains=pnt)
-        LSLD_steepgradezone_rating = qs_LSLD_steepgradezone.values_list('lookup_val', flat=True)
-        for rating in LSLD_steepgradezone_rating:
-            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_filter__lookup_val__exact=rating).select_subclasses()
+        qs_lsld_steepgradezone = lsld_steepgradezone.objects.filter(geom__contains=pnt)
+        lsld_steepgradezone_rating = qs_lsld_steepgradezone.values_list('gridcode', flat=True)
+        for rating in lsld_steepgradezone_rating:
+            individualSnugget = Snugget.objects.filter(lsld_steepgradezone_filter__gridcode__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
@@ -827,7 +827,7 @@ class Snugget(models.Model):
                 'LSLD_ExistingAreas_kingco_rating': LSLD_ExistingAreas_kingco_rating,
                 'LSLD_kingco_rating': LSLD_kingco_rating,
                 'LSLD_Prone_kingco_rating': LSLD_Prone_kingco_rating,
-                'LSLD_steepgradezone_rating': LSLD_steepgradezone_rating,
+                'lsld_steepgradezone_rating': lsld_steepgradezone_rating,
                 'Summer_kingco_rating': Summer_kingco_rating,
                 'Volcano_kingco_rating': Volcano_kingco_rating,
                 'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating,

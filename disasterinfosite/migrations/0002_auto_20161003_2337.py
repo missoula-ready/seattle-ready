@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             name='EQ_Liquefact_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Liquefact_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
             name='EQ_SeattleFault72_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.EQ_SeattleFault72_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             name='Fire_WUI_kingco_only',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Fire_WUI_kingco_only.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -90,7 +90,7 @@ class Migration(migrations.Migration):
             name='Flood_CMZ_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Flood_CMZ_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -99,7 +99,7 @@ class Migration(migrations.Migration):
             name='Flood_DamInundation',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Flood_DamInundation.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -108,7 +108,7 @@ class Migration(migrations.Migration):
             name='Flood_nearest_sand_distr',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Flood_nearest_sand_distr.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -126,7 +126,7 @@ class Migration(migrations.Migration):
             name='LSLD_ExistingAreas_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_ExistingAreas_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -144,7 +144,7 @@ class Migration(migrations.Migration):
             name='Volcano_Lahar_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_Lahar_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -153,7 +153,7 @@ class Migration(migrations.Migration):
             name='EQ_Cascadia_kingco',
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.EQ_Cascadia_kingco.getGroup)),
             ],
@@ -242,7 +242,7 @@ class Migration(migrations.Migration):
             name='EQ_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.EQ_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -251,7 +251,7 @@ class Migration(migrations.Migration):
             name='Flood_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Flood_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -260,7 +260,7 @@ class Migration(migrations.Migration):
             name='LSLD_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -269,7 +269,7 @@ class Migration(migrations.Migration):
             name='Volcano_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
             ],
@@ -298,7 +298,7 @@ class Migration(migrations.Migration):
             name='Fire_kingco',
             fields=[
                 ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Fire_kingco.getGroup)),
             ],
@@ -312,7 +312,7 @@ class Migration(migrations.Migration):
             name='LSLD_existing_features',
             fields=[
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.LSLD_existing_features.getGroup)),
             ],
@@ -321,7 +321,7 @@ class Migration(migrations.Migration):
             name='Summer_kingco',
             fields=[
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Summer_kingco.getGroup)),
             ],
@@ -330,9 +330,18 @@ class Migration(migrations.Migration):
             name='Winter_kingco',
             fields=[
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
-                ('lookup_val', models.CharField(max_length=80)),
+                ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
                 ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Winter_kingco.getGroup)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='lsld_steepgradezone',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('gridcode', models.IntegerField()),
+                ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
+                ('group', models.ForeignKey(default=disasterinfosite.models.lsld_steepgradezone.getGroup, on_delete=django.db.models.deletion.CASCADE, to='disasterinfosite.ShapefileGroup')),
             ],
         ),
         migrations.AddField(
@@ -349,5 +358,10 @@ class Migration(migrations.Migration):
             model_name='snugget',
             name='Winter_kingco_filter',
             field=models.ForeignKey(to='disasterinfosite.Winter_kingco', blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+'),
+        ),,
+        migrations.AddField(
+            model_name='snugget',
+            name='lsld_steepgradezone_filter',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+', to='disasterinfosite.lsld_steepgradezone'),
         ),
     ]
