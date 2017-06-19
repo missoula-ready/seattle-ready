@@ -4,6 +4,7 @@
 {% if languages|length > 1 %}
   <form action="{% url "set_language" %}" method="post" id="language__form">
   {% csrf_token %}
+  <input name="next" type="hidden" value="/seattle" />
     <select id="language__select" name="language" class="select radius select--language caps sans-serif" onchange="this.form.submit()">
       {% for language in languages %}
       <option class="select select--language" value="{{ language.code }}"
