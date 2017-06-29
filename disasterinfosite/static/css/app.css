@@ -208,7 +208,7 @@ MAP AND SEARCH STYLES
 /* loading spinner during geolocation */
 .loading {
   position: fixed;
-  z-index: 999;
+  z-index: 1001;
   height: 100%;
   width: 100%;
   top: 0;
