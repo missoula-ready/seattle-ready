@@ -213,8 +213,17 @@ MAP AND SEARCH STYLES
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(255,255,255,.5) url(../img/thinking.gif) no-repeat center center;
-  background-size: 110px 110px;
+  background-color: rgba(8, 31, 44, 0.8);
+  text-align: center;
+}
+
+.loading-spinner {
+  max-width: 40%;
+}
+
+.loading-text {
+  color: #fff;
+  margin: 10px;
 }
 
 /*****
