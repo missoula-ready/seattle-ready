@@ -58,6 +58,7 @@ $( document ).ready(function() {
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
     icon.options.iconUrl = "../static/img/marker-icon.png";
+    icon.options.shadowUrl = "../static/img/marker-shadow.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,
