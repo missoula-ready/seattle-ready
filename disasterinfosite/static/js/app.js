@@ -253,8 +253,7 @@ $( document ).ready(function() {
   requiredFocus($("#user-signup__password"));
   requiredBlur($("#user-signup__username"), "Valid email address required.");
   requiredBlur($("#user-signup__password"), "Required");
-  setValueOnFocus($("#user-signup__state"), "MT");
-  setValueOnFocus($("#user-signup__zip"), "598");
+  setValueOnFocus($("#user-signup__state"), "WA");
 
   var sendAjaxAuthRequest = function(url, data, error, success) {
     var getCookie = function(name) {
