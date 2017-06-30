@@ -87,6 +87,8 @@ LANGUAGES = (
     ('vi', gettext('Vietnamese'))
 )
 
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
 USE_I18N = True
 TIME_ZONE = 'UTC'
 USE_TZ = True
