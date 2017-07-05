@@ -54,10 +54,10 @@ module.exports = {
     },
     {
       test: /\.(png|gif|jpe?g|svg)(\?v=\d+\.\d+\.\d+)?$/i,
-      loader: "url?name=[name].[ext],limit=1000"
+      loader: "url-loader?name=[name].[ext],limit=1000"
     },{
       test: /\.html(\?v=\d+\.\d+\.\d+)?$/i,
-      loader: 'html'
+      loader: 'html-loader'
     }]
   }
 }
