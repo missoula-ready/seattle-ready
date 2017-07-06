@@ -1,3 +1,8 @@
+require('../css/normalize.css');
+require('../css/foundation.min.css');
+require('../css/app.css');
+require('../css/leaflet.css');
+
 require('slick-carousel');
 var $ = require('jquery');
 
