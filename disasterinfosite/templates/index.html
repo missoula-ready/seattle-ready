@@ -22,17 +22,10 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
-  <script src="{% static 'build/vendor.js' %}"></script>
-
-  <!-- Load Google Maps from CDN-->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places"></script>
-
-  <script src="{% static 'build/app.js' %}"></script>
   <script type="text/javascript">
     var mapBounds = {{ data_bounds | js }};
   </script>
-
-  </head>
+</head>
 <body>
   <div class="row top-header">
     <div id="title" class="title-header" role="banner">
@@ -124,6 +117,10 @@
   <h1 class="loading-text caps">{% trans "Getting results for your location..." %}</h1>
   <img class="loading-spinner" src="{% static 'img/thinking.gif' %}">
 </div>
+  <!-- Load Google Maps from CDN-->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places"></script>
+  <script src="{% static 'build/vendor.js' %}"></script>
+  <script src="{% static 'build/app.js' %}"></script>
 
   <!-- script for Google Analytics -->
   <script>
