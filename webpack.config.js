@@ -50,7 +50,13 @@ module.exports = {
     loaders: [
     {
       test: /\.css(\?v=\d+\.\d+\.\d+)?$/,
-      loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+      loader: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: [{
+          loader: "css-loader",
+          query: { minimize: true, sourceMap: true}
+        }]
+      })
     },
     {
       test: /\.(png|gif|jpe?g|svg)(\?v=\d+\.\d+\.\d+)?$/i,
