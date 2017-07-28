@@ -283,16 +283,16 @@ msgstr "Эксперты рекомендуют иметь при себе сл�
 
 #: templates/supply-kit.html:9
 msgid "Days of supplies"
-msgstr "провиант на несколько дней;"
+msgstr "провиант на несколько дней"
 
 #: templates/supply-kit.html:9 templates/supply-kit.html:14
 #: templates/supply-kit.html:19
 msgid "per person"
-msgstr "на каждого человека."
+msgstr "на каждого человека"
 
 #: templates/supply-kit.html:14
 msgid "Gallons of water"
-msgstr "как можно больше воды;"
+msgstr "как можно больше воды"
 
 #: templates/supply-kit.html:19
 msgid "Meals"

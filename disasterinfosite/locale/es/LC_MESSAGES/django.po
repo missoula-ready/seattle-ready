@@ -248,16 +248,16 @@ msgstr "Los expertos sugieren que tenga lo siguiente:"
 
 #: templates/supply-kit.html:9
 msgid "Days of supplies"
-msgstr "Suministros para varios días."
+msgstr "Suministros para varios días"
 
 #: templates/supply-kit.html:9 templates/supply-kit.html:14
 #: templates/supply-kit.html:19
 msgid "per person"
-msgstr "por persona."
+msgstr "por persona"
 
 #: templates/supply-kit.html:14
 msgid "Gallons of water"
-msgstr "Galones de agua."
+msgstr "Galones de agua"
 
 #: templates/supply-kit.html:19
 msgid "Meals"
