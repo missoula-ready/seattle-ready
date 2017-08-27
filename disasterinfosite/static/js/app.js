@@ -39,8 +39,19 @@ $( document ).ready(function() {
   }
   map.scrollWheelZoom.disable();
 
-  var osmUrl='//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4';
-  var osmAttrib='Map data © <a href="//openstreetmap.org">OpenStreetMap</a> contributors';
+// uncomment these lines to go back to Thunderforest's map tiles.
+// at the time of making this change, they have a specific issue:
+// Lake Washington is marked as land at sea level, while Mercer Island is marked as water.
+// This issue is common to multiple Thunderforest styles, but not OSM itself
+// You can check http://thunderforest.com/maps/landscape/ to see if it's fixed
+//  var osmUrl='//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4';
+//  var osmAttrib='Map data © <a href="//openstreetmap.org">OpenStreetMap</a> contributors';
+
+// temp switch to Stamen's Terrain style
+// Comment these lines and uncomment the ones above to go back
+// see http://maps.stamen.com/terrain/#12/47.5697/-122.2203 for a style preview
+  var osmUrl='//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png';
+  var osmAttrib='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
   var layer = new L.TileLayer(osmUrl, {attribution: osmAttrib}).addTo(map);
   layer.setOpacity(0.6);
 
