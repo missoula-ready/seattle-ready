@@ -83,5 +83,11 @@ myenv/
 
 # Node Modules
 node_modules/
-
 disasterinfosite/data/~$snuggets.xlsx
+
+# Static files that we don't own
+disasterinfosite/static/admin
+disasterinfosite/static/gis
+disasterinfosite/static/modeltranslation
+
+webpack-stats.json
