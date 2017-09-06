@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 {% load js %}
 {% load i18n %}
 
@@ -24,6 +24,7 @@
 
   <script type="text/javascript">
     var mapBounds = {{ data_bounds | js }};
+    var staticPath = {% get_static_prefix %};
   </script>
 </head>
 <body>
