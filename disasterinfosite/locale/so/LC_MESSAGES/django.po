@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 20:37+0000\n"
+"POT-Creation-Date: 2017-09-05 22:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,9 @@ msgstr ""
 msgid ""
 "Look below the map to see information for your location, or enter another "
 "location."
-msgstr "Fiir qariirada hoose si aad u aragtid warbixinta goobtaada, ama geli goob kale."
+msgstr ""
+"Fiir qariirada hoose si aad u aragtid warbixinta goobtaada, ama geli goob "
+"kale."
 
 #: templates/found_content.html:26
 msgid "Results for this location"
@@ -80,7 +82,12 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                %(settings.site_title)s waxaa loo naqshadeeyay inay ku caawiso barida iyo u diyaarinta dadka masiibooyinka ka dhaco aagooda. Masiibooyinka uma weeraraan goobaha si la mid ah marka waxaan u aragnay mid muhiim ah inaan siino warbixinta gaarka ah ee goobta si markaas si ku haboon loogu diyaargaroobo. %(settings.site_title)s ayaa diyaariyo warbixin hadeer oo u xiro qaab looga geli karo dadka dagan %(location.area_name)s.\n"
+"                %(settings.site_title)s waxaa loo naqshadeeyay inay ku "
+"caawiso barida iyo u diyaarinta dadka masiibooyinka ka dhaco aagooda. "
+"Masiibooyinka uma weeraraan goobaha si la mid ah marka waxaan u aragnay mid "
+"muhiim ah inaan siino warbixinta gaarka ah ee goobta si markaas si ku haboon "
+"loogu diyaargaroobo. %(settings.site_title)s ayaa diyaariyo warbixin hadeer "
+"oo u xiro qaab looga geli karo dadka dagan %(location.area_name)s.\n"
 "            "
 
 #: templates/geek_box.html:14
@@ -97,7 +104,13 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                Aagaan wuxuu isticmaalaa xogta qataraha halista ugu cusub ee %(location.area_name)s. Isticmaalaha aagaan ayaa masuul ka ah xaqiijinta warbixin walboo gaar ah ee la socoto illaha xogta asalka. Inkastoo xogtaan ay matashi qiimeyta halisaha hadeer, laguma qiyaasin dhacdooyinka mustaqbalka. Sharaxaadaha halista iyo sida loogu diyaar garoobo halisahaas waxay ku saleysantahay warbixinta ugu wanaagsan ee ka imaaneyso American Red Cross iyo Hay’ada Maamulka Gurmadka Faderaalka.\n"
+"                Aagaan wuxuu isticmaalaa xogta qataraha halista ugu cusub ee "
+"%(location.area_name)s. Isticmaalaha aagaan ayaa masuul ka ah xaqiijinta "
+"warbixin walboo gaar ah ee la socoto illaha xogta asalka. Inkastoo xogtaan "
+"ay matashi qiimeyta halisaha hadeer, laguma qiyaasin dhacdooyinka "
+"mustaqbalka. Sharaxaadaha halista iyo sida loogu diyaar garoobo halisahaas "
+"waxay ku saleysantahay warbixinta ugu wanaagsan ee ka imaaneyso American Red "
+"Cross iyo Hay’ada Maamulka Gurmadka Faderaalka.\n"
 "            "
 
 #: templates/geek_box.html:20
@@ -109,7 +122,9 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                    Xogta loo isticmaalay %(settings.site_title)s waxaa loo hli karaa ka dajiso <a href=\"%(settings.data_download)s\" target=\"_blank\">halkaan</a>\n"
+"                    Xogta loo isticmaalay %(settings.site_title)s waxaa loo "
+"hli karaa ka dajiso <a href=\"%(settings.data_download)s\" target=\"_blank"
+"\">halkaan</a>\n"
 "                "
 
 #: templates/geek_box.html:27
@@ -122,7 +137,8 @@ msgid ""
 msgstr ""
 "\n"
 "                    Su’aalo ma qabtaa? <a href=\"mailto:"
-"%(settings.contact_email)s\">I-meel u dir aasaasayaasha</a> wixii warbixin dheeraad ah.\n"
+"%(settings.contact_email)s\">I-meel u dir aasaasayaasha</a> wixii warbixin "
+"dheeraad ah.\n"
 "                "
 
 #: templates/geek_box.html:35
@@ -133,7 +149,8 @@ msgstr "Dulmarka Xogta Dhaqsida ah"
 #, python-format
 msgid ""
 "Take a look at some overviews of the data we used for %(location.area_name)s:"
-msgstr "Fiiri bal dulmarada qaarkood ee aan u isticmaalnay %(location.area_name)s:"
+msgstr ""
+"Fiiri bal dulmarada qaarkood ee aan u isticmaalnay %(location.area_name)s:"
 
 #: templates/geek_box.html:47
 msgid "Who made this?"
@@ -143,7 +160,8 @@ msgstr "Yaa sameeyay midaan?"
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
-msgstr "Geli goobtaada wargelin la gaareeyay ee halisahaaga iyo sida loo diyaarinayo."
+msgstr ""
+"Geli goobtaada wargelin la gaareeyay ee halisahaaga iyo sida loo diyaarinayo."
 
 #: templates/index.html:33
 msgid "Sign Up / Log In"
@@ -154,11 +172,18 @@ msgid ""
 "Give a location by typing in the box below, clicking on the map, or clicking "
 "'find me'. You'll get a personalized report on your natural hazard risks and "
 "steps you can take to prepare."
-msgstr "Sii booska adiga oo ku qorayo sanduuqa hoose, oo riixayo qariirada, ama riixayo 'iga hel'. Waxaad heleysaa wargelin la gaareeyay ee qataraha halista dabiiciga iyo tallaabooyinka aad qaadi kartid si aad u diyaar garowdid."
+msgstr ""
+"Sii booska adiga oo ku qorayo sanduuqa hoose, oo riixayo qariirada, ama "
+"riixayo 'iga hel'. Waxaad heleysaa wargelin la gaareeyay ee qataraha halista "
+"dabiiciga iyo tallaabooyinka aad qaadi kartid si aad u diyaar garowdid."
 
 #: templates/index.html:57
 msgid "Location"
 msgstr "Meesha"
+
+#: templates/index.html:59
+msgid "Your address, your city"
+msgstr "Ciwaankaaga, caasimadaada"
 
 #: templates/index.html:66
 msgid "Find Me"
@@ -182,7 +207,9 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            %(settings.site_title)s waxay ku siisaa afkaarta masiibooyinkee dabiici ah ayaad la kulmi kartaa mustaqbalka sida ku saleysan goobta ee %(location.area_name)s.\n"
+"            %(settings.site_title)s waxay ku siisaa afkaarta masiibooyinkee "
+"dabiici ah ayaad la kulmi kartaa mustaqbalka sida ku saleysan goobta ee "
+"%(location.area_name)s.\n"
 "          "
 
 #: templates/index.html:94
@@ -193,7 +220,9 @@ msgstr "Sida loo Diyaargaroobo"
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
-msgstr "Waxaad leedahay awood isbadel lagu sameynayo. Ogow sida aad u illaali kartid dadka aad jaceshahay iyo guriga ka hor inta aysan dhufan masiibada xigto."
+msgstr ""
+"Waxaad leedahay awood isbadel lagu sameynayo. Ogow sida aad u illaali kartid "
+"dadka aad jaceshahay iyo guriga ka hor inta aysan dhufan masiibada xigto."
 
 #: templates/index.html:99
 msgid "In Recent History"
@@ -208,7 +237,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            Ogow masiibooyinkee ayaa dhuftay %(location.area_name)s waqtiga la soo dhaafay, saameynada ay heleen, iyo halka ay dhacday.\n"
+"            Ogow masiibooyinkee ayaa dhuftay %(location.area_name)s waqtiga "
+"la soo dhaafay, saameynada ay heleen, iyo halka ay dhacday.\n"
 "          "
 
 #: templates/index.html:117
@@ -217,7 +247,7 @@ msgstr ""
 
 #: templates/language_selector.html:15
 msgid "Language"
-msgstr ""
+msgstr "Luuqada"
 
 #: templates/no_content_found.html:28
 msgid "No information available."
@@ -232,14 +262,17 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"                Waxay u muuqataa in goobtaada ay banaanka ka tahay %(location.area_name)s.\n"
+"                Waxay u muuqataa in goobtaada ay banaanka ka tahay "
+"%(location.area_name)s.\n"
 "              "
 
 #: templates/no_content_found.html:36
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
-msgstr "Iyada oo aan qiimeyno oo aan sare u qaadno adkeysiga meel walba, xogta awooda siiso dhinacaan looma heli karo meelaha kale weli."
+msgstr ""
+"Iyada oo aan qiimeyno oo aan sare u qaadno adkeysiga meel walba, xogta "
+"awooda siiso dhinacaan looma heli karo meelaha kale weli."
 
 #: templates/supply-kit.html:4
 msgid "Experts suggest you have the following:"
@@ -294,7 +327,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            Haddii magaca isticmaalahaaga %(username)s, waxaad rabi kartaa inaad ka baxdid.\n"
+"            Haddii magaca isticmaalahaaga %(username)s, waxaad rabi kartaa "
+"inaad ka baxdid.\n"
 "          "
 
 #: templates/user_interactions.html:30
@@ -308,7 +342,13 @@ msgid ""
 "ongoing incidents specific to your location. We want you to be better "
 "prepared so you can keep your family, friends, and neighbors safe when a "
 "disaster strikes! Personal information will be protected and secure."
-msgstr "Isaga diiwaangeli si bilaash ah si aad u gashid warbixinta u diyaargarowga halista la habeeyay. Adiga oo sheegayo ciwaankaaga, waxaad heleysaa aqbaaraha ku saabsan halisaha iyo shilalka socdo ee gaarka u ah goobtaada. Waxaan rabnaa inaad si wanaagsan ugu diyaargarowdid si markaas aad ugu haysid badbaado qoyskaaga, saaxibada, iyo dariska marka ay timaado masiibo! Warbixin gaar ah waa la illaalinayaa oo badbaado ah."
+msgstr ""
+"Isaga diiwaangeli si bilaash ah si aad u gashid warbixinta u diyaargarowga "
+"halista la habeeyay. Adiga oo sheegayo ciwaankaaga, waxaad heleysaa "
+"aqbaaraha ku saabsan halisaha iyo shilalka socdo ee gaarka u ah goobtaada. "
+"Waxaan rabnaa inaad si wanaagsan ugu diyaargarowdid si markaas aad ugu "
+"haysid badbaado qoyskaaga, saaxibada, iyo dariska marka ay timaado masiibo! "
+"Warbixin gaar ah waa la illaalinayaa oo badbaado ah."
 
 #: templates/user_interactions.html:41
 msgid "Required."
@@ -364,13 +404,18 @@ msgstr "Lambarka Boostada"
 
 #: templates/user_interactions.html:107
 msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
-msgstr "Ma u baahantahay caawinta qaar? <a href=\"mailto:help@hazardgready.org\">I-meel noo soo dir.</a>"
+msgstr ""
+"Ma u baahantahay caawinta qaar? <a href=\"mailto:help@hazardgready.org\">I-"
+"meel noo soo dir.</a>"
 
 #: templates/user_interactions.html:113
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
-msgstr "Waad ku mahadsantahay iska diiwaangelintaada! Waan kula soo socodsiineynaa aqbaaraha la xiriiro iyo warbixinta. Xili walba ayaad soo laaban kartaa si aad u cusbooneysid ciwaankaaga."
+msgstr ""
+"Waad ku mahadsantahay iska diiwaangelintaada! Waan kula soo socodsiineynaa "
+"aqbaaraha la xiriiro iyo warbixinta. Xili walba ayaad soo laaban kartaa si "
+"aad u cusbooneysid ciwaankaaga."
 
 #: templates/user_interactions.html:120
 #, python-format
@@ -383,11 +428,12 @@ msgstr "Waan ku gelineynaa. Wax yar sug..."
 
 #: templates/user_interactions.html:134
 msgid "Whoops, it looks like that username or password didn't work."
-msgstr "Whoops, waxay u muqataa in magaca isticmaalaha ama furaha uusan shaqeynin."
+msgstr ""
+"Whoops, waxay u muqataa in magaca isticmaalaha ama furaha uusan shaqeynin."
 
 #: templates/user_interactions.html:170
 msgid "Update"
-msgstr ""
+msgstr "Aqbaar"
 
 #: templates/user_interactions.html:177
 msgid "Thanks for keeping us up to date!"
@@ -395,4 +441,5 @@ msgstr "Waad ku mahadsantahay nasoo ogeysiintaada!"
 
 #: templates/user_interactions.html:183
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr "Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo markale."
+msgstr ""
+"Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo markale."

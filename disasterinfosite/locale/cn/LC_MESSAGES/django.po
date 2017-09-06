@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 19:25+0000\n"
+"POT-Creation-Date: 2017-09-05 22:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,8 +130,8 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                    有疑问？<a href=\"mailto:"
-"%(settings.contact_email)s\">发电子邮件给创建人</a>，获取更多信息。\n"
+"                    有疑问？<a href=\"mailto:%(settings.contact_email)s\">发"
+"电子邮件给创建人</a>，获取更多信息。\n"
 "                "
 
 #: templates/geek_box.html:35
@@ -170,6 +170,10 @@ msgstr ""
 #: templates/index.html:57
 msgid "Location"
 msgstr "位置"
+
+#: templates/index.html:59
+msgid "Your address, your city"
+msgstr "您的地址，所在城市"
 
 #: templates/index.html:66
 msgid "Find Me"
@@ -230,7 +234,7 @@ msgstr ""
 
 #: templates/language_selector.html:15
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: templates/no_content_found.html:28
 msgid "No information available."
@@ -404,7 +408,7 @@ msgstr "糟糕，用户名或密码不正确。"
 
 #: templates/user_interactions.html:170
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: templates/user_interactions.html:177
 msgid "Thanks for keeping us up to date!"

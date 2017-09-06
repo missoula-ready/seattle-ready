@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 19:24+0000\n"
+"POT-Creation-Date: 2017-09-05 22:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,6 +188,10 @@ msgstr ""
 msgid "Location"
 msgstr "Местоположение"
 
+#: templates/index.html:59
+msgid "Your address, your city"
+msgstr "Ваш адрес, ваш город"
+
 #: templates/index.html:66
 msgid "Find Me"
 msgstr "Найти меня"
@@ -250,7 +254,7 @@ msgstr ""
 
 #: templates/language_selector.html:15
 msgid "Language"
-msgstr ""
+msgstr "Язык"
 
 #: templates/no_content_found.html:28
 msgid "No information available."
@@ -433,7 +437,7 @@ msgstr "Ой! Неверное имя пользователя или парол
 
 #: templates/user_interactions.html:170
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 #: templates/user_interactions.html:177
 msgid "Thanks for keeping us up to date!"
