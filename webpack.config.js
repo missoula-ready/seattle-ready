@@ -60,7 +60,7 @@ module.exports = {
     },
     {
       test: /\.(png|gif|jpe?g|svg)(\?v=\d+\.\d+\.\d+)?$/i,
-      loader: "url-loader?name=[name].[ext],limit=1000"
+      loader: "file-loader?name=[name].[ext],limit=1000"
     },{
       test: /\.html(\?v=\d+\.\d+\.\d+)?$/i,
       loader: 'html-loader'
