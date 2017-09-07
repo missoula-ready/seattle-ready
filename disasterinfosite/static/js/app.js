@@ -58,7 +58,6 @@ function submitLocation(lat,lng, location_query_text) {
 function submitLocationQuery() {
   // grab the query value, ignoring it if it's empty
   var location_query_text = $locationInput.val();
-  console.log(location_query_text);
   if (location_query_text.length === 0) return;
   disableForm();
 
