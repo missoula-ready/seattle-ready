@@ -3,6 +3,12 @@ require('../css/foundation.min.css');
 require('../css/app.css');
 require('../css/leaflet.css');
 
+var boundaryShape = require('../img/boundary.json');
+
+require('../img/marker-icon.png');
+require('../img/marker-shadow.png');
+require('../img/thinking.gif');
+
 require('slick-carousel');
 var $ = require('jquery');
 
@@ -55,29 +61,21 @@ $( document ).ready(function() {
   var layer = new L.TileLayer(osmUrl, {attribution: osmAttrib}).addTo(map);
   layer.setOpacity(0.6);
 
-  $.ajax({
-    type: "POST",
-    url: "../static/img/boundary.geojson",
-    dataType: "json",
-    success: function(boundaryShape) {
-      var boundaryStyle = {
-        "color": "rgb(165, 199, 39)",
-        "weight": 4,
-        "opacity": 1,
-        "fillColor": "#ffffff",
-        "fillOpacity": 0.7
-      };
-      var boundaryLayer = L.geoJson(boundaryShape, {
-        style: boundaryStyle
-      }).addTo(map);
-    }
-  });
+  var boundaryStyle = {
+    "color": "rgb(165, 199, 39)",
+    "weight": 4,
+    "opacity": 1,
+    "fillColor": "#ffffff",
+    "fillOpacity": 0.7
+  };
+
+  L.geoJson(boundaryShape, { style: boundaryStyle }).addTo(map);
 
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
-    icon.options.iconUrl = "../static/img/marker-icon.png";
-    icon.options.shadowUrl = "../static/img/marker-shadow.png";
+    icon.options.iconUrl = staticPath + "build/marker-icon.png";
+    icon.options.shadowUrl = staticPath + "build/marker-shadow.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,
