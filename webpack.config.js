@@ -59,11 +59,15 @@ module.exports = {
       })
     },
     {
-      test: /\.(png|gif|jpe?g|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+      test: /\.(png|gif|jpe?g|svg|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/i,
       loader: "file-loader?name=[name].[ext],limit=1000"
     },{
       test: /\.html(\?v=\d+\.\d+\.\d+)?$/i,
       loader: 'html-loader'
-    }]
-  }
+    },
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "url-loader?limit=10000&minetype=application/font-woff"
+    }
+  ]}
 }
