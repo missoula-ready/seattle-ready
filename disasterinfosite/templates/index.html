@@ -119,7 +119,7 @@
   <img class="loading-spinner" src="{% static 'build/thinking.gif' %}">
 </div>
   <!-- Load Google Maps from CDN-->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places&callback=initAddressInput"></script>
   <script src="{% static 'build/vendor.js' %}"></script>
   <script src="{% static 'build/app.js' %}"></script>
 
