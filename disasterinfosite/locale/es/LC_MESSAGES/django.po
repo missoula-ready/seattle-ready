@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 19:29+0000\n"
+"POT-Creation-Date: 2017-09-05 22:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,9 @@ msgstr ""
 msgid ""
 "Look below the map to see information for your location, or enter another "
 "location."
-msgstr "Observe debajo del mapa para ver información de su ubicación o ingrese otra ubicación."
+msgstr ""
+"Observe debajo del mapa para ver información de su ubicación o ingrese otra "
+"ubicación."
 
 #: templates/found_content.html:26
 msgid "Results for this location"
@@ -81,7 +83,13 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                %(settings.site_title)s está diseñado para ayudar a educar y preparar a las personas para los desastres que ocurran en su área. Los desastres no afectan los lugares de igual manera, por lo que consideramos importante dar información específica de la ubicación para una correcta preparación. %(settings.site_title)s organiza información actualizada y la presenta de tal manera que sea accesible para cualquier residente de %(location.area_name)s.\n"
+"                %(settings.site_title)s está diseñado para ayudar a educar y "
+"preparar a las personas para los desastres que ocurran en su área. Los "
+"desastres no afectan los lugares de igual manera, por lo que consideramos "
+"importante dar información específica de la ubicación para una correcta "
+"preparación. %(settings.site_title)s organiza información actualizada y la "
+"presenta de tal manera que sea accesible para cualquier residente de "
+"%(location.area_name)s.\n"
 "            "
 
 #: templates/geek_box.html:14
@@ -98,7 +106,13 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                Este sitio utiliza la información de riesgos más actualizada para %(location.area_name)s. El usuario de este sitio tiene la responsabilidad de verificar toda información particular con las fuentes de datos originales. A pesar de que estos datos representan la mejor evaluación actual de los riesgos, no predicen futuros eventos. Las descripciones de los riesgos y cómo prepararse se basan en la mejor información de la Cruz Roja Estadounidense y la Agencia Federal de Gestión de Emergencias.\n"
+"                Este sitio utiliza la información de riesgos más actualizada "
+"para %(location.area_name)s. El usuario de este sitio tiene la "
+"responsabilidad de verificar toda información particular con las fuentes de "
+"datos originales. A pesar de que estos datos representan la mejor evaluación "
+"actual de los riesgos, no predicen futuros eventos. Las descripciones de los "
+"riesgos y cómo prepararse se basan en la mejor información de la Cruz Roja "
+"Estadounidense y la Agencia Federal de Gestión de Emergencias.\n"
 "            "
 
 #: templates/geek_box.html:20
@@ -110,7 +124,9 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                    La información utilizada para %(settings.site_title)s se puede descargar <a href=\"%(settings.data_download)s\" target=\"_blank\">aquí</a>\n"
+"                    La información utilizada para %(settings.site_title)s se "
+"puede descargar <a href=\"%(settings.data_download)s\" target=\"_blank"
+"\">aquí</a>\n"
 "                "
 
 #: templates/geek_box.html:27
@@ -123,7 +139,8 @@ msgid ""
 msgstr ""
 "\n"
 "                    ¿Desea hacer alguna pregunta? <a href=\"mailto:"
-"%(settings.contact_email)s\">Escriba a los creadores</a> para obtener más información.\n"
+"%(settings.contact_email)s\">Escriba a los creadores</a> para obtener más "
+"información.\n"
 "                "
 
 #: templates/geek_box.html:35
@@ -134,7 +151,9 @@ msgstr "Descripción breve de los datos"
 #, python-format
 msgid ""
 "Take a look at some overviews of the data we used for %(location.area_name)s:"
-msgstr "Observe algunas descripciones de los datos que utilizamos para %(location.area_name)s:"
+msgstr ""
+"Observe algunas descripciones de los datos que utilizamos para "
+"%(location.area_name)s:"
 
 #: templates/geek_box.html:47
 msgid "Who made this?"
@@ -144,7 +163,9 @@ msgstr "¿Quién hizo esto?"
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
-msgstr "Ingrese su ubicación para obtener un informe personalizado de sus riesgos y cómo prepararse."
+msgstr ""
+"Ingrese su ubicación para obtener un informe personalizado de sus riesgos y "
+"cómo prepararse."
 
 #: templates/index.html:33
 msgid "Sign Up / Log In"
@@ -155,11 +176,19 @@ msgid ""
 "Give a location by typing in the box below, clicking on the map, or clicking "
 "'find me'. You'll get a personalized report on your natural hazard risks and "
 "steps you can take to prepare."
-msgstr "Ingrese una ubicación escribiendo en la siguiente casilla, haciendo clic en el mapa o haciendo clic en \"Buscar mi ubicación\". Obtendrá un informe personalizado sobre sus riesgos naturales y los pasos que puede llevar a cabo para prepararse."
+msgstr ""
+"Ingrese una ubicación escribiendo en la siguiente casilla, haciendo clic en "
+"el mapa o haciendo clic en \"Buscar mi ubicación\". Obtendrá un informe "
+"personalizado sobre sus riesgos naturales y los pasos que puede llevar a "
+"cabo para prepararse."
 
 #: templates/index.html:57
 msgid "Location"
 msgstr "Ubicación"
+
+#: templates/index.html:59
+msgid "Your address, your city"
+msgstr "Su domicilio, su ciudad"
 
 #: templates/index.html:66
 msgid "Find Me"
@@ -183,7 +212,9 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            %(settings.site_title)s le da una idea de los desastres naturales que puede sufrir en el futuro según la ubicación en %(location.area_name)s.\n"
+"            %(settings.site_title)s le da una idea de los desastres "
+"naturales que puede sufrir en el futuro según la ubicación en "
+"%(location.area_name)s.\n"
 "          "
 
 #: templates/index.html:94
@@ -194,7 +225,9 @@ msgstr "Cómo prepararse"
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
-msgstr "Usted tiene la capacidad de hacer una diferencia. Descubra cómo puede proteger a sus seres queridos y su casa antes del próximo desastre."
+msgstr ""
+"Usted tiene la capacidad de hacer una diferencia. Descubra cómo puede "
+"proteger a sus seres queridos y su casa antes del próximo desastre."
 
 #: templates/index.html:99
 msgid "In Recent History"
@@ -209,7 +242,8 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            Averigüe qué desastres hubo en %(location.area_name)s en el pasado, qué impacto tuvieron y dónde ocurrieron.\n"
+"            Averigüe qué desastres hubo en %(location.area_name)s en el "
+"pasado, qué impacto tuvieron y dónde ocurrieron.\n"
 "          "
 
 #: templates/index.html:117
@@ -218,7 +252,7 @@ msgstr ""
 
 #: templates/language_selector.html:15
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: templates/no_content_found.html:28
 msgid "No information available."
@@ -233,14 +267,17 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"                Parece que su ubicación está fuera de %(location.area_name)s.\n"
+"                Parece que su ubicación está fuera de "
+"%(location.area_name)s.\n"
 "              "
 
 #: templates/no_content_found.html:36
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
-msgstr "Mientras que valoramos y fomentamos la resiliencia en todos lados, los datos que impulsan este sitio aún no están disponibles para otros lugares."
+msgstr ""
+"Mientras que valoramos y fomentamos la resiliencia en todos lados, los datos "
+"que impulsan este sitio aún no están disponibles para otros lugares."
 
 #: templates/supply-kit.html:4
 msgid "Experts suggest you have the following:"
@@ -309,7 +346,14 @@ msgid ""
 "ongoing incidents specific to your location. We want you to be better "
 "prepared so you can keep your family, friends, and neighbors safe when a "
 "disaster strikes! Personal information will be protected and secure."
-msgstr "Inscríbase gratis para acceder a información personalizada para estar preparado en caso de desastres. Al dar su domicilio, obtendrá actualizaciones acerca de los peligros estacionales y los incidentes que estén sucediendo en ese momento y que sean específicos de su ubicación. Queremos que esté mejor preparado para que pueda mantener a su familia, amigos y vecinos seguros en caso de desastre. La información personal estará protegida y segura."
+msgstr ""
+"Inscríbase gratis para acceder a información personalizada para estar "
+"preparado en caso de desastres. Al dar su domicilio, obtendrá "
+"actualizaciones acerca de los peligros estacionales y los incidentes que "
+"estén sucediendo en ese momento y que sean específicos de su ubicación. "
+"Queremos que esté mejor preparado para que pueda mantener a su familia, "
+"amigos y vecinos seguros en caso de desastre. La información personal estará "
+"protegida y segura."
 
 #: templates/user_interactions.html:41
 msgid "Required."
@@ -331,8 +375,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          ¿Necesita asistencia (como un restablecimiento de contraseña)? <a href=\"mailto:"
-"help@hazardgready.org\">Envíenos un correo electrónico.</a>\n"
+"          ¿Necesita asistencia (como un restablecimiento de contraseña)? <a "
+"href=\"mailto:help@hazardgready.org\">Envíenos un correo electrónico.</a>\n"
 "        "
 
 #: templates/user_interactions.html:67
@@ -365,13 +409,18 @@ msgstr "Código Postal"
 
 #: templates/user_interactions.html:107
 msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
-msgstr "¿Necesita ayuda? <a href=\"mailto:help@hazardgready.org\">Envíenos un correo electrónico.</a>"
+msgstr ""
+"¿Necesita ayuda? <a href=\"mailto:help@hazardgready.org\">Envíenos un correo "
+"electrónico.</a>"
 
 #: templates/user_interactions.html:113
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
-msgstr "Gracias por inscribirse. Nos comunicaremos con usted con noticias e información relevantes. Puede volver en cualquier momento para actualizar su dirección."
+msgstr ""
+"Gracias por inscribirse. Nos comunicaremos con usted con noticias e "
+"información relevantes. Puede volver en cualquier momento para actualizar su "
+"dirección."
 
 #: templates/user_interactions.html:120
 #, python-format
@@ -388,7 +437,7 @@ msgstr "Parece que su nombre de usuario o contraseña no es correcto."
 
 #: templates/user_interactions.html:170
 msgid "Update"
-msgstr ""
+msgstr "Actualización"
 
 #: templates/user_interactions.html:177
 msgid "Thanks for keeping us up to date!"
