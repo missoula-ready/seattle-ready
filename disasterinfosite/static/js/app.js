@@ -12,6 +12,23 @@ require('../img/thinking.gif');
 require('slick-carousel');
 var $ = require('jquery');
 
+// This is on window so that it can get called after the google maps API script is loaded asynchronously.
+window.initAddressInput = function() {
+  // Set up autocomplete
+  var autocomplete = new google.maps.places.Autocomplete($locationInput[0]);
+
+  // submit location text
+  $locationSubmit.click(submitLocationQuery);
+
+  // hitting enter key in the textfield will also trigger submit
+  $locationInput.keydown(function(event) {
+    if (event.keyCode === 13) {
+      submitLocationQuery();
+      return false;
+    }
+  });
+};
+
 var $locationInput = $('#location-text');
 var $locationSubmit = $('#location-submit');
 var $autoLocationSubmit = $('.auto-location-submit');
@@ -54,23 +71,6 @@ function submitLocationQuery() {
       submitLocation(lat,lon, location_query_text);
     } else {
       $(".geocode-error-message").html($('p').text("We had a problem finding that location."));
-    }
-  });
-};
-
-// This is on window so that it can get called after the google maps API script is loaded asynchronously.
-window.initAddressInput = function() {
-  // Set up autocomplete
-  var autocomplete = new google.maps.places.Autocomplete($locationInput[0]);
-
-  // submit location text
-  $locationSubmit.click(submitLocationQuery);
-
-  // hitting enter key in the textfield will also trigger submit
-  $locationInput.keydown(function(event) {
-    if (event.keyCode === 13) {
-      submitLocationQuery();
-      return false;
     }
   });
 };
