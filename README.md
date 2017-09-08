@@ -9,7 +9,7 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 # This instance of Hazard Ready uses Webpack to bundle its static files. For that reason, you need these additional steps to set it up:
 1. Make sure that you have [Node and NPM installed](https://www.npmjs.com/get-npm)
 1. In the same directory that contains ```package.json```, run ```npm install```
-1. Run ```npm webpack```
+1. Run ```npm run webpack```
 
 
 Depending on your server setup, you may want to put these values in settings.py directly.
