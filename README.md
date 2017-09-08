@@ -6,6 +6,11 @@ The project is a custom instance of the [Disaster Preparedness](https://github.c
 
 # To set it up, follow the instructions in the [Disaster Preparedness project README](https://github.com/missoula-ready/disaster-preparedness/blob/master/README.md). But instead of DJANGO_SECRET_KEY, use DJANGO_SECRET_KEY_SEATTLE, and instead of DATABASE_URL, use DATABASE_URL_SEATTLE.
 
+# This instance of Hazard Ready uses the HTML Tidy utility to check HTML fragments in snugget texts. You may need to install it
+
+* See [this page](http://countergram.com/open-source/pytidylib/docs/index.html#installing-html-tidy) for instructions
+* NB: this information should be expanded and put into the parent Disaster Readiness project's README if and when we backport HTML checking functionality.
+
 # This instance of Hazard Ready uses Webpack to bundle its static files. For that reason, you need these additional steps to set it up:
 1. Make sure that you have [Node and NPM installed](https://www.npmjs.com/get-npm)
 1. In the same directory that contains ```package.json```, run ```npm install```

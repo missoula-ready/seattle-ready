@@ -3,6 +3,7 @@ import csv
 
 import openpyxl # library to read .xlsx format
 import psycopg2
+from tidylib import tidy_fragment # HTML parsing/cleaning - see http://countergram.com/open-source/pytidylib/docs/index.html
 
 # import settings here because we'll follow whatever's set there
 # for the database parameters
@@ -124,11 +125,13 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
   	values_to_insert = values_to_insert + (row[col.replace("content_", "text-")],)
   values_to_insert = values_to_insert + (row["image"], row["intensity"])
 
+
   cur.execute(
     'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + '%s, %s);',
     values_to_insert
   )
   # For extra credit, set the group's display_name to the heading value.
+
 
 
 
