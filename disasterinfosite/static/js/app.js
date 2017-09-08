@@ -53,8 +53,11 @@ function enableForm() {
 }
 
 function submitLocation(lat,lng, location_query_text) {
-  // reload the page with the lat,lng
-  document.location =  encodeURI(document.location.pathname + "?lat=" + lat + "&lng=" + lng + "&loc=" + location_query_text);
+  var queryString = "?lat=" + lat + "&lng=" + lng;
+  if(location_query_text && location_query_text.length) {
+    queryString = queryString  + "&loc=" + location_query_text;
+  }
+  document.location =  encodeURI(document.location.pathname + queryString);
 }
 
 function submitLocationQuery() {
@@ -248,7 +251,7 @@ $( document ).ready(function() {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
       // success! onwards to view the content
-      submitLocation(lat, lng, "");
+      submitLocation(lat, lng);
     };
     var geoError = function(error) {
       console.log('Error finding your location: ' + error.message);
