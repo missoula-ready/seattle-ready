@@ -263,6 +263,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
 def XLSXDictReader(f):
   book  = openpyxl.reader.excel.load_workbook(f)
   sheet = book.get_active_sheet()
+  langs = []
 
   rows = 1
   for row in sheet.iter_rows():
@@ -272,6 +273,10 @@ def XLSXDictReader(f):
     cols = cols + 1
 
   headers = dict( (i, sheet.cell(row=1, column=i).value) for i in range(1, cols) )
+  for header in headers.values():
+  	if header.startswith('text-'):
+  		langs.append(header.split('-')[1])
+  print("Found snugget texts in the following language[s]:", langs, "\n")
 
   def item(i, j):
     if sheet.cell(row=i, column=j).value == None:
