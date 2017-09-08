@@ -29,6 +29,7 @@ There is one shapefile in disasterinfosite/data that is too big to host on githu
 # Values to put in Django Admin
 
 ### Tabs
+Note: because this site is translated, you can find the translations for these values in ```admin-strings.xlsx```
 
 ######Earthquake
     Display Name: Earthquake
@@ -100,6 +101,17 @@ Note that these may appear in different sections or be mutually exclusive, which
   Historical Images: 12
 
 ### Important links
+  Title: King County Emergency Management
+  Link: ```Find out more about local resources and information at the <a href="http://www.kingcounty.gov/depts/emergency-management.aspx" target="_blank">King County EM website</a>.```
+
+  Title: Alert King County
+  Link: ```Get real-time alerts about what's happening in King County. Find out more <a href="http://www.kingcounty.gov/depts/emergency-management/alert-king-county.aspx" target="_blank">here</a>.```
+
+  Title: Alert Seattle
+  Link: ```Be the first to know what's happening near you. Find out more <a href="http://alert.seattle.gov" target="_blank">here</a>.```
+
+  Title: Seattle Office of Emergency Management
+  Link: ```The <a href="http://www.seattle.gov/emergency-management" target="_blank">Seattle OEM</a> website has many great resources for finding out more.```
 
 ### Supply kit
 
