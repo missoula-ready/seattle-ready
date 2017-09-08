@@ -19,7 +19,7 @@ Currently, there is no out-of-the box support for language codes cn (an abbrevia
 
 1. In ```venv/lib/python3.5/site-packages/django/conf/locale```, create a folder called `cn` and a folder called `so`
 1. Copy the contents of the appropriate Chinese language folder into `cn` (curently, zh-Hans). This makes a Simplified Chinese language with the code `cn`.
-1. Create a blank file called ``__init__.py`` in the `so` folder. In the `so` folder, create a folder named `LC_MESSAGES` and copy the file name `django.mo` from the equivalent location in any other language's folder. This sets up a dummy Somali translation, which is enough to fool Django into thinking it has a Somali version.
+1. Create a blank file called ``__init__.py`` in the `so` folder. In the `so` folder, create a folder named `LC_MESSAGES` and copy the file named `django.mo` from the equivalent location in any other language's folder. This sets up a dummy Somali translation, which is enough to fool Django into thinking it has a Somali version.
 
 To finish adding languages, we have added `so` and `cn` to `django.conf.locale` in `settings.py`.
 
