@@ -108,11 +108,23 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
     (str(sectionID), str(subsectionID), str(groupID), str(filterID))
   )
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
-  # TODO: modify this to dynamically read in localized text columns and put them in localized content columns
-  i18n_columns = "".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+
+  # dynamically build list of multilingual content
+  i18n_columns = ", ".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+  i18n_placeholders = ", ".join(["%s" for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+  values_to_insert = (snuggetID, row["text-en"])
+  for col in i18n_columns.split(", "):
+  	values_to_insert = values_to_insert + (row[col.replace("content_", "text-")],)
+  values_to_insert = values_to_insert + (row["image"], row["intensity"])
+
+#  cur.mogrify(
+#    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + ', %s, %s);',
+#    values_to_insert
+#  )
+
   cur.execute(
-    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_colunms + ', image, percentage) VALUES (%s, %s, %s, %s, %s, %s);',
-    (snuggetID, row["text-en"], row["text-en"], row["text-es"], row["image"], row["intensity"])
+    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + ', %s, %s);',
+    values_to_insert
   )
   # For extra credit, set the group's display_name to the heading value.
 
