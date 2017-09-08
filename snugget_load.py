@@ -61,7 +61,7 @@ def allRequiredFieldsPresent(row, optionalFields, rowCount):
 
 
 def checkHTMLTagClosures(row, rowCount):
-	tags_to_check = ["ol", "ul", "li", "a"]
+	tags_to_check = ["ol", "ul", "li", "a", "b"]
 	mismatches = {}
 	for key in row.keys():
 		if key.startswith('text-'):
