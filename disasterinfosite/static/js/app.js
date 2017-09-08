@@ -232,6 +232,7 @@ $( document ).ready(function() {
   // Make a click on the map submit the location
   map.on('click', function(e) {
     $locationInput.val("");  // clear query text
+    disableForm();
     submitLocation(e.latlng.lat, e.latlng.lng, "");
   });
 
