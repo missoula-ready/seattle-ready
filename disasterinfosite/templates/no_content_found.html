@@ -27,7 +27,7 @@
           <h2 class="caps">{% trans "No information available." %}</h2>
           <div>
             <p>
-              {% blocktrans %}
+              {% blocktrans with area_name=location.area_name %}
                 It looks like your location is outside of {{ location.area_name }}.
               {% endblocktrans %}
             </p>
