@@ -242,7 +242,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
     print("Please enter one of the following letters to choose how to proceed:")
     print("R: Replace the existing snugget[s] with the new value loaded from", snuggetFile, " and ask again for the next one.")
     print("A: replace All without asking again.")
-    print("Q: quit so you can edit", snuggetFile, "and/or check the snuggets in the Django admin panel and try again.")
+    print("Q: Quit so you can edit", snuggetFile, "and/or check the snuggets in the Django admin panel and try again.")
     response = ""
     while response not in ["A", "R", "Q"]:
       response = input(">> ").upper()
