@@ -92,9 +92,15 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row):
 
   return overwriteAll
 
+
+
+
 def _get_i18n_db_column(column_name):
   if column_name.startswith('text-'):
     return 'content_' + column_name.split('-')[1]
+
+
+
 
 def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID, cur):
 #   "intensity" -> disasterinfosite_textsnugget.percentage (numeric, null as null)
@@ -111,14 +117,15 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
 
   # dynamically build list of multilingual content and language codes
   i18n_columns = ", ".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
-  i18n_placeholders = ", ".join(["%s" for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+  i18n_placeholders = ""
   values_to_insert = (snuggetID, row["text-en"])
   for col in i18n_columns.split(", "):
+  	i18n_placeholders = i18n_placeholders + "%s, "
   	values_to_insert = values_to_insert + (row[col.replace("content_", "text-")],)
   values_to_insert = values_to_insert + (row["image"], row["intensity"])
 
   cur.execute(
-    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + ', %s, %s);',
+    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + '%s, %s);',
     values_to_insert
   )
   # For extra credit, set the group's display_name to the heading value.
