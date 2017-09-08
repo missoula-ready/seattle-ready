@@ -30,6 +30,7 @@ def main():
       for row in newSnuggets:
         rowCount += 1
         if allRequiredFieldsPresent(row, optionalFields, rowCount):
+          checkHTMLTagClosures(row, rowCount)
           overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
   print("Snugget load complete. Processed", rowCount, "rows in", snuggetFile)
 
@@ -56,6 +57,23 @@ def allRequiredFieldsPresent(row, optionalFields, rowCount):
   else: # the entire row is blank
     print("Skipping empty row", rowCount)
     return False
+
+
+
+def checkHTMLTagClosures(row, rowCount):
+	tags_to_check = ["ol", "ul", "li", "a", "b"]
+	mismatches = {}
+	for key in row.keys():
+		if key.startswith('text-'):
+			for tag in tags_to_check:
+				tag_opening_no_attr = "<" + tag + ">"
+				tag_opening_with_attr = "<" + tag + " "
+				tag_closing = "</" + tag + ">"
+				tag_openings = row[key].count(tag_opening_no_attr) + row[key].count(tag_opening_with_attr)
+				tag_closings = row[key].count(tag_closing)
+				if tag_openings > tag_closings:
+					print("WARNING: In row", str(rowCount), key, "has", str(tag_openings), "opening <" + tag + "> tag[s] but only", str(tag_closings), "closing tag[s].")
+
 
 
 
