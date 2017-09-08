@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('disasterinfosite', '0002_auto_20161003_2337'),
+        ('disasterinfosite', '0002_data_load'),
     ]
 
     operations = [
@@ -476,5 +476,35 @@ class Migration(migrations.Migration):
             model_name='textsnugget',
             name='content_cn',
             field=models.TextField(null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_cn',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_en',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_es',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_ru',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_so',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
+        ),
+        migrations.AddField(
+            model_name='importantlink',
+            name='link_vi',
+            field=models.TextField(help_text='Your link and any information about it. Any web address in here gets turned into a link automatically.', null=True),
         ),
     ]
