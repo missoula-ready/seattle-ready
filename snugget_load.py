@@ -95,6 +95,13 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row):
 
 
 
+def _get_i18n_db_column(column_name):
+  if column_name.startswith('text-'):
+    return 'content_' + column_name.split('-')[1]
+
+
+
+
 def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID, cur):
 #   "intensity" -> disasterinfosite_textsnugget.percentage (numeric, null as null)
 #   "image" -> disasterinfosite_textsnugget.image
@@ -107,12 +114,24 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
     (str(sectionID), str(subsectionID), str(groupID), str(filterID))
   )
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
-  # TODO: modify this to dynamically read in localized text columns and put them in localized content columns
+
+  # dynamically build list of multilingual content and language codes
+  i18n_columns = ", ".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+  i18n_placeholders = ""
+  values_to_insert = (snuggetID, row["text-en"])
+  for col in i18n_columns.split(", "):
+  	i18n_placeholders = i18n_placeholders + "%s, "
+  	values_to_insert = values_to_insert + (row[col.replace("content_", "text-")],)
+  values_to_insert = values_to_insert + (row["image"], row["intensity"])
+
   cur.execute(
-    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, content_en, image, percentage) VALUES (%s, %s, %s, %s, %s);',
-    (snuggetID, row["text"], row["text"], row["image"], row["intensity"])
+    'INSERT INTO ' + appName + '_textsnugget (snugget_ptr_id, content, ' + i18n_columns + ', image, percentage) VALUES (%s, %s, ' + i18n_placeholders + '%s, %s);',
+    values_to_insert
   )
   # For extra credit, set the group's display_name to the heading value.
+
+
+
 
 
 def readColumnsFrom(appName, table, cur):
@@ -227,7 +246,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
     return True
   else:
     if oldSnugget is not None:
-      print("In shapefile ", repr(row["shapefile"]), " there is already a snugget defined for section " , repr(row["section"]), ", subsection ", repr(row["subsection"]), ", intensity ", repr(row["lookup_value"]), " with the following text content:", sep="")
+      print("In shapefile ", repr(row["shapefile"]), " there is already a snugget defined for section " , repr(row["section"]), ", subsection ", repr(row["subsection"]), ", intensity ", repr(row["lookup_value"]), " with the following English-language text content:", sep="")
       print(oldSnugget)
     elif oldSnuggets != []:
       print("In shapefile ", repr(row["shapefile"]), " there are existing snuggets for section" , repr(row["section"]), ", subsection ", repr(row["subsection"]), " with the following text content:", sep="")
@@ -240,7 +259,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
     print("Please enter one of the following letters to choose how to proceed:")
     print("R: Replace the existing snugget[s] with the new value loaded from", snuggetFile, " and ask again for the next one.")
     print("A: replace All without asking again.")
-    print("Q: quit so you can edit", snuggetFile, "and/or check the snuggets in the Django admin panel and try again.")
+    print("Q: Quit so you can edit", snuggetFile, "and/or check the snuggets in the Django admin panel and try again.")
     response = ""
     while response not in ["A", "R", "Q"]:
       response = input(">> ").upper()
@@ -261,6 +280,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
 def XLSXDictReader(f):
   book  = openpyxl.reader.excel.load_workbook(f)
   sheet = book.get_active_sheet()
+  langs = []
 
   rows = 1
   for row in sheet.iter_rows():
@@ -270,6 +290,10 @@ def XLSXDictReader(f):
     cols = cols + 1
 
   headers = dict( (i, sheet.cell(row=1, column=i).value) for i in range(1, cols) )
+  for header in headers.values():
+  	if header.startswith('text-'):
+  		langs.append(header.split('-')[1])
+  print("Found snugget texts in the following language[s]:", langs, "\n")
 
   def item(i, j):
     if sheet.cell(row=i, column=j).value == None:
