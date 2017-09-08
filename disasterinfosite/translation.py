@@ -15,7 +15,7 @@ class SupplyKitTranslationOptions(TranslationOptions):
 
 @register(ImportantLink)
 class ImportantLinkTranslationOptions(TranslationOptions):
-  fields = ('title',)
+  fields = ('title','link')
 
 @register(ShapefileGroup)
 class ShapefileGroupTranslationOptions(TranslationOptions):
