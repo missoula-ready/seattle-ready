@@ -336,12 +336,12 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='lsld_steepgradezone',
+            name='LSLD_steepgradezone',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('gridcode', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.lsld_steepgradezone.getGroup, on_delete=django.db.models.deletion.CASCADE, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_steepgradezone.getGroup, on_delete=django.db.models.deletion.CASCADE, to='disasterinfosite.ShapefileGroup')),
             ],
         ),
         migrations.AddField(
@@ -361,7 +361,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='snugget',
-            name='lsld_steepgradezone_filter',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+', to='disasterinfosite.lsld_steepgradezone'),
+            name='LSLD_steepgradezone_filter',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='+', to='disasterinfosite.LSLD_steepgradezone'),
         ),
     ]
