@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 22:34+0000\n"
+"POT-Creation-Date: 2017-09-12 21:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,20 +68,28 @@ msgstr "Комплект принадлежностей"
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: templates/geek_box.html:7
+#: templates/geek_box.html:6
 msgid "How does it work?"
 msgstr "Как это работает?"
 
-#: templates/geek_box.html:9
-#, python-format
+#: templates/geek_box.html:8
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                %(settings.site_title)s is designed to help educate and "
+#| "prepare people for disasters that occur in their area. Disasters don’t "
+#| "strike locations equally so we found it important to give location "
+#| "specific information in order to properly prepare. "
+#| "%(settings.site_title)s organizes current information and packages it in "
+#| "a way that makes it accessible for any %(location.area_name)s resident.\n"
+#| "            "
 msgid ""
 "\n"
-"                %(settings.site_title)s is designed to help educate and "
-"prepare people for disasters that occur in their area. Disasters don’t "
-"strike locations equally so we found it important to give location specific "
-"information in order to properly prepare. %(settings.site_title)s organizes "
-"current information and packages it in a way that makes it accessible for "
-"any %(location.area_name)s resident.\n"
+"                %(title)s is designed to help educate and prepare people for "
+"disasters that occur in their area. Disasters don’t strike locations equally "
+"so we found it important to give location specific information in order to "
+"properly prepare. %(title)s organizes current information and packages it in "
+"a way that makes it accessible for any %(area_name)s resident.\n"
 "            "
 msgstr ""
 "\n"
@@ -93,13 +101,23 @@ msgstr ""
 "таким образом, чтобы она была доступна для любого жителя "
 "%(location.area_name)s."
 
-#: templates/geek_box.html:14
-#, python-format
+#: templates/geek_box.html:13
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                This site uses the most up-to-date hazard risk data "
+#| "available for %(location.area_name)s. The user of this site is "
+#| "responsible for verifying any particular information with the original "
+#| "data sources. Although these data represent the best current assessment "
+#| "of hazards, they are not predictive of future events. The descriptions of "
+#| "risk and how to prepare for those risks are based on best information "
+#| "from the American Red Cross and the Federal Emergency Management Agency.\n"
+#| "            "
 msgid ""
 "\n"
 "                This site uses the most up-to-date hazard risk data "
-"available for %(location.area_name)s. The user of this site is responsible "
-"for verifying any particular information with the original data sources. "
+"available for %(area_name)s. The user of this site is responsible for "
+"verifying any particular information with the original data sources. "
 "Although these data represent the best current assessment of hazards, they "
 "are not predictive of future events. The descriptions of risk and how to "
 "prepare for those risks are based on best information from the American Red "
@@ -118,12 +136,18 @@ msgstr ""
 "ситуациях.\n"
 "            "
 
-#: templates/geek_box.html:20
-#, python-format
+#: templates/geek_box.html:19
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    Data used for %(settings.site_title)s is available "
+#| "for download <a href=\"%(settings.data_download)s\" target=\"_blank"
+#| "\">here</a>.\n"
+#| "                "
 msgid ""
 "\n"
-"                    Data used for %(settings.site_title)s is available for "
-"download <a href=\"%(settings.data_download)s\" target=\"_blank\">here</a>.\n"
+"                    Data used for %(title)s is available for download <a "
+"href=\"%(download)s\" target=\"_blank\">here</a>.\n"
 "                "
 msgstr ""
 "\n"
@@ -132,12 +156,18 @@ msgstr ""
 "\"_blank\">здесь</a>.\n"
 "                "
 
-#: templates/geek_box.html:27
-#, python-format
+#: templates/geek_box.html:26
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    Have questions? <a href=\"mailto:"
+#| "%(settings.contact_email)s\">Email the creators</a> for more "
+#| "information.\n"
+#| "                "
 msgid ""
 "\n"
-"                    Have questions? <a href=\"mailto:"
-"%(settings.contact_email)s\">Email the creators</a> for more information.\n"
+"                    Have questions? <a href=\"mailto:%(email)s\">Email the "
+"creators</a> for more information.\n"
 "                "
 msgstr ""
 "\n"
@@ -145,19 +175,21 @@ msgstr ""
 "\">Напишите создателям</a> для получения дополнительной информации.\n"
 "                "
 
-#: templates/geek_box.html:35
+#: templates/geek_box.html:34
 msgid "Quick Data Overview"
 msgstr "Краткий обзор данных"
 
-#: templates/geek_box.html:37
-#, python-format
-msgid ""
-"Take a look at some overviews of the data we used for %(location.area_name)s:"
+#: templates/geek_box.html:36
+#, fuzzy, python-format
+#| msgid ""
+#| "Take a look at some overviews of the data we used for "
+#| "%(location.area_name)s:"
+msgid "Take a look at some overviews of the data we used for %(area_name)s:"
 msgstr ""
 "Просмотрите некоторые обзоры данных, которые мы использовали для "
 "%(location.area_name)s:"
 
-#: templates/geek_box.html:47
+#: templates/geek_box.html:46
 msgid "Who made this?"
 msgstr "Кто это сделал?"
 
@@ -169,11 +201,11 @@ msgstr ""
 "Введите свое местоположение для получения персонализированного отчета о "
 "ваших рисках и способах подготовки."
 
-#: templates/index.html:33
+#: templates/index.html:31
 msgid "Sign Up / Log In"
 msgstr "Регистрация или вход"
 
-#: templates/index.html:45 templates/no_content_found.html:9
+#: templates/index.html:43 templates/no_content_found.html:8
 msgid ""
 "Give a location by typing in the box below, clicking on the map, or clicking "
 "'find me'. You'll get a personalized report on your natural hazard risks and "
@@ -184,33 +216,38 @@ msgstr ""
 "природными опасностями, а также о мерах, которые можно предпринять для "
 "подготовки."
 
-#: templates/index.html:57
+#: templates/index.html:55
 msgid "Location"
 msgstr "Местоположение"
 
-#: templates/index.html:59
+#: templates/index.html:57
 msgid "Your address, your city"
 msgstr "Ваш адрес, ваш город"
 
-#: templates/index.html:66
+#: templates/index.html:64
 msgid "Find Me"
 msgstr "Найти меня"
 
-#: templates/index.html:86
+#: templates/index.html:81
 msgid "What are my risks?"
 msgstr "Каковы мои риски?"
 
-#: templates/index.html:87
+#: templates/index.html:82
 msgid "What to Expect"
 msgstr "Чего ожидать"
 
-#: templates/index.html:89
-#, python-format
+#: templates/index.html:84
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            %(settings.site_title)s gives you an idea of which natural "
+#| "disasters you might experience in the future based on a location in "
+#| "%(location.area_name)s.\n"
+#| "          "
 msgid ""
 "\n"
-"            %(settings.site_title)s gives you an idea of which natural "
-"disasters you might experience in the future based on a location in "
-"%(location.area_name)s.\n"
+"            %(title)s gives you an idea of which natural disasters you might "
+"experience in the future based on a location in %(area_name)s.\n"
 "          "
 msgstr ""
 "\n"
@@ -219,11 +256,11 @@ msgstr ""
 "в %(location.area_name)s.\n"
 "          "
 
-#: templates/index.html:94
+#: templates/index.html:89
 msgid "How to Prepare"
 msgstr "Как подготовиться"
 
-#: templates/index.html:96
+#: templates/index.html:91
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -231,16 +268,21 @@ msgstr ""
 "У вас есть возможность изменить ход событий. Узнайте, как вы можете защитить "
 "своих близких и свой дом, пока не разразилось следующее бедствие."
 
-#: templates/index.html:99
+#: templates/index.html:94
 msgid "In Recent History"
 msgstr "Недавние события"
 
-#: templates/index.html:101
-#, python-format
+#: templates/index.html:96
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            Find out which disasters have struck %(location.area_name)s "
+#| "in the past, what impact they had, and where they happened.\n"
+#| "          "
 msgid ""
 "\n"
-"            Find out which disasters have struck %(location.area_name)s in "
-"the past, what impact they had, and where they happened.\n"
+"            Find out which disasters have struck %(area_name)s in the past, "
+"what impact they had, and where they happened.\n"
 "          "
 msgstr ""
 "\n"
@@ -248,7 +290,7 @@ msgstr ""
 "прошлом, какое влияние они оказали и где они происходили.\n"
 "          "
 
-#: templates/index.html:117
+#: templates/index.html:112
 msgid "Getting results for your location..."
 msgstr ""
 
@@ -256,11 +298,11 @@ msgstr ""
 msgid "Language"
 msgstr "Язык"
 
-#: templates/no_content_found.html:28
+#: templates/no_content_found.html:27
 msgid "No information available."
 msgstr "Нет доступной информации."
 
-#: templates/no_content_found.html:31
+#: templates/no_content_found.html:30
 #, python-format
 msgid ""
 "\n"
@@ -273,7 +315,7 @@ msgstr ""
 "%(location.area_name)s.\n"
 "              "
 
-#: templates/no_content_found.html:36
+#: templates/no_content_found.html:35
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -281,24 +323,24 @@ msgstr ""
 "Хотя мы ценим и поддерживаем устойчивость во всем мире, данные, необходимые "
 "для работы этого сайта, пока недоступны для других мест."
 
-#: templates/supply-kit.html:4
+#: templates/supply-kit.html:3
 msgid "Experts suggest you have the following:"
 msgstr "Эксперты рекомендуют иметь при себе следующее:"
 
-#: templates/supply-kit.html:9
+#: templates/supply-kit.html:8
 msgid "Days of supplies"
 msgstr "провиант на несколько дней"
 
-#: templates/supply-kit.html:9 templates/supply-kit.html:14
-#: templates/supply-kit.html:19
+#: templates/supply-kit.html:8 templates/supply-kit.html:13
+#: templates/supply-kit.html:18
 msgid "per person"
 msgstr "на каждого человека"
 
-#: templates/supply-kit.html:14
+#: templates/supply-kit.html:13
 msgid "Gallons of water"
 msgstr "как можно больше воды"
 
-#: templates/supply-kit.html:19
+#: templates/supply-kit.html:18
 msgid "Meals"
 msgstr "продукты питания"
 
