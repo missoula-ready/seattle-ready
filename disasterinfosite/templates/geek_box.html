@@ -5,27 +5,19 @@
       <div class="small-12 medium-6 columns">
         <h3 class="caps">{% trans "How does it work?" %}</h3>
         <p>
-            {% blocktrans with title=settings.site_title area_name=location.area_name %}
-                {{ title }} is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. {{ title }} organizes current information and packages it in a way that makes it accessible for any {{ area_name }} resident.
-            {% endblocktrans %}
+            {% blocktrans with title=settings.site_title area_name=location.area_name %}{{ title }} is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. {{ title }} organizes current information and packages it in a way that makes it accessible for any {{ area_name }} resident.{% endblocktrans %}
         </p>
         <p>
-            {% blocktrans with area_name=location.area_name %}
-                This site uses the most up-to-date hazard risk data available for {{ area_name }}. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency.
-            {% endblocktrans %}
+            {% blocktrans with area_name=location.area_name %}This site uses the most up-to-date hazard risk data available for {{ area_name }}. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency.{% endblocktrans %}
         </p>
         {% if settings.data_download %}
             <p>
-                {% blocktrans with title=settings.site_title download=settings.data_download%}
-                    Data used for {{ title }} is available for download <a href="{{ download }}" target="_blank">here</a>.
-                {% endblocktrans %}
+                {% blocktrans with title=settings.site_title download=settings.data_download%}Data used for {{ title }} is available for download <a href="{{ download }}" target="_blank">here</a>.{% endblocktrans %}
             </p>
         {% endif %}
         {% if settings.contact_email %}
             <p>
-                {% blocktrans with email=settings.contact_email %}
-                    Have questions? <a href="mailto:{{ email }}">Email the creators</a> for more information.
-                {% endblocktrans %}
+                {% blocktrans with email=settings.contact_email %}Have questions? <a href="mailto:{{ email }}">Email the creators</a> for more information.{% endblocktrans %}
             </p>
         {% endif %}
     </div>

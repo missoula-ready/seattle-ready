@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-12 21:11+0000\n"
+"POT-Creation-Date: 2017-09-13 23:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,114 +69,62 @@ msgid "How does it work?"
 msgstr "如何操作？"
 
 #: templates/geek_box.html:8
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                %(settings.site_title)s is designed to help educate and "
-#| "prepare people for disasters that occur in their area. Disasters don’t "
-#| "strike locations equally so we found it important to give location "
-#| "specific information in order to properly prepare. "
-#| "%(settings.site_title)s organizes current information and packages it in "
-#| "a way that makes it accessible for any %(location.area_name)s resident.\n"
-#| "            "
+#, python-format
 msgid ""
-"\n"
-"                %(title)s is designed to help educate and prepare people for "
-"disasters that occur in their area. Disasters don’t strike locations equally "
-"so we found it important to give location specific information in order to "
-"properly prepare. %(title)s organizes current information and packages it in "
-"a way that makes it accessible for any %(area_name)s resident.\n"
-"            "
+"%(title)s is designed to help educate and prepare people for disasters that "
+"occur in their area. Disasters don’t strike locations equally so we found it "
+"important to give location specific information in order to properly "
+"prepare. %(title)s organizes current information and packages it in a way "
+"that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"\n"
-"                %(settings.site_title)s 旨在教育人们了解发生在他们所在区域的"
-"灾害，并帮助人们做好灾害应对准备。灾害对每个地点的冲击并不全然相同，所以我们"
-"认为有必要给具体位置提供具体针对性信息，以便妥善做好准"
-"备。%(settings.site_title)s组织整理当前信息，并以所有 %(location.area_name)s "
-"居民可查阅的方式进行整合。\n"
-"            "
+"%(title)s 旨在教育人们了解发生在他们所在区域的灾害，并帮助人们做好灾害应对准"
+"备。灾害对每个地点的冲击并不全然相同，所以我们认为有必要给具体位置提供具体针"
+"对性信息，以便妥善做好准备。%(title)s组织整理当前信息，并以所有 "
+"%(area_name)s 居民可查阅的方式进行整合。"
 
-#: templates/geek_box.html:13
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                This site uses the most up-to-date hazard risk data "
-#| "available for %(location.area_name)s. The user of this site is "
-#| "responsible for verifying any particular information with the original "
-#| "data sources. Although these data represent the best current assessment "
-#| "of hazards, they are not predictive of future events. The descriptions of "
-#| "risk and how to prepare for those risks are based on best information "
-#| "from the American Red Cross and the Federal Emergency Management Agency.\n"
-#| "            "
+#: templates/geek_box.html:11
+#, python-format
 msgid ""
-"\n"
-"                This site uses the most up-to-date hazard risk data "
-"available for %(area_name)s. The user of this site is responsible for "
-"verifying any particular information with the original data sources. "
-"Although these data represent the best current assessment of hazards, they "
-"are not predictive of future events. The descriptions of risk and how to "
-"prepare for those risks are based on best information from the American Red "
-"Cross and the Federal Emergency Management Agency.\n"
-"            "
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original data sources. Although these data "
+"represent the best current assessment of hazards, they are not predictive of "
+"future events. The descriptions of risk and how to prepare for those risks "
+"are based on best information from the American Red Cross and the Federal "
+"Emergency Management Agency."
 msgstr ""
-"\n"
-"                本网站采用 %(location.area_name)s可用的最新危害风险数据。本网"
-"站的用户有责任对照原始数据来源核实任何特定信息。虽然这些数据代表了当前最好的"
-"危害评估，但它们不能预测未来事件。风险描述以及如何做好应对这些风险的准备，建"
-"立在美国红十字会和联邦应急管理局的最佳信息的基础上。\n"
-"            "
+"本网站采用 %(area_name)s可用的最新危害风险数据。本网站的用户有责任对照原始数"
+"据来源核实任何特定信息。虽然这些数据代表了当前最好的危害评估，但它们不能预测"
+"未来事件。风险描述以及如何做好应对这些风险的准备，建立在美国红十字会和联邦应"
+"急管理局的最佳信息的基础上。"
 
-#: templates/geek_box.html:19
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                    Data used for %(settings.site_title)s is available "
-#| "for download <a href=\"%(settings.data_download)s\" target=\"_blank"
-#| "\">here</a>.\n"
-#| "                "
+#: templates/geek_box.html:15
+#, python-format
 msgid ""
-"\n"
-"                    Data used for %(title)s is available for download <a "
-"href=\"%(download)s\" target=\"_blank\">here</a>.\n"
-"                "
+"Data used for %(title)s is available for download <a href=\"%(download)s\" "
+"target=\"_blank\">here</a>."
 msgstr ""
-"\n"
-"                    %(settings.site_title)s 使用的数据可以从<a href="
-"\"%(settings.data_download)s\" target=\"_blank\">此处</a>下载\n"
-"                "
+"%(title)s 使用的数据可以从<a href=\"%(download)s\" target=\"_blank\">此处</a>"
+"下载"
+
+#: templates/geek_box.html:20
+#, python-format
+msgid ""
+"Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for more "
+"information."
+msgstr ""
+"有疑问？<a href=\"mailto:%(email)s\">发电子邮件给创建人</a>，获取更多信息。"
 
 #: templates/geek_box.html:26
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                    Have questions? <a href=\"mailto:"
-#| "%(settings.contact_email)s\">Email the creators</a> for more "
-#| "information.\n"
-#| "                "
-msgid ""
-"\n"
-"                    Have questions? <a href=\"mailto:%(email)s\">Email the "
-"creators</a> for more information.\n"
-"                "
-msgstr ""
-"\n"
-"                    有疑问？<a href=\"mailto:%(settings.contact_email)s\">发"
-"电子邮件给创建人</a>，获取更多信息。\n"
-"                "
-
-#: templates/geek_box.html:34
 msgid "Quick Data Overview"
 msgstr "快速数据概览"
 
-#: templates/geek_box.html:36
-#, fuzzy, python-format
-#| msgid ""
-#| "Take a look at some overviews of the data we used for "
-#| "%(location.area_name)s:"
+#: templates/geek_box.html:28
+#, python-format
 msgid "Take a look at some overviews of the data we used for %(area_name)s:"
-msgstr "看一看我们用于%(location.area_name)s的数据概览："
+msgstr "看一看我们用于%(area_name)s的数据概览："
 
-#: templates/geek_box.html:46
+#: templates/geek_box.html:38
 msgid "Who made this?"
 msgstr "谁做的这个？"
 
@@ -220,57 +168,38 @@ msgid "What to Expect"
 msgstr "有何预测"
 
 #: templates/index.html:84
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            %(settings.site_title)s gives you an idea of which natural "
-#| "disasters you might experience in the future based on a location in "
-#| "%(location.area_name)s.\n"
-#| "          "
+#, python-format
 msgid ""
-"\n"
-"            %(title)s gives you an idea of which natural disasters you might "
-"experience in the future based on a location in %(area_name)s.\n"
+"%(title)s gives you an idea of which natural disasters you might experience "
+"in the future based on a location in %(area_name)s.\n"
 "          "
 msgstr ""
-"\n"
-"            %(settings.site_title)s 让您了解您在%(location.area_name)s的地点"
-"上，未来可能经历哪些自然灾害。\n"
+"%(title)s 让您了解您在%(area_name)s的地点上，未来可能经历哪些自然灾害。\n"
 "          "
 
-#: templates/index.html:89
+#: templates/index.html:88
 msgid "How to Prepare"
 msgstr "如何准备"
 
-#: templates/index.html:91
+#: templates/index.html:90
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
 msgstr "您有能力做出改变。在下一次灾害发生之前，了解如何保护您所爱的人和家。"
 
-#: templates/index.html:94
+#: templates/index.html:93
 msgid "In Recent History"
 msgstr "近期历史"
 
-#: templates/index.html:96
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            Find out which disasters have struck %(location.area_name)s "
-#| "in the past, what impact they had, and where they happened.\n"
-#| "          "
+#: templates/index.html:95
+#, python-format
 msgid ""
-"\n"
-"            Find out which disasters have struck %(area_name)s in the past, "
-"what impact they had, and where they happened.\n"
+"Find out which disasters have struck %(area_name)s in the past, what impact "
+"they had, and where they happened.\n"
 "          "
-msgstr ""
-"\n"
-"            查看过去发生过哪些灾害 %(location.area_name)s、有哪些影响以及发生"
-"在哪里。\n"
-"          "
+msgstr "查看过去发生过哪些灾害 %(area_name)s、有哪些影响以及发生在哪里。"
 
-#: templates/index.html:112
+#: templates/index.html:110
 msgid "Getting results for your location..."
 msgstr ""
 
@@ -284,17 +213,10 @@ msgstr "无可用信息。"
 
 #: templates/no_content_found.html:30
 #, python-format
-msgid ""
-"\n"
-"                It looks like your location is outside of "
-"%(location.area_name)s.\n"
-"              "
-msgstr ""
-"\n"
-"                看起来您的位置在 %(location.area_name)s以外。\n"
-"              "
+msgid "It looks like your location is outside of %(area_name)s."
+msgstr "看起来您的位置在 %(area_name)s以外。"
 
-#: templates/no_content_found.html:35
+#: templates/no_content_found.html:33
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -347,20 +269,14 @@ msgstr "欢迎回来！"
 
 #: templates/user_interactions.html:15
 #, python-format
-msgid ""
-"\n"
-"            If your username isn't %(username)s, you might want to log out.\n"
-"          "
-msgstr ""
-"\n"
-"            如果您的用户名不是 %(username)s，请退出。\n"
-"          "
+msgid "If your username isn't %(username)s, you might want to log out."
+msgstr "如果您的用户名不是 %(username)s，请退出。"
 
-#: templates/user_interactions.html:30
+#: templates/user_interactions.html:28
 msgid "Why should you sign up?"
 msgstr "为什么您应当注册？"
 
-#: templates/user_interactions.html:32
+#: templates/user_interactions.html:30
 msgid ""
 "Sign up for free to access customized hazard preparedness information. By "
 "providing your address, you will get updates about seasonal hazards and "
@@ -372,90 +288,86 @@ msgstr ""
 "您所在位置的当前事故的信息。我们希望您准备地更好，以便在灾害发生时，您能够确"
 "保您的家人、朋友和邻居安全！个人信息将受到保护和保密。"
 
-#: templates/user_interactions.html:41
+#: templates/user_interactions.html:39
 msgid "Required."
 msgstr "必填"
 
-#: templates/user_interactions.html:44
+#: templates/user_interactions.html:42
 msgid "Username (your email address)"
 msgstr "用户名（您的电子邮件地址）"
 
-#: templates/user_interactions.html:47
+#: templates/user_interactions.html:45
 msgid "Password"
 msgstr "密码"
 
-#: templates/user_interactions.html:58
+#: templates/user_interactions.html:56
 msgid ""
-"\n"
-"          Need some help (like a password reset)? <a href=\"mailto:"
-"help@hazardgready.org\">Email us.</a>\n"
-"        "
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"org\">Email us.</a>"
 msgstr ""
-"\n"
-"          需要帮助（如密码重置）？<a href=\"mailto:help@hazardgready.org\">发"
-"电子邮件给我们。</a>\n"
-"        "
+"需要帮助（如密码重置）？<a href=\"mailto:help@hazardgready.org\">发电子邮件给"
+"我们。</a>"
 
-#: templates/user_interactions.html:67
+#: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
 msgstr "电子邮件地址（您的用户名）"
 
-#: templates/user_interactions.html:72
+#: templates/user_interactions.html:68
 msgid "Password (more than 8 characters long, please)"
 msgstr "密码（8 个字符以上）"
 
-#: templates/user_interactions.html:77 templates/user_interactions.html:145
+#: templates/user_interactions.html:73 templates/user_interactions.html:141
 msgid "Street Address"
 msgstr "街道地址"
 
-#: templates/user_interactions.html:82 templates/user_interactions.html:150
+#: templates/user_interactions.html:78 templates/user_interactions.html:146
 msgid "Other Address Information"
 msgstr "其他地址信息"
 
-#: templates/user_interactions.html:87 templates/user_interactions.html:155
+#: templates/user_interactions.html:83 templates/user_interactions.html:151
 msgid "City"
 msgstr "市"
 
-#: templates/user_interactions.html:92 templates/user_interactions.html:160
+#: templates/user_interactions.html:88 templates/user_interactions.html:156
 msgid "State"
 msgstr "州"
 
-#: templates/user_interactions.html:97 templates/user_interactions.html:165
+#: templates/user_interactions.html:93 templates/user_interactions.html:161
 msgid "Zip Code"
 msgstr "邮编"
 
-#: templates/user_interactions.html:107
+#: templates/user_interactions.html:103
 msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
 msgstr ""
 "需要帮助？<a href=\"mailto:help@hazardgready.org\">发电子邮件给我们。</a>"
 
-#: templates/user_interactions.html:113
+#: templates/user_interactions.html:109
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
 msgstr "谢谢注册！我们将向您通知相关新闻和信息。您可以随时回来更新您的地址。"
 
-#: templates/user_interactions.html:120
+#: templates/user_interactions.html:116
 #, python-format
 msgid "Welcome back, %(username)s!"
 msgstr "欢迎回来 %(username)s！"
 
-#: templates/user_interactions.html:128
+#: templates/user_interactions.html:124
 msgid "We're logging you in. Just a moment..."
 msgstr "登录中。稍等……"
 
-#: templates/user_interactions.html:134
+#: templates/user_interactions.html:130
 msgid "Whoops, it looks like that username or password didn't work."
 msgstr "糟糕，用户名或密码不正确。"
 
-#: templates/user_interactions.html:170
+#: templates/user_interactions.html:166
 msgid "Update"
 msgstr "更新"
 
-#: templates/user_interactions.html:177
+#: templates/user_interactions.html:173
 msgid "Thanks for keeping us up to date!"
 msgstr "谢谢您通知我们！"
 
-#: templates/user_interactions.html:183
+#: templates/user_interactions.html:179
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr "糟糕，我们不确定那里发生了什么。或许您应当重试。"

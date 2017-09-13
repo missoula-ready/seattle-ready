@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-12 21:11+0000\n"
+"POT-Creation-Date: 2017-09-13 23:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,123 +73,72 @@ msgid "How does it work?"
 msgstr "Как это работает?"
 
 #: templates/geek_box.html:8
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                %(settings.site_title)s is designed to help educate and "
-#| "prepare people for disasters that occur in their area. Disasters don’t "
-#| "strike locations equally so we found it important to give location "
-#| "specific information in order to properly prepare. "
-#| "%(settings.site_title)s organizes current information and packages it in "
-#| "a way that makes it accessible for any %(location.area_name)s resident.\n"
-#| "            "
+#, python-format
 msgid ""
-"\n"
-"                %(title)s is designed to help educate and prepare people for "
-"disasters that occur in their area. Disasters don’t strike locations equally "
-"so we found it important to give location specific information in order to "
-"properly prepare. %(title)s organizes current information and packages it in "
-"a way that makes it accessible for any %(area_name)s resident.\n"
-"            "
+"%(title)s is designed to help educate and prepare people for disasters that "
+"occur in their area. Disasters don’t strike locations equally so we found it "
+"important to give location specific information in order to properly "
+"prepare. %(title)s organizes current information and packages it in a way "
+"that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"\n"
-"                %(settings.site_title)s помогает в обучении и подготовке "
+"%(title)s помогает в обучении и подготовке "
 "людей к бедствиям, которые происходят в их регионе. Бедствия не происходят "
 "во всех местах одинаково, поэтому мы считаем важным давать информацию по "
 "конкретному местоположению для обеспечения надлежащей подготовки. "
-"%(settings.site_title)s организовывает текущую информацию и упаковывает ее "
+"%(title)s организовывает текущую информацию и упаковывает ее "
 "таким образом, чтобы она была доступна для любого жителя "
-"%(location.area_name)s."
+"%(area_name)s."
 
-#: templates/geek_box.html:13
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                This site uses the most up-to-date hazard risk data "
-#| "available for %(location.area_name)s. The user of this site is "
-#| "responsible for verifying any particular information with the original "
-#| "data sources. Although these data represent the best current assessment "
-#| "of hazards, they are not predictive of future events. The descriptions of "
-#| "risk and how to prepare for those risks are based on best information "
-#| "from the American Red Cross and the Federal Emergency Management Agency.\n"
-#| "            "
+#: templates/geek_box.html:11
+#, python-format
 msgid ""
-"\n"
-"                This site uses the most up-to-date hazard risk data "
-"available for %(area_name)s. The user of this site is responsible for "
-"verifying any particular information with the original data sources. "
-"Although these data represent the best current assessment of hazards, they "
-"are not predictive of future events. The descriptions of risk and how to "
-"prepare for those risks are based on best information from the American Red "
-"Cross and the Federal Emergency Management Agency.\n"
-"            "
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original data sources. Although these data "
+"represent the best current assessment of hazards, they are not predictive of "
+"future events. The descriptions of risk and how to prepare for those risks "
+"are based on best information from the American Red Cross and the Federal "
+"Emergency Management Agency."
 msgstr ""
-"\n"
-"                На этом сайте используются самые актуальные данные "
-"относительно риска опасностей, которые доступны для %(location.area_name)s. "
+"На этом сайте используются самые актуальные данные "
+"относительно риска опасностей, которые доступны для %(area_name)s. "
 "Пользователь этого сайта несет ответственность за сверку той или иной "
 "информации с первоначальными источниками данных. Хотя эти данные "
 "представляют собой наилучшую текущую оценку опасностей, они не позволяют "
 "прогнозировать будущие события. Описания рисков и способы подготовки к этим "
 "рискам основаны на самой полной информации, полученной от Американского "
 "Красного Креста и Федерального агентства по управлению в чрезвычайных "
-"ситуациях.\n"
-"            "
+"ситуациях."
 
-#: templates/geek_box.html:19
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                    Data used for %(settings.site_title)s is available "
-#| "for download <a href=\"%(settings.data_download)s\" target=\"_blank"
-#| "\">here</a>.\n"
-#| "                "
+#: templates/geek_box.html:15
+#, python-format
 msgid ""
-"\n"
-"                    Data used for %(title)s is available for download <a "
-"href=\"%(download)s\" target=\"_blank\">here</a>.\n"
-"                "
+"Data used for %(title)s is available for download <a href=\"%(download)s\" "
+"target=\"_blank\">here</a>."
 msgstr ""
-"\n"
-"                    Данные, используемые для %(settings.site_title)s, "
-"доступны для скачивания <a href=\"%(settings.data_download)s\" target="
-"\"_blank\">здесь</a>.\n"
-"                "
+"Данные, используемые для %(title)s, "
+"доступны для скачивания <a href=\"%(download)s\" target="
+"\"_blank\">здесь</a>."
+
+#: templates/geek_box.html:20
+#, python-format
+msgid ""
+"Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for more "
+"information."
+msgstr ""
+"Есть вопросы? <a href=\"mailto:%(email)s"
+"\">Напишите создателям</a> для получения дополнительной информации."
 
 #: templates/geek_box.html:26
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                    Have questions? <a href=\"mailto:"
-#| "%(settings.contact_email)s\">Email the creators</a> for more "
-#| "information.\n"
-#| "                "
-msgid ""
-"\n"
-"                    Have questions? <a href=\"mailto:%(email)s\">Email the "
-"creators</a> for more information.\n"
-"                "
-msgstr ""
-"\n"
-"                    Есть вопросы? <a href=\"mailto:%(settings.contact_email)s"
-"\">Напишите создателям</a> для получения дополнительной информации.\n"
-"                "
-
-#: templates/geek_box.html:34
 msgid "Quick Data Overview"
 msgstr "Краткий обзор данных"
 
-#: templates/geek_box.html:36
-#, fuzzy, python-format
-#| msgid ""
-#| "Take a look at some overviews of the data we used for "
-#| "%(location.area_name)s:"
+#: templates/geek_box.html:28
+#, python-format
 msgid "Take a look at some overviews of the data we used for %(area_name)s:"
-msgstr ""
-"Просмотрите некоторые обзоры данных, которые мы использовали для "
-"%(location.area_name)s:"
+msgstr "Просмотрите некоторые обзоры данных, которые мы использовали для %(area_name)s:"
 
-#: templates/geek_box.html:46
+#: templates/geek_box.html:38
 msgid "Who made this?"
 msgstr "Кто это сделал?"
 
@@ -237,30 +186,22 @@ msgid "What to Expect"
 msgstr "Чего ожидать"
 
 #: templates/index.html:84
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            %(settings.site_title)s gives you an idea of which natural "
-#| "disasters you might experience in the future based on a location in "
-#| "%(location.area_name)s.\n"
-#| "          "
+#, python-format
 msgid ""
-"\n"
-"            %(title)s gives you an idea of which natural disasters you might "
-"experience in the future based on a location in %(area_name)s.\n"
+"%(title)s gives you an idea of which natural disasters you might experience "
+"in the future based on a location in %(area_name)s.\n"
 "          "
 msgstr ""
-"\n"
-"            %(settings.site_title)s дает вам представление о том, какие "
+"%(title)s дает вам представление о том, какие "
 "стихийные бедствия могут возникнуть в будущем, основываясь на местоположении "
-"в %(location.area_name)s.\n"
+"в %(area_name)s.\n"
 "          "
 
-#: templates/index.html:89
+#: templates/index.html:88
 msgid "How to Prepare"
 msgstr "Как подготовиться"
 
-#: templates/index.html:91
+#: templates/index.html:90
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -268,29 +209,22 @@ msgstr ""
 "У вас есть возможность изменить ход событий. Узнайте, как вы можете защитить "
 "своих близких и свой дом, пока не разразилось следующее бедствие."
 
-#: templates/index.html:94
+#: templates/index.html:93
 msgid "In Recent History"
 msgstr "Недавние события"
 
-#: templates/index.html:96
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            Find out which disasters have struck %(location.area_name)s "
-#| "in the past, what impact they had, and where they happened.\n"
-#| "          "
+#: templates/index.html:95
+#, python-format
 msgid ""
-"\n"
-"            Find out which disasters have struck %(area_name)s in the past, "
-"what impact they had, and where they happened.\n"
+"Find out which disasters have struck %(area_name)s in the past, what impact "
+"they had, and where they happened.\n"
 "          "
 msgstr ""
-"\n"
-"            Узнайте, какие бедствия обрушивались на %(location.area_name)s в "
+"Узнайте, какие бедствия обрушивались на %(area_name)s в "
 "прошлом, какое влияние они оказали и где они происходили.\n"
 "          "
 
-#: templates/index.html:112
+#: templates/index.html:110
 msgid "Getting results for your location..."
 msgstr ""
 
@@ -303,19 +237,11 @@ msgid "No information available."
 msgstr "Нет доступной информации."
 
 #: templates/no_content_found.html:30
-#, python-format
-msgid ""
-"\n"
-"                It looks like your location is outside of "
-"%(location.area_name)s.\n"
-"              "
-msgstr ""
-"\n"
-"                Похоже, ваше местоположение находится за пределами "
-"%(location.area_name)s.\n"
-"              "
+#, python-format            "
+msgid "It looks like your location is outside of %(area_name)s."
+msgstr "Похоже, ваше местоположение находится за пределами %(area_name)s."
 
-#: templates/no_content_found.html:35
+#: templates/no_content_found.html:33
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -370,21 +296,14 @@ msgstr "С возвращением!"
 
 #: templates/user_interactions.html:15
 #, python-format
-msgid ""
-"\n"
-"            If your username isn't %(username)s, you might want to log out.\n"
-"          "
-msgstr ""
-"\n"
-"            Если ваше имя пользователя не %(username)s, вы можете выйти из "
-"системы.\n"
-"          "
+msgid "If your username isn't %(username)s, you might want to log out."
+msgstr "Если ваше имя пользователя не %(username)s, вы можете выйти из системы."
 
-#: templates/user_interactions.html:30
+#: templates/user_interactions.html:28
 msgid "Why should you sign up?"
 msgstr "Зачем следует зарегистрироваться?"
 
-#: templates/user_interactions.html:32
+#: templates/user_interactions.html:30
 msgid ""
 "Sign up for free to access customized hazard preparedness information. By "
 "providing your address, you will get updates about seasonal hazards and "
@@ -399,64 +318,60 @@ msgstr ""
 "подготовлены и смогли обеспечить безопасность своей семьи, друзей и соседей "
 "при наступлении бедствия! Личная информация будет защищена."
 
-#: templates/user_interactions.html:41
+#: templates/user_interactions.html:39
 msgid "Required."
 msgstr "Обязательно."
 
-#: templates/user_interactions.html:44
+#: templates/user_interactions.html:42
 msgid "Username (your email address)"
 msgstr "Имя пользователя (ваш адрес электронной почты)"
 
-#: templates/user_interactions.html:47
+#: templates/user_interactions.html:45
 msgid "Password"
 msgstr "Пароль"
 
-#: templates/user_interactions.html:58
+#: templates/user_interactions.html:56
 msgid ""
-"\n"
-"          Need some help (like a password reset)? <a href=\"mailto:"
-"help@hazardgready.org\">Email us.</a>\n"
-"        "
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"org\">Email us.</a>"
 msgstr ""
-"\n"
-"          Нужна помощь (например, со сбросом пароля)? <a href=\"mailto:"
-"help@hazardgready.org\">Напишите нам.</a>\n"
-"        "
+"Нужна помощь (например, со сбросом пароля)? <a href=\"mailto:"
+"help@hazardgready.org\">Напишите нам.</a>"
 
-#: templates/user_interactions.html:67
+#: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
 msgstr "Адрес электронной почты (это будет ваше имя пользователя)"
 
-#: templates/user_interactions.html:72
+#: templates/user_interactions.html:68
 msgid "Password (more than 8 characters long, please)"
 msgstr "Пароль (более 8 символов)"
 
-#: templates/user_interactions.html:77 templates/user_interactions.html:145
+#: templates/user_interactions.html:73 templates/user_interactions.html:141
 msgid "Street Address"
 msgstr "Улица и номер дома"
 
-#: templates/user_interactions.html:82 templates/user_interactions.html:150
+#: templates/user_interactions.html:78 templates/user_interactions.html:146
 msgid "Other Address Information"
 msgstr "Другие адресные данные"
 
-#: templates/user_interactions.html:87 templates/user_interactions.html:155
+#: templates/user_interactions.html:83 templates/user_interactions.html:151
 msgid "City"
 msgstr "Город"
 
-#: templates/user_interactions.html:92 templates/user_interactions.html:160
+#: templates/user_interactions.html:88 templates/user_interactions.html:156
 msgid "State"
 msgstr "Штат"
 
-#: templates/user_interactions.html:97 templates/user_interactions.html:165
+#: templates/user_interactions.html:93 templates/user_interactions.html:161
 msgid "Zip Code"
 msgstr "Почтовый индекс"
 
-#: templates/user_interactions.html:107
+#: templates/user_interactions.html:103
 msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
 msgstr ""
 "Нужна помощь? <a href=\"mailto:help@hazardgready.org\">Напишите нам.</a>"
 
-#: templates/user_interactions.html:113
+#: templates/user_interactions.html:109
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
@@ -464,27 +379,27 @@ msgstr ""
 "Благодарим за регистрацию! Мы будем присылать вам актуальные новости и "
 "информацию. Вы можете вернуться в любое время, чтобы обновить свой адрес."
 
-#: templates/user_interactions.html:120
+#: templates/user_interactions.html:116
 #, python-format
 msgid "Welcome back, %(username)s!"
 msgstr "С возвращением, %(username)s!"
 
-#: templates/user_interactions.html:128
+#: templates/user_interactions.html:124
 msgid "We're logging you in. Just a moment..."
 msgstr "Выполняется вход в систему. Подождите немного..."
 
-#: templates/user_interactions.html:134
+#: templates/user_interactions.html:130
 msgid "Whoops, it looks like that username or password didn't work."
 msgstr "Ой! Неверное имя пользователя или пароль."
 
-#: templates/user_interactions.html:170
+#: templates/user_interactions.html:166
 msgid "Update"
 msgstr "Обновить"
 
-#: templates/user_interactions.html:177
+#: templates/user_interactions.html:173
 msgid "Thanks for keeping us up to date!"
 msgstr "Спасибо, что держите нас в курсе!"
 
-#: templates/user_interactions.html:183
+#: templates/user_interactions.html:179
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr "Ой! Похоже, что-то пошло не так. Повторите попытку."
