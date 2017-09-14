@@ -1,6 +1,8 @@
 {% load static %}
 {% load js %}
 {% load i18n %}
+{% load render_bundle from webpack_loader %}
+{% load webpack_static from webpack_loader %}
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -13,7 +15,7 @@
 
   <title>{{ settings.site_title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="{% static 'build/app.css' %}">
+  {% render_bundle 'app' 'css' %}
 
   <!-- Load fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -108,11 +110,10 @@
 
 <div class="loading hide">
   <h1 class="loading-text caps">{% trans "Getting results for your location..." %}</h1>
-  <img class="loading-spinner" src="{% static 'build/thinking.gif' %}">
+  <img class="loading-spinner" src="{% webpack_static 'build/thinking.gif' %}">
 </div>
-
-  <script src="{% static 'build/vendor.js' %}"></script>
-  <script src="{% static 'build/app.js' %}"></script>
+  {% render_bundle 'vendor' 'js' %}
+  {% render_bundle 'app' 'js' %}
 
   <!-- Load Google Maps from CDN-->
   <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places&callback=initAddressInput"></script>
