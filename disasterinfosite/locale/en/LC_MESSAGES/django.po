@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-12 21:11+0000\n"
+"POT-Creation-Date: 2017-09-13 23:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,57 +70,49 @@ msgstr ""
 #: templates/geek_box.html:8
 #, python-format
 msgid ""
-"\n"
-"                %(title)s is designed to help educate and prepare people for "
-"disasters that occur in their area. Disasters don’t strike locations equally "
-"so we found it important to give location specific information in order to "
-"properly prepare. %(title)s organizes current information and packages it in "
-"a way that makes it accessible for any %(area_name)s resident.\n"
-"            "
+"%(title)s is designed to help educate and prepare people for disasters that "
+"occur in their area. Disasters don’t strike locations equally so we found it "
+"important to give location specific information in order to properly "
+"prepare. %(title)s organizes current information and packages it in a way "
+"that makes it accessible for any %(area_name)s resident."
 msgstr ""
 
-#: templates/geek_box.html:13
+#: templates/geek_box.html:11
 #, python-format
 msgid ""
-"\n"
-"                This site uses the most up-to-date hazard risk data "
-"available for %(area_name)s. The user of this site is responsible for "
-"verifying any particular information with the original data sources. "
-"Although these data represent the best current assessment of hazards, they "
-"are not predictive of future events. The descriptions of risk and how to "
-"prepare for those risks are based on best information from the American Red "
-"Cross and the Federal Emergency Management Agency.\n"
-"            "
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original data sources. Although these data "
+"represent the best current assessment of hazards, they are not predictive of "
+"future events. The descriptions of risk and how to prepare for those risks "
+"are based on best information from the American Red Cross and the Federal "
+"Emergency Management Agency."
 msgstr ""
 
-#: templates/geek_box.html:19
+#: templates/geek_box.html:15
 #, python-format
 msgid ""
-"\n"
-"                    Data used for %(title)s is available for download <a "
-"href=\"%(download)s\" target=\"_blank\">here</a>.\n"
-"                "
+"Data used for %(title)s is available for download <a href=\"%(download)s\" "
+"target=\"_blank\">here</a>."
+msgstr ""
+
+#: templates/geek_box.html:20
+#, python-format
+msgid ""
+"Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for more "
+"information."
 msgstr ""
 
 #: templates/geek_box.html:26
-#, python-format
-msgid ""
-"\n"
-"                    Have questions? <a href=\"mailto:%(email)s\">Email the "
-"creators</a> for more information.\n"
-"                "
-msgstr ""
-
-#: templates/geek_box.html:34
 msgid "Quick Data Overview"
 msgstr ""
 
-#: templates/geek_box.html:36
+#: templates/geek_box.html:28
 #, python-format
 msgid "Take a look at some overviews of the data we used for %(area_name)s:"
 msgstr ""
 
-#: templates/geek_box.html:46
+#: templates/geek_box.html:38
 msgid "Who made this?"
 msgstr ""
 
@@ -164,36 +156,34 @@ msgstr ""
 #: templates/index.html:84
 #, python-format
 msgid ""
-"\n"
-"            %(title)s gives you an idea of which natural disasters you might "
-"experience in the future based on a location in %(area_name)s.\n"
+"%(title)s gives you an idea of which natural disasters you might experience "
+"in the future based on a location in %(area_name)s.\n"
 "          "
 msgstr ""
 
-#: templates/index.html:89
+#: templates/index.html:88
 msgid "How to Prepare"
 msgstr ""
 
-#: templates/index.html:91
+#: templates/index.html:90
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
 msgstr ""
 
-#: templates/index.html:94
+#: templates/index.html:93
 msgid "In Recent History"
 msgstr ""
 
-#: templates/index.html:96
+#: templates/index.html:95
 #, python-format
 msgid ""
-"\n"
-"            Find out which disasters have struck %(area_name)s in the past, "
-"what impact they had, and where they happened.\n"
+"Find out which disasters have struck %(area_name)s in the past, what impact "
+"they had, and where they happened.\n"
 "          "
 msgstr ""
 
-#: templates/index.html:112
+#: templates/index.html:110
 msgid "Getting results for your location..."
 msgstr ""
 
@@ -207,14 +197,10 @@ msgstr ""
 
 #: templates/no_content_found.html:30
 #, python-format
-msgid ""
-"\n"
-"                It looks like your location is outside of "
-"%(location.area_name)s.\n"
-"              "
+msgid "It looks like your location is outside of %(area_name)s."
 msgstr ""
 
-#: templates/no_content_found.html:35
+#: templates/no_content_found.html:33
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -267,17 +253,14 @@ msgstr ""
 
 #: templates/user_interactions.html:15
 #, python-format
-msgid ""
-"\n"
-"            If your username isn't %(username)s, you might want to log out.\n"
-"          "
+msgid "If your username isn't %(username)s, you might want to log out."
 msgstr ""
 
-#: templates/user_interactions.html:30
+#: templates/user_interactions.html:28
 msgid "Why should you sign up?"
 msgstr ""
 
-#: templates/user_interactions.html:32
+#: templates/user_interactions.html:30
 msgid ""
 "Sign up for free to access customized hazard preparedness information. By "
 "providing your address, you will get updates about seasonal hazards and "
@@ -286,85 +269,83 @@ msgid ""
 "disaster strikes! Personal information will be protected and secure."
 msgstr ""
 
-#: templates/user_interactions.html:41
+#: templates/user_interactions.html:39
 msgid "Required."
 msgstr ""
 
-#: templates/user_interactions.html:44
+#: templates/user_interactions.html:42
 msgid "Username (your email address)"
 msgstr ""
 
-#: templates/user_interactions.html:47
+#: templates/user_interactions.html:45
 msgid "Password"
 msgstr ""
 
-#: templates/user_interactions.html:58
+#: templates/user_interactions.html:56
 msgid ""
-"\n"
-"          Need some help (like a password reset)? <a href=\"mailto:"
-"help@hazardgready.org\">Email us.</a>\n"
-"        "
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
+"org\">Email us.</a>"
 msgstr ""
 
-#: templates/user_interactions.html:67
+#: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
 msgstr ""
 
-#: templates/user_interactions.html:72
+#: templates/user_interactions.html:68
 msgid "Password (more than 8 characters long, please)"
 msgstr ""
 
-#: templates/user_interactions.html:77 templates/user_interactions.html:145
+#: templates/user_interactions.html:73 templates/user_interactions.html:141
 msgid "Street Address"
 msgstr ""
 
-#: templates/user_interactions.html:82 templates/user_interactions.html:150
+#: templates/user_interactions.html:78 templates/user_interactions.html:146
 msgid "Other Address Information"
 msgstr ""
 
-#: templates/user_interactions.html:87 templates/user_interactions.html:155
+#: templates/user_interactions.html:83 templates/user_interactions.html:151
 msgid "City"
 msgstr ""
 
-#: templates/user_interactions.html:92 templates/user_interactions.html:160
+#: templates/user_interactions.html:88 templates/user_interactions.html:156
 msgid "State"
 msgstr ""
 
-#: templates/user_interactions.html:97 templates/user_interactions.html:165
+#: templates/user_interactions.html:93 templates/user_interactions.html:161
 msgid "Zip Code"
 msgstr ""
 
-#: templates/user_interactions.html:107
-msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
+#: templates/user_interactions.html:103
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
 
-#: templates/user_interactions.html:113
+#: templates/user_interactions.html:109
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
 msgstr ""
 
-#: templates/user_interactions.html:120
+#: templates/user_interactions.html:116
 #, python-format
 msgid "Welcome back, %(username)s!"
 msgstr ""
 
-#: templates/user_interactions.html:128
+#: templates/user_interactions.html:124
 msgid "We're logging you in. Just a moment..."
 msgstr ""
 
-#: templates/user_interactions.html:134
+#: templates/user_interactions.html:130
 msgid "Whoops, it looks like that username or password didn't work."
 msgstr ""
 
-#: templates/user_interactions.html:170
+#: templates/user_interactions.html:166
 msgid "Update"
 msgstr ""
 
-#: templates/user_interactions.html:177
+#: templates/user_interactions.html:173
 msgid "Thanks for keeping us up to date!"
 msgstr ""
 
-#: templates/user_interactions.html:183
+#: templates/user_interactions.html:179
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr ""

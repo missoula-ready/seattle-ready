@@ -81,8 +81,7 @@
         <h2 class="caps">{% trans "What are my risks?" %}</h2>
         <h3 class>{% trans "What to Expect" %}</h3>
         <p>
-          {% blocktrans with title=settings.site_title area_name=location.area_name%}
-            {{ title }} gives you an idea of which natural disasters you might experience in the future based on a location in {{ area_name }}.
+          {% blocktrans with title=settings.site_title area_name=location.area_name%}{{ title }} gives you an idea of which natural disasters you might experience in the future based on a location in {{ area_name }}.
           {% endblocktrans %}
         </p>
 
@@ -93,8 +92,7 @@
 
         <h3>{% trans "In Recent History" %}</h3>
         <p>
-          {% blocktrans with area_name=location.area_name%}
-            Find out which disasters have struck {{ area_name }} in the past, what impact they had, and where they happened.
+          {% blocktrans with area_name=location.area_name%}Find out which disasters have struck {{ area_name }} in the past, what impact they had, and where they happened.
           {% endblocktrans %}
         </p>
       </div>
