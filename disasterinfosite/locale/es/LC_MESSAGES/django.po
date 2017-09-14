@@ -326,11 +326,11 @@ msgstr "Contraseña"
 
 #: templates/user_interactions.html:56
 msgid ""
-"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
 "org\">Email us.</a>"
 msgstr ""
 "¿Necesita asistencia (como un restablecimiento de contraseña)? <a href="
-"\"mailto:help@hazardgready.org\">Envíenos un correo electrónico.</a>"
+"\"mailto:help@hazardready.org\">Envíenos un correo electrónico.</a>"
 
 #: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
@@ -361,9 +361,9 @@ msgid "Zip Code"
 msgstr "Código Postal"
 
 #: templates/user_interactions.html:103
-msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
-"¿Necesita ayuda? <a href=\"mailto:help@hazardgready.org\">Envíenos un correo "
+"¿Necesita ayuda? <a href=\"mailto:help@hazardready.org\">Envíenos un correo "
 "electrónico.</a>"
 
 #: templates/user_interactions.html:109

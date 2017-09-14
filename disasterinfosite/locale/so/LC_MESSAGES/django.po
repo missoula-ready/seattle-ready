@@ -322,11 +322,11 @@ msgstr "Furaha"
 
 #: templates/user_interactions.html:56
 msgid ""
-"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
 "org\">Email us.</a>"
 msgstr ""
 "Ma u baahantahay caawin yar (sida tirida furaha)? <a href=\"mailto:"
-"help@hazardgready.org\">I-meel noo soo dir.</a>"
+"help@hazardready.org\">I-meel noo soo dir.</a>"
 
 #: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
@@ -357,9 +357,9 @@ msgid "Zip Code"
 msgstr "Lambarka Boostada"
 
 #: templates/user_interactions.html:103
-msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
-"Ma u baahantahay caawinta qaar? <a href=\"mailto:help@hazardgready.org\">I-"
+"Ma u baahantahay caawinta qaar? <a href=\"mailto:help@hazardready.org\">I-"
 "meel noo soo dir.</a>"
 
 #: templates/user_interactions.html:109

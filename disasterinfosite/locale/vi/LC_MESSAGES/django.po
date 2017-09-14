@@ -330,11 +330,11 @@ msgstr "Mật Khẩu"
 
 #: templates/user_interactions.html:56
 msgid ""
-"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
 "org\">Email us.</a>"
 msgstr ""
 "Bạn cần trợ giúp (VD: đặt lại mật khẩu) phải không? <a href="
-"\"mailto:help@hazardgready.org\">Gửi email cho chúng tôi.</a>"
+"\"mailto:help@hazardready.org\">Gửi email cho chúng tôi.</a>"
 
 #: templates/user_interactions.html:63
 msgid "Email address (this will be your username)"
@@ -365,9 +365,9 @@ msgid "Zip Code"
 msgstr "Mã Bưu Chính"
 
 #: templates/user_interactions.html:103
-msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
-"Bạn cần trợ giúp phải không? <a href=\"mailto:help@hazardgready.org\">Gửi "
+"Bạn cần trợ giúp phải không? <a href=\"mailto:help@hazardready.org\">Gửi "
 "email cho chúng tôi.</a>"
 
 #: templates/user_interactions.html:109

@@ -302,10 +302,10 @@ msgstr "密码"
 
 #: templates/user_interactions.html:56
 msgid ""
-"Need some help (like a password reset)? <a href=\"mailto:help@hazardgready."
+"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
 "org\">Email us.</a>"
 msgstr ""
-"需要帮助（如密码重置）？<a href=\"mailto:help@hazardgready.org\">发电子邮件给"
+"需要帮助（如密码重置）？<a href=\"mailto:help@hazardready.org\">发电子邮件给"
 "我们。</a>"
 
 #: templates/user_interactions.html:63
@@ -337,9 +337,9 @@ msgid "Zip Code"
 msgstr "邮编"
 
 #: templates/user_interactions.html:103
-msgid "Need some help? <a href=\"mailto:help@hazardgready.org\">Email us.</a>"
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
-"需要帮助？<a href=\"mailto:help@hazardgready.org\">发电子邮件给我们。</a>"
+"需要帮助？<a href=\"mailto:help@hazardready.org\">发电子邮件给我们。</a>"
 
 #: templates/user_interactions.html:109
 msgid ""
