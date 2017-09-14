@@ -485,35 +485,25 @@ PHOTOS OF PAST EVENTS
 }
 
 /* Arrows for photo slider */
+.slick-prev {
+  left: -10px;
+}
+
+.slick-next {
+  right: -10px;
+}
+
 .slick-prev,
 .slick-next
 {
-  position: absolute;
-  top: 40%;
-  cursor: pointer;
-  color: #FFFFFF;
   background: #000000;
-  opacity: .75;
-  z-index: 9999;
-  font-size: 2rem;
-  padding: 1rem;
+  border-radius: 10px;
 }
 
-.slick-prev {
-  left: 0px;
-}
-.slick-next
-{
-  right: 0px;
-}
-
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus
-{
+.slick-prev:focus, .slick-prev:hover,
+.slick-next:focus, .slick-next:hover {
   background: #000000;
-  outline: none;
+  color: #a5c727;
 }
 
 /*****
