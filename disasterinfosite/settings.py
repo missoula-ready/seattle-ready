@@ -32,11 +32,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'django.contrib.gis',
     'embed_video',
     'disasterinfosite',
-    'solo'
+    'solo',
+    'webpack_loader'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -143,10 +143,19 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-if DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'build/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.map']
+    }
+}
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
 STATIC_URL = '/static/'
@@ -156,10 +165,9 @@ STATIC_URL = '/static/'
 # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
 # STATIC_URL = '/zr/static/'
 
-if not DEBUG:
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Specially for GeoDjango on Heroku
 GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
@@ -168,9 +176,5 @@ GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 ### ^^^^^^^^^^^^^^^^^^^^^^^^^ ###
 ### END HEROKU CONFIGURATIONS ###
 
-if DEBUG:
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
-else:
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'img')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
 MEDIA_URL = '/static/img/'
