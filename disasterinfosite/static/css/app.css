@@ -26,27 +26,27 @@ TYPOGRAPHY STYLES
 }
 
 h1 {
-  font-size: 2.3125rem;
+  font-size: 2.3125em;
 }
 
 h2 {
-  font-size: 1.6875rem;
-  line-height: 1.75rem;
+  font-size: 1.6875em;
+  line-height: 1.75em;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 1.4375rem;
+  font-size: 1.4375em;
   font-weight: bold;
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: 1.125em;
   font-weight: bold;
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 label {
@@ -109,11 +109,11 @@ HEADER STYLES
 
 .project-title {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 2em;
 }
 
 .project-subtitle {
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 /*****
@@ -243,7 +243,7 @@ LOGIN / SIGNUP FORM
 }
 
 .user-interaction__buttons .button:not(:last-child) {
-  margin-right: 2rem;
+  margin-right: 2em;
 }
 
 #user-interaction-container label {
@@ -294,11 +294,6 @@ input:invalid {
   border-width: 2px;
 }
 
-.select {
-  height: 38px;
-  width: auto;
-}
-
 /****
 DISASTER TABS
 ****/
@@ -330,13 +325,13 @@ DISASTER TABS
 }
 
 .tabs-content > .content {
-  padding: 1rem;
+  padding: 1em;
   width: auto;
 }
 
 .tabs-content > .content.active {
   margin-top: 10px;
-  padding: 1rem;
+  padding: 1em;
 }
 
 .tabs dd > a, .tabs .tab-title > a {
@@ -413,7 +408,7 @@ SECTIONS
 
 .section-icon {
   display: inline-block;
-  margin-top: 0.2rem;
+  margin-top: 0.2em;
   width: 80px;
   height: 80px;
   background-size: 80px auto;
@@ -424,7 +419,7 @@ SECTIONS
 }
 
 .section-title {
-  font-size: 1.75rem;
+  font-size: 1.75em;
   line-height: 3em;
   margin-left: 90px;
   text-transform: uppercase;
@@ -563,8 +558,8 @@ GEEK BOX
 
 .who-made-this-logo {
   max-width: 30%;
-  max-height: 5rem;
-  margin: 0.5rem;
+  max-height: 5em;
+  margin: 0.5em;
 }
 
 .county-logo {
@@ -588,7 +583,7 @@ GEEK BOX
 
 
   #location-text {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
   }
 
   .title-image {
@@ -596,9 +591,9 @@ GEEK BOX
   }
 
   .project-title {
-    font-size: 2rem;
+    font-size: 2em;
     line-height: 1.2em;
-    padding-top: 3rem;
+    padding-top: 3em;
   }
 
   .project-subtitle {
@@ -629,15 +624,15 @@ GEEK BOX
   }
 
   h2 {
-    line-height: 1.5rem;
+    line-height: 1.5em;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 
   h5 {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .tabs-content > .content.active {
@@ -650,7 +645,7 @@ GEEK BOX
   }
 
   .likely-scenario p {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .intensity-meter {
@@ -688,7 +683,7 @@ GEEK BOX
   }
 
   .user-interaction__buttons .button:not(:last-child) {
-      margin-right: 1rem;
+      margin-right: 1em;
   }
 
   .loading-text {
@@ -703,12 +698,25 @@ GEEK BOX
     padding: 9px 1em;
   }
 
-  #title .button--top {
-    width: 90px;
+  .title-header {
+    padding-top: 1em;
+    text-align: center;
+  }
+
+  #title .button--top,
+  #language__form {
+    margin: 0 auto;
+    position: static;
+    width: 90%;
+  }
+
+  select {
+    margin-bottom: 0.5em;
+    text-align: center;
   }
 
   .user-interaction__buttons .button:not(:last-child) {
-      margin-right: 0.5rem;
+    margin-right: 0.5em;
   }
 
   #location-text {
@@ -720,13 +728,15 @@ GEEK BOX
   }
 
   .project-title {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     line-height: 1.5em;
+    padding-top: 1em;
   }
 
   .project-subtitle {
     font-size: 16px;
     line-height: 1.2em;
+    margin-bottom: 0.5em;
   }
 
   .section-icon {
@@ -740,7 +750,7 @@ GEEK BOX
   }
 
   .section-title {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     margin-left: 55px;
   }
 
@@ -763,7 +773,7 @@ GEEK BOX
   }
 
   .user-interactions-help {
-    padding-top: 1rem;
+    padding-top: 1em;
     font-size: 0.75em
   }
 
