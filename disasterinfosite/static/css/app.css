@@ -21,7 +21,6 @@ TYPOGRAPHY STYLES
 .vert-pad-medium { padding: 2em 0; }
 .caps {
   text-transform: uppercase;
-  letter-spacing: 0.06em;
   font-weight: bold;
 }
 
@@ -416,22 +415,16 @@ SECTIONS
 }
 
 .section-icon {
-  display: inline-block;
-  margin-top: 0.2em;
-  width: 80px;
-  height: 80px;
-  background-size: 80px auto;
-}
-
-.section-icon--dynamic {
   width: 100%;
+  min-height: 80px;
+  background-position: left center;
+  background-size: 80px auto;
 }
 
 .section-title {
   font-size: 1.75em;
   line-height: 3em;
-  margin-left: 90px;
-  text-transform: uppercase;
+  margin-left: 92px;
 }
 
 /*****
@@ -578,6 +571,18 @@ GEEK BOX
 
 /* adjustments for smaller screens */
 @media only screen and (max-width: 40rem) {
+  h2 {
+    font-size: 1.4em;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
   .button, .select {
     font-size: 12px;
   }
@@ -633,26 +638,19 @@ GEEK BOX
      font-size: 1.25em;
   }
 
-  h2 {
-    font-size: 1.4em;
-    line-height: 1.5em;
-  }
-
-  h3 {
-    font-size: 1.2em;
-  }
-
-  h5 {
-    font-size: 1em;
-  }
-
   .tabs-content > .content.active {
     margin-top: 0;
   }
 
-  .caps {
-    text-transform: uppercase;
-    font-weight: bold;
+  .section-icon {
+    background-size: 50px auto;
+    min-height: 50px;
+  }
+
+  .section-title {
+    font-size: 1.4em;
+    line-height: 2em;
+    margin-left: 56px;
   }
 
   .likely-scenario p {
@@ -670,7 +668,7 @@ GEEK BOX
   }
 
   .section-content {
-    padding: 0;
+    padding: 0.5em;
   }
 
   .disaster-container .column {
@@ -751,19 +749,9 @@ GEEK BOX
     margin-bottom: 0.5em;
   }
 
-  .section-icon {
-    width: 50px;
-    height: 50px;
-    background-size: 50px auto;
-  }
-
-  .section-icon--dynamic {
-    width: 100%;
-  }
-
-  .section-title {
-    font-size: 1.2em;
-    margin-left: 55px;
+  .tabs-content > .content.active {
+    margin-top: 0;
+    padding: 0.5em;
   }
 
   .past-photos {
