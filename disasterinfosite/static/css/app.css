@@ -438,19 +438,7 @@ SNUGGET CONTENT
 }
 
 .intensity-meter {
-    float:left;
-    margin: 0 15px;
-    width:100px;
-}
-
-.intensity-content {
-  margin-top: 10px;
-}
-
-.intensity {
-  display: inline-block;
-  margin-bottom:20px;
-  width: 100%;
+  text-align: center;
 }
 
 .intensity-meter-segment {
@@ -655,16 +643,6 @@ GEEK BOX
 
   .likely-scenario p {
     font-size: 1em;
-  }
-
-  .intensity-meter {
-    float:left;
-    margin: 0 10px 0 0;
-    width:100px;
-  }
-
-  .intensity-content {
-    margin: 10px 0 0 0;
   }
 
   .section-content {
