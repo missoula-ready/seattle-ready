@@ -68,6 +68,11 @@ a {
   color: #006086;
 }
 
+p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
 /*****
 HEADER STYLES
 *****/
@@ -624,6 +629,7 @@ GEEK BOX
   }
 
   h2 {
+    font-size: 1.4em;
     line-height: 1.5em;
   }
 
@@ -694,8 +700,13 @@ GEEK BOX
 /* adjustments for the smallest screens */
 @media only screen and (max-width: 26rem) {
   .button {
+    margin: 0.5em auto;
+    padding: 1em;
+    width: 100%;
+  }
+
+  #location-submit {
     margin: 0;
-    padding: 9px 1em;
   }
 
   .title-header {
@@ -716,7 +727,7 @@ GEEK BOX
   }
 
   .user-interaction__buttons .button:not(:last-child) {
-    margin-right: 0.5em;
+    margin-right: auto;
   }
 
   #location-text {
