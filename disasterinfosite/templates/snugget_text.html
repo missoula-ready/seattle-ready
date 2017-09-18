@@ -8,11 +8,11 @@
           {{ snugget.dynamic_image | safe }}
         {% endif %}
       </div>
-      <div class="intensity-content small-12 medium-9 columns">
+      <div class="intensity-content snugget-content small-12 medium-9 columns">
         {{ snugget.content | safe }}
       </div>
     </div>
     {% else %}
-      <p>{{ snugget.content | safe }}</p>
+      <p class="snugget-content">{{ snugget.content | safe }}</p>
   {% endif %}
 {% endblock %}

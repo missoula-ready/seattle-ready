@@ -48,13 +48,13 @@
               </div>
               <div class="section-content">
                 {% for sub_section, snuggets in sub_sections.items %}
-                  <h3>{{ sub_section.display_name }}</h3>
+                  <h3 class="snugget-subsection">{{ sub_section.display_name }}</h3>
                   {% for snugget in snuggets %}
                     {% show_snugget snugget %}
                   {% endfor %}
                 {% endfor %}
                 {% if section.name == "In Recent History" and hazard.photos %}
-                  <h3>{% trans "Historical Images" %}</h3>
+                  <h3 class="snugget-subsection">{% trans "Historical Images" %}</h3>
                   <div class="past-photos">
                     {% for photo in hazard.photos %}
                      <img alt="{{ photo.caption }}" title="{{ photo.caption }}" class="slideshow-image" src="{{ photo.image.url }}"/>

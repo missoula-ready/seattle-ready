@@ -387,7 +387,7 @@ SECTIONS
 *****/
 
 .section-content {
-  padding-left: 20px;
+  padding: 0 1em;
 }
 
 .section-icon--link {
@@ -431,14 +431,25 @@ SECTIONS
 SNUGGET CONTENT
 *****/
 
+.snugget-subsection {
+  margin-top: 1em;
+}
+
 /* Center images that appear in snuggets */
-.section-content img {
-  display: block;
-  margin: 1rem auto;
+.snugget-content img {
+  margin: 1em auto;
+}
+
+.intensity {
+  padding: 1em 0;
 }
 
 .intensity-meter {
   text-align: center;
+}
+
+.intensity-meter img {
+  max-width: 100px; /* For non-SVG, non-fire dial icons */
 }
 
 .intensity-meter-segment {
@@ -564,13 +575,10 @@ GEEK BOX
     line-height: 1.5em;
   }
 
-  h3 {
-    font-size: 1.2em;
-  }
-
   h5 {
     font-size: 1em;
   }
+
   .button, .select {
     font-size: 12px;
   }
@@ -646,7 +654,7 @@ GEEK BOX
   }
 
   .section-content {
-    padding: 0.5em;
+    padding: 0 0.5em;
   }
 
   .disaster-container .column {
@@ -730,6 +738,18 @@ GEEK BOX
   .tabs-content > .content.active {
     margin-top: 0;
     padding: 0.5em;
+  }
+
+  .intensity {
+    padding: 0.5em;
+  }
+
+  .intensity-meter {
+    margin-bottom: 0.5em;
+  }
+
+  .snugget-content img {
+    display: block;
   }
 
   .past-photos {
