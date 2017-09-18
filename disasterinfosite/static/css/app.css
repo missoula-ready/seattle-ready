@@ -634,17 +634,13 @@ GEEK BOX
      font-size: 1.25em;
   }
 
-  .tabs-content > .content.active {
-    margin-top: 0;
-  }
-
   .section-icon {
     background-size: 50px auto;
     min-height: 50px;
   }
 
   .section-title {
-    font-size: 1.4em;
+    font-size: 1.3em;
     line-height: 2em;
     margin-left: 56px;
   }
@@ -661,8 +657,18 @@ GEEK BOX
     padding: 0;
   }
 
+  .tabs-content > .content.active {
+    margin-top: 0;
+    padding: 0.5em;
+  }
+
+  .tabs dd, .tabs .tab-title {
+    margin: 0 !important;
+    width: 100%;
+  }
+
   .tabs dd > a, .tabs .tab-title > a {
-    padding: 0.5rem 0.75rem
+    padding: 0.3rem 0.5rem
   }
 
   .location-form {
@@ -735,11 +741,6 @@ GEEK BOX
     margin-bottom: 0.5em;
   }
 
-  .tabs-content > .content.active {
-    margin-top: 0;
-    padding: 0.5em;
-  }
-
   .intensity {
     padding: 0.5em;
   }
@@ -759,15 +760,6 @@ GEEK BOX
 
   .slideshow-image {
     width: 270px;
-  }
-
-  .tabs dd, .tabs .tab-title {
-    margin: 0 !important;
-    width: 100%;
-  }
-
-  .tabs dd > a, .tabs .tab-title > a {
-    padding: 0.3rem 0.5rem
   }
 
   .user-interactions-help {
