@@ -294,6 +294,10 @@ GENERIC FORM STYLES
   color: #fff;
 }
 
+select {
+  height: 3.25em;
+}
+
 input:invalid {
   border-color: #f03b20;
   border-width: 2px;
@@ -578,6 +582,10 @@ GEEK BOX
     font-size: 12px;
   }
 
+  .button {
+    padding: 1em;
+  }
+
   #title .button--top {
     font-size: 0.75em;
   }
@@ -586,13 +594,14 @@ GEEK BOX
     background-size: 23px 23px;
   }
 
-
   #location-text {
     margin-bottom: 0.5em;
   }
 
   .title-image {
+    display: block;
     max-height: 50px;
+    margin: 0 auto;
   }
 
   .project-title {
@@ -606,10 +615,6 @@ GEEK BOX
     line-height: 1.2em;
   }
 
-  .title-image {
-    display: block;
-    margin: 0 auto;
-  }
   .location-label {
     font-size: 22px;
     line-height: 1.2em;
@@ -701,7 +706,6 @@ GEEK BOX
 @media only screen and (max-width: 26rem) {
   .button {
     margin: 0.5em auto;
-    padding: 1em;
     width: 100%;
   }
 
@@ -732,10 +736,6 @@ GEEK BOX
 
   #location-text {
     font-size: 16px;
-  }
-
-  .title-image {
-    max-height: 50px;
   }
 
   .project-title {
