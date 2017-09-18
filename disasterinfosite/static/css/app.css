@@ -569,7 +569,7 @@ GEEK BOX
 
 
 /* adjustments for smaller screens */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 860px) {
   h2 {
     font-size: 1.4em;
     line-height: 1.5em;
@@ -693,7 +693,7 @@ GEEK BOX
 }
 
 /* adjustments for the smallest screens */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 420px) {
   .vert-pad-medium { padding: 1em 0; }
   .button {
     margin: 0.5em auto;
