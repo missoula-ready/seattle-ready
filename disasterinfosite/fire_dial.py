@@ -7,8 +7,8 @@ dial = """<svg
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   width="105px"
-   height="65px"
+   width="160px"
+   height="100px"
    viewBox="0 0 354.00001 179.16412"
    version="1.1">
    <title>A fire dial showing {3} percent intensity</title>
