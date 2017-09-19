@@ -472,15 +472,16 @@ PHOTOS OF PAST EVENTS
 *****/
 
 .past-photos {
-  width: 420px;
   padding: 10px;
   margin: 0 auto;
 }
 
+.past-photo__container {
+  padding: 10px;
+}
+
 .slideshow-image {
-  width: 400px;
-  max-width: 100%;
-  display: inline-block;
+  margin: 0 auto;
 }
 
 /* Arrows for photo slider */
@@ -496,13 +497,19 @@ PHOTOS OF PAST EVENTS
 .slick-next
 {
   background: #000000;
-  border-radius: 10px;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
 }
 
 .slick-prev:focus, .slick-prev:hover,
 .slick-next:focus, .slick-next:hover {
   background: #000000;
   color: #a5c727;
+}
+
+.slick-next::before, .slick-prev::before {
+  font-size: 40px;
 }
 
 /*****
@@ -777,13 +784,15 @@ GEEK BOX
     display: block;
   }
 
-  .past-photos {
-    width: 272px;
-    height: 250px;
+  .slick-prev,
+  .slick-next
+  {
+    height: 25px;
+    width: 25px;
   }
 
-  .slideshow-image {
-    width: 270px;
+  .slick-next::before, .slick-prev::before {
+    font-size: 25px;
   }
 
   .user-interactions-help {

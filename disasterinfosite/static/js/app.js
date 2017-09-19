@@ -94,7 +94,7 @@ function loadGallery() {
   var currentSlideElement = $('.disaster-content.active .past-photos');
   currentSlideElement.slick({
     slidesToShow: 1,
-    variableWidth: true,
+    variableWidth: false,
     prevArrow: '<button type="button" class="slick-prev"><</button>',
     nextArrow: '<button type="button" class="slick-next">></button>'
   });
