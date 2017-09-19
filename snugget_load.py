@@ -1,5 +1,4 @@
 import os
-import csv
 
 import openpyxl # library to read .xlsx format
 import psycopg2
