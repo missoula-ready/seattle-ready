@@ -1,6 +1,6 @@
 require('../css/normalize.css');
 require('../css/foundation.min.css');
-require('../css/leaflet.css');
+require('leaflet/dist/leaflet.css');
 require("slick-carousel/slick/slick.css");
 require("slick-carousel/slick/slick-theme.css");
 require('../css/app.css');
@@ -12,6 +12,7 @@ require('../img/marker-shadow.png');
 require('../img/thinking.gif');
 
 require('slick-carousel');
+var L = require('leaflet');
 var $ = require('jquery');
 
 // This is on window so that it can get called after the google maps API script is loaded asynchronously.
@@ -219,8 +220,8 @@ $( document ).ready(function() {
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
-    icon.options.iconUrl = staticPath + "build/marker-icon.png";
-    icon.options.shadowUrl = staticPath + "build/marker-shadow.png";
+    icon.options.iconUrl = "marker-icon.png";
+    icon.options.shadowUrl = "marker-shadow.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,

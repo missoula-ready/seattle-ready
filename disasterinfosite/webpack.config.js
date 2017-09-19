@@ -28,8 +28,7 @@ module.exports = {
     new BundleTracker({filename: './webpack-stats.json'}),
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery",
-      L: "leaflet"
+      jQuery: "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
