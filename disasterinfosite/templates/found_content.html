@@ -43,8 +43,10 @@
         {% endif %}
           {% for section, sub_sections in hazard.sections.items %}
             <div class="snugget-text">
-              <div class="section-icon section-icon--{{ section }}">
-                <h2 class="caps section-title">{{ section.display_name }}</h2>
+              <div class="section-title-wrapper">
+                <div class="section-icon section-icon--{{ section }}">
+                  <h2 class="caps section-title">{{ section.display_name }}</h2>
+                </div>
               </div>
               <div class="section-content">
                 {% for sub_section, snuggets in sub_sections.items %}

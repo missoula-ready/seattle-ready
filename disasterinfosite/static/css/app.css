@@ -414,17 +414,20 @@ SECTIONS
   background: transparent url(../img/prepare.svg) no-repeat 0 0;
 }
 
+.section-title-wrapper {
+  min-height: 130px;
+}
+
 .section-icon {
   width: 100%;
   min-height: 80px;
-  background-position: left center;
-  background-size: 80px auto;
+  max-height: 100px;
+  background-size: contain;
 }
 
 .section-title {
-  font-size: 1.75em;
-  line-height: 3em;
-  margin-left: 92px;
+  font-size: 2.5em;
+  margin-left: 120px;
 }
 
 /*****
@@ -575,6 +578,10 @@ GEEK BOX
     line-height: 1.5em;
   }
 
+  h3 {
+    font-size: 1.2em;
+  }
+
   h5 {
     font-size: 1em;
   }
@@ -634,15 +641,18 @@ GEEK BOX
      font-size: 1.25em;
   }
 
+  .section-title-wrapper {
+    min-height: 80px;
+  }
+
   .section-icon {
-    background-size: 50px auto;
-    min-height: 50px;
+    min-height: 70px;
+    max-height: 80px;
   }
 
   .section-title {
-    font-size: 1.3em;
-    line-height: 2em;
-    margin-left: 56px;
+    font-size: 1.5em;
+    margin-left: 84px;
   }
 
   .likely-scenario p {
@@ -739,6 +749,20 @@ GEEK BOX
     font-size: 16px;
     line-height: 1.2em;
     margin-bottom: 0.5em;
+  }
+
+  .section-title-wrapper {
+    min-height: 80px;
+  }
+
+  .section-icon {
+    min-height: 50px;
+    max-height: 60px;
+  }
+
+  .section-title {
+    font-size: 1.2em;
+    margin-left: 62px;
   }
 
   .intensity {
