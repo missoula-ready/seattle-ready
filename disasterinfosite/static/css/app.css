@@ -63,6 +63,10 @@ label {
   border: 0;
 }
 
+a {
+  color: #006086;
+}
+
 p {
   line-height: 1.5;
   margin-bottom: 1em;
@@ -529,7 +533,7 @@ SUPPLY KIT
   font-size: 50px;
   line-height: .9em;
   margin: 0 15px;
-  color: #a5c727;
+  color: #397D02;
 }
 .supply-kit .text-label {
   padding-top: .2em;
