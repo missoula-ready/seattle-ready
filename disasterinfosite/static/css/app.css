@@ -500,6 +500,7 @@ PHOTOS OF PAST EVENTS
   border-radius: 20px;
   height: 40px;
   width: 40px;
+  z-index: 1;
 }
 
 .slick-prev:focus, .slick-prev:hover,
