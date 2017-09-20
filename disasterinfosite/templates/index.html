@@ -3,9 +3,10 @@
 {% load i18n %}
 {% load render_bundle from webpack_loader %}
 {% load webpack_static from webpack_loader %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="utf-8" />
   <meta property="og:url" content="{{ settings.site_url }}"/>
