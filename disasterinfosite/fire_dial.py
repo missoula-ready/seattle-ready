@@ -27,8 +27,7 @@ dial = """<svg
          transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
     </marker>
   </defs>
-  <metadata
-     id="metadata4821">
+  <metadata>
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -39,9 +38,7 @@ dial = """<svg
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     id="layer1"
-     transform="translate(-105.07686,-245.57977)">
+  <g transform="translate(-105.07686,-245.57977)">
 
 <!-- leftmost segment -->
     <path
