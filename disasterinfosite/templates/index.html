@@ -3,11 +3,13 @@
 {% load i18n %}
 {% load render_bundle from webpack_loader %}
 {% load webpack_static from webpack_loader %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <meta property="og:url" content="{{ settings.site_url }}"/>
   <meta property="og:title" content="{{ settings.site_description }}">
   {% trans "Enter your location for a personalized report on your risks and how to prepare." as meta_description %}
