@@ -10,8 +10,12 @@ dial = """<svg
    width="160px"
    height="100px"
    viewBox="0 0 354.00001 179.16412"
+   aria-labelledby="title-{2}"
+   aria-describedby="desc-{2}"
+   role="img"
    version="1.1">
-   <title>A fire dial showing {3} percent intensity</title>
+   <title id="title-{2}">Intensity</title>
+   <desc id="desc={2}">A fire dial showing {3} percent intensity</desc>
   <defs>
 
 <!-- the arrowhead -->
