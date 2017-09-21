@@ -436,6 +436,7 @@ SNUGGET CONTENT
 
 .snugget-subsection {
   margin-top: 1em;
+  text-transform: capitalize;
 }
 
 /* Center images that appear in snuggets */
