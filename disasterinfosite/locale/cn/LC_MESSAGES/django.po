@@ -50,7 +50,7 @@ msgstr "查看下面的地图，了解您的位置信息或输入其他位置。
 
 #: templates/found_content.html:26
 msgid "Results for this location"
-msgstr ""
+msgstr "该地方结果"
 
 #: templates/found_content.html:58
 msgid "Historical Images"
@@ -201,7 +201,7 @@ msgstr "查看过去发生过哪些灾害 %(area_name)s、有哪些影响以及�
 
 #: templates/index.html:110
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "在该地方获得成果……"
 
 #: templates/language_selector.html:15
 msgid "Language"

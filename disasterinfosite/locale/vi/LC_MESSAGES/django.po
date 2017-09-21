@@ -52,7 +52,7 @@ msgstr ""
 
 #: templates/found_content.html:26
 msgid "Results for this location"
-msgstr ""
+msgstr "Kết quả cho địa điểm này"
 
 #: templates/found_content.html:58
 msgid "Historical Images"
@@ -223,7 +223,7 @@ msgstr ""
 
 #: templates/index.html:110
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "Xem kết quả cho địa điểm của bạn…"
 
 #: templates/language_selector.html:15
 msgid "Language"
@@ -236,7 +236,7 @@ msgstr "Không có thông tin."
 #: templates/no_content_found.html:30
 #, python-format         "
 msgid "It looks like your location is outside of %(area_name)s."
-msgstr "Có vẻ như địa điểm của bạn nằm bên ngoài %(area_name)s"
+msgstr "Có vẻ như địa điểm của bạn nằm bên ngoài %(area_name)s."
 
 #: templates/no_content_found.html:33
 msgid ""
