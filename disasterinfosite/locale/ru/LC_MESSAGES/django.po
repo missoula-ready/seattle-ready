@@ -54,7 +54,7 @@ msgstr ""
 
 #: templates/found_content.html:26
 msgid "Results for this location"
-msgstr ""
+msgstr "Результаты для этого местоположения"
 
 #: templates/found_content.html:58
 msgid "Historical Images"
@@ -226,7 +226,7 @@ msgstr ""
 
 #: templates/index.html:110
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "Получение результатов для вашего местоположения..."
 
 #: templates/language_selector.html:15
 msgid "Language"

@@ -50,7 +50,7 @@ msgstr ""
 
 #: templates/found_content.html:26
 msgid "Results for this location"
-msgstr ""
+msgstr "Natiijooyinka goobtaan"
 
 #: templates/found_content.html:58
 msgid "Historical Images"
@@ -215,7 +215,7 @@ msgstr ""
 
 #: templates/index.html:110
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "Helida natiijooyinka goobtaada…"
 
 #: templates/language_selector.html:15
 msgid "Language"
