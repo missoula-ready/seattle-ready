@@ -706,6 +706,7 @@ GEEK BOX
   }
 
   .loading-text {
+    font-size: 2em;
     margin: 30px 0 10px;
   }
 }
@@ -806,6 +807,6 @@ GEEK BOX
   }
 
   .loading-text {
-    margin: 10px 0;
+    font-size: 1.5em;
   }
 }
