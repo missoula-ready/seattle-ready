@@ -13,6 +13,8 @@
       </div>
     </div>
     {% else %}
-      <p class="snugget-content">{{ snugget.content | safe }}</p>
+    <div class="snugget-content row">
+      {{ snugget.content | safe }}
+    </div>
   {% endif %}
 {% endblock %}

@@ -415,7 +415,7 @@ SECTIONS
 }
 
 .section-title-wrapper {
-  min-height: 130px;
+  min-height: 80px;
 }
 
 .section-icon {
@@ -651,7 +651,7 @@ GEEK BOX
   }
 
   .section-title-wrapper {
-    min-height: 80px;
+    min-height: 50px;
   }
 
   .section-icon {
@@ -762,7 +762,7 @@ GEEK BOX
   }
 
   .section-title-wrapper {
-    min-height: 80px;
+    min-height: 30px;
   }
 
   .section-icon {
