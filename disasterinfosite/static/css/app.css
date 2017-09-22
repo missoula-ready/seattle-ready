@@ -441,6 +441,7 @@ SNUGGET CONTENT
 
 /* Center images that appear in snuggets */
 .snugget-content img {
+  display: block;
   margin: 1em auto;
 }
 
@@ -781,10 +782,6 @@ GEEK BOX
 
   .intensity-meter {
     margin-bottom: 0.5em;
-  }
-
-  .snugget-content img {
-    display: block;
   }
 
   .slick-prev,
