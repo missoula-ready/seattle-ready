@@ -67,6 +67,10 @@ a {
   color: #0075A3;
 }
 
+a:hover, a:focus {
+  color: #397D02;
+}
+
 p {
   line-height: 1.5;
   margin-bottom: 1em;
@@ -83,7 +87,8 @@ HEADER STYLES
    color: #fff;
 }
 
-#title h1 a:hover {
+#title h1 a:hover,
+#title h1 a:focus {
    color: #fff;
 }
 
@@ -351,7 +356,8 @@ DISASTER TABS
   padding: 0.5rem
 }
 
-.tabs dd > a:hover, .tabs .tab-title > a:hover {
+.tabs dd > a:hover, .tabs .tab-title > a:hover,
+.tabs dd > a:focus, .tabs .tab-title > a:focus {
   color: #006666;
 }
 
@@ -361,7 +367,8 @@ DISASTER TABS
   color: #fff;
 }
 
-.tabs dd.active > a:hover, .tabs .tab-title.active > a:hover {
+.tabs dd.active > a:hover, .tabs .tab-title.active > a:hover,
+.tabs dd.active > a:focus, .tabs .tab-title.active > a:focus {
   color: #a5c727;
 }
 
@@ -441,6 +448,7 @@ SNUGGET CONTENT
 
 /* Center images that appear in snuggets */
 .snugget-content img {
+  display: block;
   margin: 1em auto;
 }
 
@@ -781,10 +789,6 @@ GEEK BOX
 
   .intensity-meter {
     margin-bottom: 0.5em;
-  }
-
-  .snugget-content img {
-    display: block;
   }
 
   .slick-prev,
