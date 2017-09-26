@@ -84,20 +84,35 @@ Note: because this site is translated, you can find the translations for these v
 Note that these may appear in different sections or be mutually exclusive, which is why some of them have the same order.
 
   In Your Lifetime: 0
+
   Cascadia Quake: 1
+
   What's the Worst: 2
+
   Erosion Risk: 3
+
   Climate Impacts: 3
+
   If the dams failed: 3
+
   Tsunami Zone: 3
+
   Liquefaction: 4
+
   Unstable Structures: 5
+
   Warning Signs: 6
+
   Before: 7
+
   During: 8
+
   After: 9
+
   Local Resources: 10
+
   What's Happened?: 11
+
   Historical Images: 12
 
 ### Important links
@@ -116,7 +131,7 @@ Note that these may appear in different sections or be mutually exclusive, which
 ### Supply kit
 
 ###### days
-  3
+  10
 ###### text
 Supply kit text goes here
 
