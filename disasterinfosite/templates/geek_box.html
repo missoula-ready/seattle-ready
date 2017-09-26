@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load webpack_static from webpack_loader %}
 
 <div role="contentinfo" id="geek-box-container">
   <div id="geek-box" class="row vert-pad-medium">
@@ -37,6 +38,7 @@
     <div class="small-12 medium-6 columns">
         <h3 class="caps">{% trans "Who made this?" %}</h3>
         <p>{{ settings.who_made_this | safe}}</p>
+        <img class="geek-box-logo" src="{% webpack_static 'build/logo.png' %}" alt="">
     </div>
   </div>
 </div>

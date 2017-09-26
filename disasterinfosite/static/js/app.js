@@ -11,6 +11,7 @@ require('../img/marker-icon.png');
 require('../img/marker-shadow.png');
 require('../img/thinking.gif');
 require('../img/favicon.ico');
+require('../img/logo.png');
 
 require('slick-carousel');
 var L = require('leaflet');
