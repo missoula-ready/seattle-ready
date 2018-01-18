@@ -8,6 +8,7 @@ require('../css/app.css');
 var boundaryShape = require('../img/boundary.json');
 
 require('../img/marker-icon.png');
+require('../img/marker-icon-2x.png');
 require('../img/marker-shadow.png');
 require('../img/thinking.gif');
 require('../img/favicon.ico');
