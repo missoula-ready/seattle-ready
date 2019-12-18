@@ -22,7 +22,7 @@ if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '10.0.2.2']
 else:
     # hazardready.org is the current production server. 23.92.25.126 is its numeric address. eldang.eldan.co.uk is our demo/test server
-    ALLOWED_HOSTS = ['hazardready.org', '.hazardready.org', 'test.hazardready.org', '23.92.25.126', 'eldang.eldan.co.uk']
+    ALLOWED_HOSTS = ['.hazardready.org', '23.92.25.126']
 
 # Application definition
 INSTALLED_APPS = (
