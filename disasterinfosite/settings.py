@@ -16,13 +16,13 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY_SEATTLE']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '10.0.2.2']
 else:
     # hazardready.org is the current production server. 23.92.25.126 is its numeric address. eldang.eldan.co.uk is our demo/test server
-    ALLOWED_HOSTS = ['hazardready.org', '.hazardready.org', '23.92.25.126', 'eldang.eldan.co.uk']
+    ALLOWED_HOSTS = ['.hazardready.org', '23.92.25.126']
 
 # Application definition
 INSTALLED_APPS = (
@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'django.contrib.gis',
     'embed_video',
     'disasterinfosite',
@@ -155,10 +156,10 @@ WEBPACK_LOADER = {
 }
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
-STATIC_URL = '/static/'
+STATIC_URL = '/seattle/static/'
 
 # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
 # STATIC_URL = '/SUBDIR/static/'
@@ -176,5 +177,5 @@ GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 ### ^^^^^^^^^^^^^^^^^^^^^^^^^ ###
 ### END HEROKU CONFIGURATIONS ###
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
-MEDIA_URL = '/static/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'img')
+MEDIA_URL = '/seattle/static/img/'
